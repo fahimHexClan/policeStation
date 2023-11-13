@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.MangeTrafficFormController">
+   <children>
+      <AnchorPane layoutX="52.0" layoutY="52.0" prefHeight="644.0" prefWidth="964.0" style="-fx-background-color: White;">
+         <children>
+            <Separator layoutX="385.0" layoutY="3.0" orientation="VERTICAL" prefHeight="644.0" prefWidth="95.0" />
+            <Label layoutX="606.0" layoutY="21.0" prefHeight="22.0" prefWidth="195.0" text="Vehicle" textAlignment="CENTER">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="20.0" prefHeight="40.0" prefWidth="232.0" text="Driver" textAlignment="CENTER">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXTextField layoutX="99.0" layoutY="352.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="100.0" layoutY="330.0" prefHeight="29.0" prefWidth="241.0" text="Licen Number" />
+      <JFXTextField layoutX="101.0" layoutY="282.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="101.0" layoutY="258.0" prefHeight="29.0" prefWidth="241.0" text="address" />
+      <JFXTextField layoutX="100.0" layoutY="168.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="98.0" layoutY="145.0" prefHeight="29.0" prefWidth="241.0" text="Driver Id" />
+      <JFXTextField layoutX="99.0" layoutY="228.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="98.0" layoutY="205.0" prefHeight="29.0" prefWidth="241.0" text="Driver Name" />
+      <JFXTextField layoutX="100.0" layoutY="418.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="99.0" layoutY="395.0" prefHeight="29.0" prefWidth="241.0" text="Dirth Of Birth" />
+      <JFXTextField layoutX="100.0" layoutY="478.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="99.0" layoutY="456.0" prefHeight="29.0" prefWidth="241.0" text="gender" />
+      <JFXTextField layoutX="100.0" layoutY="539.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="99.0" layoutY="516.0" prefHeight="29.0" prefWidth="241.0" text="License number" />
+      <JFXTextField layoutX="100.0" layoutY="599.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="99.0" layoutY="576.0" prefHeight="29.0" prefWidth="241.0" text="Contact Number" />
+      <JFXTextField layoutX="549.0" layoutY="352.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="550.0" layoutY="330.0" prefHeight="29.0" prefWidth="241.0" text="Model" />
+      <JFXTextField layoutX="551.0" layoutY="282.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="551.0" layoutY="258.0" prefHeight="29.0" prefWidth="241.0" text="Owner" />
+      <JFXTextField layoutX="550.0" layoutY="168.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="548.0" layoutY="145.0" prefHeight="29.0" prefWidth="241.0" text="Vehicle Id" />
+      <JFXTextField layoutX="549.0" layoutY="228.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="548.0" layoutY="205.0" prefHeight="29.0" prefWidth="241.0" text="Engine Number" />
+      <JFXTextField layoutX="550.0" layoutY="418.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="549.0" layoutY="395.0" prefHeight="29.0" prefWidth="241.0" text="Vehicle Type" />
+      <JFXTextField layoutX="550.0" layoutY="478.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="549.0" layoutY="456.0" prefHeight="29.0" prefWidth="241.0" text="Plane Number" />
+   </children>
+</AnchorPane>

@@ -1,44 +1,49 @@
 package lk.ijse.policeStation.controller;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.policeStation.DB.DatabaseConnection;
 import lk.ijse.policeStation.dto.CitizenDto;
 import lk.ijse.policeStation.model.CitizenModel;
+import lk.ijse.policeStation.tm.CitizenTm;
 
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class ManageCitizenFormController {
 
     @FXML
-    private TableColumn<?, ?> ColAddress;
+    private TableColumn<CitizenTm, String> ColAddress;
 
     @FXML
-    private TableColumn<?, ?> ColCitzenId;
+    private TableColumn<CitizenTm, String> ColCitzenId;
 
     @FXML
-    private TableColumn<?, ?> ColContactNumber;
+    private TableColumn<CitizenTm, String> ColContactNumber;
 
     @FXML
-    private TableColumn<?, ?> ColDob;
+    private TableColumn<CitizenTm, String> ColDob;
 
     @FXML
-    private TableColumn<?, ?> ColGender;
+    private TableColumn<CitizenTm, String> ColGender;
 
     @FXML
-    private TableColumn<?, ?> ColName;
+    private TableColumn<CitizenTm, String> ColName;
 
     @FXML
     private Label ContactNumberTxt;
 
     @FXML
-    private TableView<?> TblCitizen;
+    private TableView<CitizenTm> TblCitizen;
 
     @FXML
     private JFXTextField TxtAddress;
@@ -57,6 +62,11 @@ public class ManageCitizenFormController {
 
     @FXML
     private JFXTextField Txtname;
+
+    public void initialize(){
+        setTable();
+        visualize();
+    }
 
     @FXML
     void BtnSaveOnAction(ActionEvent event) {
@@ -158,5 +168,44 @@ public class ManageCitizenFormController {
         TxtContactNumber.setText(citizenDto.getContactNumber());
         TxtGender.setText(citizenDto.getGender());
         TxtDob.setText(citizenDto.getDob());
+    }
+
+    public void setTable(){
+        try {
+
+            ArrayList<CitizenDto>allCitizens= CitizenModel.getAllCitizens();
+
+            ArrayList<CitizenTm> citizen=new ArrayList<>();
+
+            for (CitizenDto Citizen:allCitizens){
+              CitizenTm citizenTm  =new CitizenTm();
+              citizenTm.setCitizenId(Citizen.getCitizenId());
+              citizenTm.setName(Citizen.getName());
+              citizenTm.setAddress(Citizen.getAddress());
+              citizenTm.setContactNumber(Citizen.getContactNumber());
+              citizenTm.setGender(Citizen.getGender());
+              citizenTm.setDob(Citizen.getDob());
+
+              citizen.add(citizenTm);
+
+            }
+
+          ObservableList<CitizenTm> CitizenTms = FXCollections.observableArrayList(citizen);
+
+            TblCitizen.setItems(CitizenTms);
+
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void visualize(){
+        ColCitzenId.setCellValueFactory(new PropertyValueFactory<>("CitizenId"));
+        ColName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        ColAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        ColContactNumber.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
+        ColGender.setCellValueFactory(new PropertyValueFactory<>("gender"));
+        ColDob.setCellValueFactory(new PropertyValueFactory<>("Dob"));
     }
 }

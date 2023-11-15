@@ -108,4 +108,19 @@ public class CitizenModel {
         }
         return List;
     }
+    public static boolean update(CitizenDto citizenDto) throws SQLException, ClassNotFoundException {
+        Connection connection = DatabaseConnection.getInstance().getConnection();
+        String sql = "UPDATE Citizen SET name=?, address=?, contactNumber=?, gender=?, Dob=? WHERE CitizenId=?";
+        try (PreparedStatement stm = connection.prepareStatement(sql)) {
+            stm.setString(1, citizenDto.getName());
+            stm.setString(2, citizenDto.getAddress());
+            stm.setString(3, citizenDto.getContactNumber());
+            stm.setString(4, citizenDto.getGender());
+            stm.setString(5, citizenDto.getDob());
+            stm.setString(6, citizenDto.getCitizenId());
+
+            int affectedRows = stm.executeUpdate();
+            return affectedRows > 0;
+        }
+    }
 }

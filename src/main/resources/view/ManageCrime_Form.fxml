@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageCrimeFormController">
    <children>
-      <AnchorPane layoutX="26.0" layoutY="35.0" prefHeight="649.0" prefWidth="990.0" style="-fx-background-color: white;" />
+      <AnchorPane layoutX="26.0" layoutY="33.0" prefHeight="649.0" prefWidth="990.0" style="-fx-background-color: white;" />
       <JFXTextField layoutX="69.0" layoutY="118.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="68.0" layoutY="95.0" prefHeight="29.0" prefWidth="241.0" text="Complain Id" />
       <JFXTextField layoutX="69.0" layoutY="322.0" prefHeight="25.0" prefWidth="264.0" />
@@ -18,8 +18,20 @@
       <JFXTextField layoutX="71.0" layoutY="252.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="71.0" layoutY="228.0" prefHeight="29.0" prefWidth="241.0" text="Location" />
       <JFXTextField layoutX="71.0" layoutY="448.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="72.0" layoutY="426.0" prefHeight="29.0" prefWidth="241.0" text="Crime Type" />
+      <Label layoutX="72.0" layoutY="426.0" prefHeight="29.0" prefWidth="241.0" text="Type Of Crime" />
       <JFXTextField layoutX="71.0" layoutY="520.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="72.0" layoutY="498.0" prefHeight="29.0" prefWidth="241.0" text="Criminal Record" />
+      <JFXTextField layoutX="371.0" layoutY="530.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="372.0" layoutY="508.0" prefHeight="29.0" prefWidth="241.0" text="Weapons Used" />
+      <JFXTextField layoutX="381.0" layoutY="470.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="382.0" layoutY="448.0" prefHeight="29.0" prefWidth="241.0" text="Previous Incidents" />
+      <JFXTextField layoutX="391.0" layoutY="390.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="392.0" layoutY="368.0" prefHeight="29.0" prefWidth="241.0" text="Motive reason" />
+      <JFXTextField layoutX="391.0" layoutY="310.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="392.0" layoutY="288.0" prefHeight="29.0" prefWidth="241.0" text="Vehicles Involved Details" />
+      <JFXTextField layoutX="381.0" layoutY="258.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="382.0" layoutY="236.0" prefHeight="29.0" prefWidth="241.0" text="Property Involved" />
+      <JFXTextField layoutX="391.0" layoutY="168.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="392.0" layoutY="146.0" prefHeight="29.0" prefWidth="241.0" text="Injuries or Casualties" />
    </children>
 </AnchorPane>

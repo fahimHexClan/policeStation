@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="451f0e7f-11a1-4e82-9643-0ff9fd2af8c8" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/dto/ComplaintDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/ComplaintModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/Fahim (1).jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCitizenFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCitizenFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageComplaintsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageComplaintsFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/dto/ComplaintDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/dto/ComplaintDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/CitizenModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/CitizenModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageCitizen_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageCitizen_Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/ComplaintModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/ComplaintModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/LogIn_Form .fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/LogIn_Form .fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageComplaints_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageComplaints_Form.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +68,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_directory_selection&quot;: &quot;/home/fahim8421/IdeaProjects/policeStation/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/fahim8421/IdeaProjects/policeStation/src/main/resources/Assets/logo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/fahim8421/IdeaProjects/policeStation/src/main/resources/Assets/Background pics&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -80,8 +80,8 @@
       <recent name="lk.ijse.policeStation.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/Assets/logo" />
       <recent name="$PROJECT_DIR$/src/main/resources/Assets/Background pics" />
+      <recent name="$PROJECT_DIR$/src/main/resources/Assets/logo" />
       <recent name="$PROJECT_DIR$/src/main/resources/Assets/gifs" />
       <recent name="$PROJECT_DIR$/src/main/resources/Assets" />
       <recent name="$PROJECT_DIR$/src/main/java/lk_ijse_policeStation/Assets" />
@@ -150,9 +150,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.lk.ijse.policeStation.Wrapper" />
+        <item itemvalue="Application.Wrapper" />
         <item itemvalue="Application.lk.ijse.policeStation.Appinitailizer" />
         <item itemvalue="Application.Appinitailizer" />
-        <item itemvalue="Application.Wrapper" />
       </list>
     </recent_temporary>
   </component>
@@ -221,7 +221,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699991079978</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1700054309340</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700054309340</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1700054326344</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700054326344</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,22 +267,6 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="Initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/CitizenModel.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCitizenFormController.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

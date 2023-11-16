@@ -1,8 +1,8 @@
 package lk.ijse.policeStation.model;
 
-import javafx.scene.control.Alert;
 import lk.ijse.policeStation.DB.DatabaseConnection;
 import lk.ijse.policeStation.dto.CitizenDto;
+import lk.ijse.policeStation.dto.ComplaintDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -19,6 +19,6 @@ public class ComplaintDto {
     private String SuspectAddress;
     private String SuspectContactNumber;
     private String SuspectName;
-    private String TxtTypeOfIncident;
-    private String TxtWitnessInformation;
+    private String TypeOfIncident;
+    private String WitnessInformation;
 }

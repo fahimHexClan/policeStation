@@ -10,9 +10,9 @@
 
 <AnchorPane prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageComplaintsFormController">
    <children>
-      <AnchorPane layoutX="25.0" layoutY="20.0" prefHeight="666.0" prefWidth="1039.0" style="-fx-background-color: white;">
+      <AnchorPane layoutX="25.0" layoutY="20.0" prefHeight="666.0" prefWidth="1000.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="53.0" layoutY="445.0" prefHeight="29.0" prefWidth="241.0" text="Description of incident">
+            <Label layoutX="53.0" layoutY="485.0" prefHeight="29.0" prefWidth="241.0" text="Description of incident">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font></Label>
@@ -23,6 +23,21 @@
                   <Font name="System Bold Italic" size="37.0" />
                </font>
             </Label>
+            <Button layoutX="868.0" layoutY="573.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #17c0eb;" text="Search">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="22.0" layoutY="275.0" prefHeight="44.0" prefWidth="251.0" text="Incident Details">
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="502.0" layoutY="276.0" prefHeight="44.0" prefWidth="251.0" text="Suspect Details">
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <JFXTextField fx:id="TxtComplainId" layoutX="76.0" layoutY="137.0" prefHeight="25.0" prefWidth="361.0" />
@@ -30,12 +45,12 @@
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font></Label>
-      <JFXTextField fx:id="TxtDate" layoutX="79.0" layoutY="302.0" prefHeight="25.0" prefWidth="361.0" />
-      <Label layoutX="77.0" layoutY="282.0" prefHeight="29.0" prefWidth="241.0" text="Date">
+      <JFXTextField fx:id="TxtDate" layoutX="79.0" layoutY="364.0" prefHeight="25.0" prefWidth="361.0" />
+      <Label layoutX="77.0" layoutY="342.0" prefHeight="29.0" prefWidth="241.0" text="Date">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font></Label>
-      <JFXTextField fx:id="TxtCitizenId" layoutX="77.0" layoutY="186.0" prefHeight="25.0" prefWidth="361.0" />
+      <JFXTextField fx:id="TxtCitizenId" layoutX="77.0" layoutY="191.0" prefHeight="25.0" prefWidth="361.0" />
       <Label layoutX="76.0" layoutY="172.0" prefHeight="29.0" prefWidth="241.0" text="Citizen Id">
          <font>
             <Font name="System Bold Italic" size="13.0" />
@@ -45,44 +60,39 @@
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font></Label>
-      <Button layoutX="356.0" layoutY="559.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">
+      <Button layoutX="356.0" layoutY="598.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="484.0" layoutY="559.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Update">
+      <Button layoutX="484.0" layoutY="599.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Update">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="616.0" layoutY="559.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Delete">
+      <Button layoutX="616.0" layoutY="599.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Delete">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="755.0" layoutY="559.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Clear">
+      <Button layoutX="755.0" layoutY="598.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Clear">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="223.0" layoutY="558.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #17c0eb;" text="Search">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <JFXTextField fx:id="TxtTypeOfIncident" layoutX="77.0" layoutY="367.0" prefHeight="25.0" prefWidth="361.0" />
-      <Label layoutX="75.0" layoutY="343.0" prefHeight="29.0" prefWidth="241.0" text="Type of Incident">
+      <JFXTextField fx:id="TxtTypeOfIncident" layoutX="77.0" layoutY="415.0" prefHeight="25.0" prefWidth="361.0" />
+      <Label layoutX="75.0" layoutY="393.0" prefHeight="29.0" prefWidth="241.0" text="Type of Incident">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="TxtLocationOfIncident" layoutX="78.0" layoutY="427.0" prefHeight="25.0" prefWidth="361.0" />
-      <Label layoutX="77.0" layoutY="403.0" prefHeight="29.0" prefWidth="241.0" text="Location of Incident">
+      <JFXTextField fx:id="TxtLocationOfIncident" layoutX="78.0" layoutY="467.0" prefHeight="25.0" prefWidth="361.0" />
+      <Label layoutX="77.0" layoutY="443.0" prefHeight="29.0" prefWidth="241.0" text="Location of Incident">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="TxtDescriptionOfIncident" layoutX="76.0" layoutY="487.0" prefHeight="25.0" prefWidth="897.0" />
+      <JFXTextField fx:id="TxtDescriptionOfIncident" layoutX="76.0" layoutY="536.0" prefHeight="25.0" prefWidth="897.0" />
       <Label layoutX="579.0" layoutY="123.0" prefHeight="29.0" prefWidth="241.0" text="Witness Information">
          <font>
             <Font name="System Bold Italic" size="13.0" />
@@ -94,26 +104,26 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="TxtStatusOfTheComplaint" layoutX="589.0" layoutY="427.0" prefHeight="25.0" prefWidth="361.0" />
-      <Label layoutX="587.0" layoutY="403.0" prefHeight="29.0" prefWidth="241.0" text="Status of the Complaint">
+      <JFXTextField fx:id="TxtStatusOfTheComplaint" layoutX="589.0" layoutY="257.0" prefHeight="25.0" prefWidth="361.0" />
+      <Label layoutX="587.0" layoutY="233.0" prefHeight="29.0" prefWidth="241.0" text="Status of the Complaint">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="TxtSuspectName" layoutX="583.0" layoutY="266.0" prefHeight="25.0" prefWidth="361.0" />
-      <Label layoutX="581.0" layoutY="243.0" prefHeight="29.0" prefWidth="241.0" text="Suspect Name">
+      <JFXTextField fx:id="TxtSuspectName" layoutX="573.0" layoutY="378.0" prefHeight="25.0" prefWidth="361.0" />
+      <Label layoutX="571.0" layoutY="355.0" prefHeight="29.0" prefWidth="241.0" text="Suspect Name">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="TxtSuspectAddress" layoutX="585.0" layoutY="317.0" prefHeight="25.0" prefWidth="361.0" />
-      <Label layoutX="585.0" layoutY="298.0" prefHeight="29.0" prefWidth="241.0" text="Suspect Address">
+      <JFXTextField fx:id="TxtSuspectAddress" layoutX="575.0" layoutY="429.0" prefHeight="25.0" prefWidth="361.0" />
+      <Label layoutX="575.0" layoutY="410.0" prefHeight="29.0" prefWidth="241.0" text="Suspect Address">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="TxtSuspectContactNumber" layoutX="586.0" layoutY="369.0" prefHeight="25.0" prefWidth="361.0" />
-      <Label layoutX="585.0" layoutY="350.0" prefHeight="29.0" prefWidth="241.0" text="Suspect ContactNumber">
+      <JFXTextField fx:id="TxtSuspectContactNumber" layoutX="576.0" layoutY="481.0" prefHeight="25.0" prefWidth="361.0" />
+      <Label layoutX="575.0" layoutY="462.0" prefHeight="29.0" prefWidth="241.0" text="Suspect ContactNumber">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>

@@ -42,15 +42,10 @@
             <Insets />
          </opaqueInsets>
       </AnchorPane>
-      <Label layoutX="282.0" layoutY="-40.0" prefHeight="207.0" prefWidth="906.0" text="Police managment System" textFill="#fff5f5">
+      <Label layoutX="185.0" layoutY="-40.0" prefHeight="207.0" prefWidth="906.0" text="Police managment System" textFill="#fff5f5">
          <font>
             <Font name="System Bold Italic" size="60.0" />
          </font>
       </Label>
-      <ImageView fitHeight="116.0" fitWidth="216.0" layoutX="4.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Assets/gifs/flag-of-sri-lanka-7.gif" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

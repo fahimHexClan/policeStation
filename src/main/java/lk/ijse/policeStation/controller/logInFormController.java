@@ -49,9 +49,9 @@ public class logInFormController {
                 createDashbard();
             } else {
                 // Login failed
-
-
                 new Alert(Alert.AlertType.WARNING, "Try again with the correct username and password").show();
+                UsrPassword.clear();
+                UsrName.clear();
             }
         }
 

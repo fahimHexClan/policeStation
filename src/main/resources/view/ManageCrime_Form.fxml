@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageCrimeFormController">
    <children>
-      <AnchorPane layoutX="26.0" layoutY="33.0" prefHeight="649.0" prefWidth="990.0" style="-fx-background-color: white;" />
+      <AnchorPane layoutX="26.0" layoutY="30.0" prefHeight="649.0" prefWidth="990.0" style="-fx-background-color: white;" />
       <JFXTextField layoutX="69.0" layoutY="118.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="68.0" layoutY="95.0" prefHeight="29.0" prefWidth="241.0" text="Complain Id" />
       <JFXTextField layoutX="69.0" layoutY="322.0" prefHeight="25.0" prefWidth="264.0" />
@@ -33,5 +34,7 @@
       <Label layoutX="382.0" layoutY="236.0" prefHeight="29.0" prefWidth="241.0" text="Property Involved" />
       <JFXTextField layoutX="391.0" layoutY="168.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="392.0" layoutY="146.0" prefHeight="29.0" prefWidth="241.0" text="Injuries or Casualties" />
+      <ComboBox layoutX="157.0" layoutY="168.0" prefWidth="150.0" />
+      <ComboBox layoutX="163.0" layoutY="98.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

@@ -1,6 +1,9 @@
 package lk.ijse.policeStation.controller;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.util.Duration;
 import lk.ijse.policeStation.DB.DatabaseConnection;
 import lk.ijse.policeStation.dto.CitizenDto;
 import lk.ijse.policeStation.model.CitizenModel;
@@ -17,15 +21,19 @@ import lk.ijse.policeStation.tm.CitizenTm;
 
 import java.io.File;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Optional;
 
 public class ManageCitizenFormController {
 
     public ImageView imageView;
+    public Label LblDate;
+    public Label lblTime;
     @FXML
     private TableColumn<CitizenTm, String> ColAddress;
 
@@ -75,6 +83,25 @@ public class ManageCitizenFormController {
     public void initialize(){
         setTable();
         visualize();
+        LoadDateAndTime();
+    }
+
+    private void LoadDateAndTime() {
+        Date date =new Date();
+        SimpleDateFormat f=new SimpleDateFormat("yyyy-MM-dd");
+        LblDate.setText(f.format(date));
+
+        //time set karaganna
+        Timeline time= new Timeline(new KeyFrame(Duration.ZERO, e->{
+            LocalTime currentTime=LocalTime.now();
+            lblTime.setText(
+                    currentTime.getHour()+" : "+currentTime.getMinute()+" : "+currentTime.getSecond()
+            );
+        }),
+                new KeyFrame(Duration.seconds(1))
+                );
+        time.setCycleCount(Animation.INDEFINITE);
+        time.play();
     }
 
     @FXML

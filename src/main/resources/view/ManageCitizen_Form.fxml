@@ -95,6 +95,26 @@
                   <Font name="System Bold Italic" size="34.0" />
                </font>
             </Label>
+            <Label fx:id="LblDate" layoutX="83.0" layoutY="25.0" prefHeight="25.0" prefWidth="204.0" text="16-11-2023">
+               <font>
+                  <Font name="Times New Roman Cyr Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="25.0" prefHeight="25.0" prefWidth="204.0" text="Date:">
+               <font>
+                  <Font name="Times New Roman Cyr Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="746.0" layoutY="25.0" prefHeight="25.0" prefWidth="204.0" text="Time  :">
+               <font>
+                  <Font name="Times New Roman Cyr Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTime" layoutX="831.0" layoutY="25.0" prefHeight="30.0" prefWidth="133.0" text="18:36:00">
+               <font>
+                  <Font name="Times New Roman Cyr Bold" size="26.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

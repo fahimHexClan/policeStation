@@ -178,5 +178,10 @@
             </RadialGradient>
          </ripplerFill>
       </JFXButton>
+      <ImageView fitHeight="32.0" fitWidth="77.0" layoutX="230.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/gifs/flag-of-sri-lanka-7.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

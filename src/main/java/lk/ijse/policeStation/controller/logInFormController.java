@@ -3,20 +3,18 @@ package lk.ijse.policeStation.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import lk.ijse.policeStation.DB.DatabaseConnection;
+import lk.ijse.policeStation.dto.UserDto;
+import lk.ijse.policeStation.model.userModel;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class logInFormController {
+
+    @FXML
+    private TextField UsrId;
 
     @FXML
     private TextField UsrName;
@@ -26,51 +24,46 @@ public class logInFormController {
 
     @FXML
     void BtnLogInOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
-        if (UsrName.getText().isBlank() == false && UsrPassword.getText().isBlank() == false) {
+        if (!UsrName.getText().isBlank() && !UsrPassword.getText().isBlank()&& ! UsrId.getText().isBlank()) {
             validation();
-
         }
     }
 
-    private void validation() throws SQLException, ClassNotFoundException, IOException {
-        Connection connection= DatabaseConnection.getInstance().getConnection();
-        String sql = "SELECT COUNT(2) FROM User WHERE UserName = ? AND Password = ?";
-        PreparedStatement stm=connection.prepareStatement(sql);
-        stm.setObject(1,UsrName.getText());
-        stm.setObject(2,UsrPassword.getText());
-        ResultSet resultSet = stm.executeQuery();
-        if (resultSet.next()) {
-            int count = resultSet.getInt(1);
-            if (count > 0) {
-                // Login successful
+    private void validation() throws SQLException, ClassNotFoundException {
+        UserDto userDto = new UserDto(UsrId.getText(), UsrName.getText(), UsrPassword.getText());
 
-
-
-                createDashbard();
-            } else {
-                // Login failed
-                new Alert(Alert.AlertType.WARNING, "Try again with the correct username and password").show();
-                UsrPassword.clear();
-                UsrName.clear();
-            }
+        if (userModel.validateUser(userDto)) {
+            // Login successful
+            createDashboard();
+        } else {
+            // Login failed
+            new Alert(Alert.AlertType.WARNING, "Try again with the correct username and password").show();
+            UsrPassword.clear();
+            UsrName.clear();
+            UsrId.clear();  // Clear user ID as well
         }
-
     }
 
-    private void createDashbard() throws IOException {
+
+    private void createDashboard() {
         try {
+            // Load the Dashboard Form
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DashBoard_Form.fxml"));
             Object dashboardRoot = loader.load();
 
-            Scene dashboardScene = new Scene((Parent) dashboardRoot);
-
-            Stage stage = (Stage) UsrName.getScene().getWindow();
-
-            stage.setScene(dashboardScene);
+            // Set the Dashboard Scene
+            setScene(dashboardRoot);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    private void setScene(Object root) {
+        // Set the scene for the current window
+        getStage().getScene().setRoot((javafx.scene.Parent) root);
+    }
+
+    private javafx.stage.Stage getStage() {
+        return (javafx.stage.Stage) UsrName.getScene().getWindow();
+    }
 }
-
-

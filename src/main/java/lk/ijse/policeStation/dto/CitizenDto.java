@@ -14,4 +14,5 @@ public class CitizenDto {
     private String Gender;
     private String Name;
     private String Address;
+    private byte[] imgview;
 }

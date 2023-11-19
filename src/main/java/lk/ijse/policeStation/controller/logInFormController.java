@@ -30,7 +30,7 @@ public class logInFormController {
     }
 
     private void validation() throws SQLException, ClassNotFoundException {
-        UserDto userDto = new UserDto(UsrId.getText(), UsrName.getText(), UsrPassword.getText());
+        UserDto userDto = new UserDto(UsrName.getText(), UsrPassword.getText(), UsrId.getText());
 
         if (userModel.validateUser(userDto)) {
             // Login successful

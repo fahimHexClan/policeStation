@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 public class ManageEmployeesFormController {
 
@@ -75,17 +76,105 @@ public class ManageEmployeesFormController {
     }
 
     public void BtnSaveOnAction(ActionEvent actionEvent) {
-        EmployeesDto employeesDto =CollectEmployeesData();
+        if (validateEmployee()) {
+            EmployeesDto employeesDto = CollectEmployeesData();
 
-        boolean isSuccess = EmployeesModel.save(employeesDto);
-        if (isSuccess ){
-            new Alert(Alert.AlertType.INFORMATION,"Data added").show();
-        }else {
-            new Alert(Alert.AlertType.ERROR,"Data Not Added").show();
+            boolean isSuccess = EmployeesModel.save(employeesDto);
+            if (isSuccess) {
+                new Alert(Alert.AlertType.INFORMATION, "Data added").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Data Not Added").show();
+            }
         }
-
     }
 
+    private boolean validateEmployee() {
+        String employeeIdText = TxtEmpId.getText();
+        boolean isEmployeeIDValidated = Pattern.matches("[E][0-9]{3,}", employeeIdText);
+        if (!isEmployeeIDValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Employee ID Must need to add([Exxxxxx])!").show();
+            return false;
+        }
+
+        //validate employee name
+        String empNameText = TxtEmpName.getText();
+        boolean isEmpNameValidated = Pattern.matches("[A-Za-z]{3,}", empNameText);
+        if (!isEmpNameValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid employee name (pls add more then 3 letters)").show();
+            return false;
+        }
+
+        //validate employee address
+        String addressText = TxtAddress.getText();
+        boolean isAddressValidated = Pattern.matches("[A-Za-z0-9/.\\s]{3,}", addressText);
+        if (!isAddressValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid employee address(pls add more then 3 letters)").show();
+            return false;
+        }
+
+        //validate employee contact number
+        String contactNumberText = TxtContactNumber.getText();
+        boolean isContactNumberValidated = Pattern.matches("[0-9]{10}", contactNumberText);
+        if (!isContactNumberValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid employee contact number(mustly type 10 numbers)").show();
+            return false;
+        }
+        String genderText = TxtGender.getText();
+        boolean isGenderValidated = Pattern.matches("Male|Female", genderText);
+        if (!isGenderValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid gender  pls choose this (Male|Female)").show();
+            return false;
+        }
+
+        // Validate Employee Type
+        String employeeTypeText = TxtEmpType.getText();
+        boolean isEmployeeTypeValidated = Pattern.matches("Full Time|Part Time", employeeTypeText);
+        if (!isEmployeeTypeValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Employee Type because u chosse this(Full Time|Part Time) ").show();
+            return false;
+        }
+
+        // Validate Police Ranking
+        String rankingText = TxtRank.getText();
+        boolean isRankingValidated = Pattern.matches("[A-Za-z]+", rankingText);
+        if (!isRankingValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Police Ranking (not allowed numbers )").show();
+            return false;
+        }
+
+        String dobText = TxtDob.getText();
+        // aniwaren me pattern ekata thiyanna ona 2000-10-08
+        boolean isDobValidated = Pattern.matches("\\d{4}-\\d{2}-\\d{2}", dobText);
+        if (!isDobValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid date of birth the right pattern is (Year-MM-DD)").show();
+            return false;
+        }
+        // Validate Officer Id
+        String officerIdText = TxtOfficerId.getText();
+        boolean isOfficerIdValidated = Pattern.matches("[O][0-9]{3,}", officerIdText);
+        if (!isOfficerIdValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Officer ID(must need to use same like this pattern [O00+])").show();
+            return false;
+        }
+
+        // Validate User Id
+        String userIdText = TxtUsrId.getText();
+        boolean isUserIdValidated = Pattern.matches("[U][0-9]{3,}", userIdText);
+        if (!isUserIdValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid User ID (must need to use same like this pattern [U00+])").show();
+            return false;
+        }
+
+        // Validate Photo (you may want to check if an image is selected)
+        Image photo = ImgEmployee.getImage();
+        if (photo == null) {
+            new Alert(Alert.AlertType.ERROR, "Please select a photo").show();
+            return false;
+        }
+
+
+        return true;
+    }
 
 
     private EmployeesDto CollectEmployeesData() {
@@ -152,22 +241,23 @@ public class ManageEmployeesFormController {
     }
 
     public void BtnUpdateOnAction(ActionEvent actionEvent) {
-        EmployeesDto updatedEmployeeDto = CollectEmployeesData();
+        if (validateEmployee()) {
+            EmployeesDto updatedEmployeeDto = CollectEmployeesData();
 
-        try {
-            boolean isUpdated = EmployeesModel.update(updatedEmployeeDto);
+            try {
+                boolean isUpdated = EmployeesModel.update(updatedEmployeeDto);
 
-            if (isUpdated) {
-                new Alert(Alert.AlertType.INFORMATION, "Data updated successfully").show();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Data not updated").show();
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.INFORMATION, "Data updated successfully").show();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Data not updated").show();
+                }
+
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
             }
-
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
     }
-
 
 
     public void BtnDeleteOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {

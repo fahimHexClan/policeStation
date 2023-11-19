@@ -12,11 +12,11 @@ public class userModel {
 
     public static boolean validateUser(UserDto userDto) throws SQLException, ClassNotFoundException {
         Connection connection = DatabaseConnection.getInstance().getConnection();
-        String sql = "SELECT COUNT(*) FROM User WHERE UserId = ? AND UserName = ? AND Password = ?";
+        String sql = "SELECT COUNT(*) FROM User WHERE  UserName = ? AND Password = ? And UserId = ?";
         try (PreparedStatement stm = connection.prepareStatement(sql)) {
-            stm.setObject(1, userDto.getUsrId());
-            stm.setObject(2, userDto.getUsrName());
-            stm.setObject(3, userDto.getPassword());
+            stm.setObject(1, userDto.getUsrName());
+            stm.setObject(2, userDto.getPassword());
+            stm.setObject(3, userDto.getUsrId());
 
             ResultSet resultSet = stm.executeQuery();
             if (resultSet.next()) {

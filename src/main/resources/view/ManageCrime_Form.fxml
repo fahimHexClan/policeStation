@@ -55,25 +55,55 @@
             </Button>
          </children></AnchorPane>
       <JFXTextField fx:id="TxtCrimeID" layoutX="62.0" layoutY="138.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="62.0" layoutY="115.0" prefHeight="29.0" prefWidth="241.0" text="Crime Id" />
+      <Label layoutX="62.0" layoutY="115.0" prefHeight="29.0" prefWidth="241.0" text="Crime Id">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
       <JFXTextField fx:id="TxtDate" layoutX="61.0" layoutY="293.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="61.0" layoutY="270.0" prefHeight="29.0" prefWidth="241.0" text="Date" />
+      <Label layoutX="61.0" layoutY="270.0" prefHeight="29.0" prefWidth="241.0" text="Date">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
       <JFXTextField fx:id="TxtLocation" layoutX="62.0" layoutY="192.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="62.0" layoutY="168.0" prefHeight="29.0" prefWidth="241.0" text="Location" />
+      <Label layoutX="62.0" layoutY="168.0" prefHeight="29.0" prefWidth="241.0" text="Location">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
       <JFXTextField fx:id="TxtTypeOfCrime" layoutX="703.0" layoutY="137.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="702.0" layoutY="114.0" prefHeight="29.0" prefWidth="241.0" text="Type Of Crime" />
+      <Label layoutX="702.0" layoutY="114.0" prefHeight="29.0" prefWidth="241.0" text="Type Of Crime">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
       <JFXTextField fx:id="TxtCriminalRecord" layoutX="402.0" layoutY="192.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="403.0" layoutY="167.0" prefHeight="29.0" prefWidth="241.0" text="Criminal Record" />
+      <Label layoutX="403.0" layoutY="167.0" prefHeight="29.0" prefWidth="241.0" text="Criminal Record">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
       <JFXTextField fx:id="TxtMotiveReson" layoutX="400.0" layoutY="240.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="401.0" layoutY="218.0" prefHeight="29.0" prefWidth="241.0" text="Motive reason" />
+      <Label layoutX="401.0" layoutY="218.0" prefHeight="29.0" prefWidth="241.0" text="Motive reason">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
       <JFXTextField fx:id="TxtInjuries" layoutX="401.0" layoutY="138.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="401.0" layoutY="117.0" prefHeight="29.0" prefWidth="241.0" text="Injuries or Casualties" />
+      <Label layoutX="401.0" layoutY="117.0" prefHeight="29.0" prefWidth="241.0" text="Injuries or Casualties">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
       <JFXTextField fx:id="TxtStatus" layoutX="404.0" layoutY="291.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="404.0" layoutY="271.0" prefHeight="29.0" prefWidth="241.0" text="Status" />
+      <Label layoutX="404.0" layoutY="271.0" prefHeight="29.0" prefWidth="241.0" text="Status">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
       <JFXTextField fx:id="TxtDeatails" layoutX="61.0" layoutY="242.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="62.0" layoutY="218.0" prefHeight="29.0" prefWidth="241.0" text="Details about crime" />
+      <Label layoutX="62.0" layoutY="218.0" prefHeight="29.0" prefWidth="241.0" text="Details about crime">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
       <JFXTextField fx:id="TxtWeponUsed" layoutX="705.0" layoutY="191.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="704.0" layoutY="168.0" prefHeight="29.0" prefWidth="241.0" text="Weapons Used" />
+      <Label layoutX="704.0" layoutY="168.0" prefHeight="29.0" prefWidth="241.0" text="Weapons Used">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Label>
       <Button layoutX="272.0" layoutY="126.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="35.0" prefWidth="68.0" style="-fx-background-color: #17c0eb;" text="Search">
          <cursor>
             <Cursor fx:constant="HAND" />

@@ -113,8 +113,6 @@ public class ManageCrimeFormController {
         TxtMotiveReson.clear();
         TxtStatus.clear();
         TxtWeponUsed.clear();
-
-        // Clear selection in the table (if needed)
         TableCrimeDetails.getSelectionModel().clearSelection();
     }
 

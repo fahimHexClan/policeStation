@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="673.0" prefWidth="988.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageDriverFormController">
+   <children>
+      <Label layoutX="323.0" layoutY="20.0" prefHeight="63.0" prefWidth="411.0" text="Manage Driver">
+         <font>
+            <Font name="System Bold Italic" size="45.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="TxtLicenseNumber" layoutX="429.0" layoutY="124.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="430.0" layoutY="102.0" prefHeight="29.0" prefWidth="241.0" text="Licen Number" />
+      <JFXTextField fx:id="TxtAddress" layoutX="51.0" layoutY="242.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="51.0" layoutY="218.0" prefHeight="29.0" prefWidth="241.0" text="address" />
+      <JFXTextField fx:id="TxtDriverId" layoutX="50.0" layoutY="128.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="48.0" layoutY="105.0" prefHeight="29.0" prefWidth="241.0" text="Driver Id" />
+      <JFXTextField fx:id="TxtDriverName" layoutX="49.0" layoutY="188.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="48.0" layoutY="165.0" prefHeight="29.0" prefWidth="241.0" text="Driver Name" />
+      <JFXTextField fx:id="TxtDob" layoutX="430.0" layoutY="190.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="429.0" layoutY="167.0" prefHeight="29.0" prefWidth="241.0" text="Dirth Of Birth" />
+      <JFXTextField fx:id="TxtGender" layoutX="430.0" layoutY="250.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="429.0" layoutY="228.0" prefHeight="29.0" prefWidth="241.0" text="gender" />
+      <JFXTextField fx:id="TxtContactNumber" layoutX="725.0" layoutY="123.0" prefHeight="25.0" prefWidth="248.0" />
+      <Label layoutX="725.0" layoutY="100.0" prefHeight="29.0" prefWidth="241.0" text="Contact Number" />
+      <TableView fx:id="TableDriver" layoutX="5.0" layoutY="356.0" prefHeight="304.0" prefWidth="974.0">
+        <columns>
+          <TableColumn fx:id="ClmDriverId" prefWidth="75.0" text="DriverId" />
+          <TableColumn fx:id="ClmDriverName" prefWidth="184.52462005615234" text="DriverName" />
+            <TableColumn fx:id="ClmAddress" prefWidth="167.61973571777344" text="Address" />
+            <TableColumn fx:id="ClmLicenseNumber" prefWidth="129.5243682861328" text="LicenseNumber" />
+            <TableColumn fx:id="ClmDob" prefWidth="135.4766845703125" text="Dob" />
+            <TableColumn fx:id="ClmGender" prefWidth="77.85760498046875" text="Gender" />
+            <TableColumn fx:id="ClmContactNumber" prefWidth="262.85809326171875" text="ContactNumber" />
+        </columns>
+      </TableView>
+      <Button layoutX="844.0" layoutY="296.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="314.0" layoutY="296.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Update">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="581.0" layoutY="295.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Delete">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="451.0" layoutY="294.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Clear">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="710.0" layoutY="295.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #17c0eb;" text="Search">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="27.0" layoutY="28.0" mnemonicParsing="false" onAction="#BackOnAction" prefHeight="48.0" prefWidth="95.0" text="Back" />
+      <ComboBox fx:id="CmbVehicleId" layoutX="731.0" layoutY="190.0" prefHeight="26.0" prefWidth="220.0" promptText="VehicleId" />
+   </children>
+</AnchorPane>

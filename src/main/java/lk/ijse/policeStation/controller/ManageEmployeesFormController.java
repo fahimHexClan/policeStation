@@ -1,5 +1,4 @@
 package lk.ijse.policeStation.controller;
-
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

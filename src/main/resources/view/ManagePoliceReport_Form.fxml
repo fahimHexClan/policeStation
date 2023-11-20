@@ -1,21 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManagePoliceReportFormController">
    <children>
-      <AnchorPane layoutX="42.0" layoutY="42.0" prefHeight="644.0" prefWidth="964.0" style="-fx-background-color: White;" />
-      <JFXTextField layoutX="109.0" layoutY="312.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="110.0" layoutY="290.0" prefHeight="29.0" prefWidth="241.0" text="Date" />
-      <JFXTextField layoutX="111.0" layoutY="242.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="111.0" layoutY="218.0" prefHeight="29.0" prefWidth="241.0" text="Citizen Id" />
-      <JFXTextField layoutX="110.0" layoutY="178.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="108.0" layoutY="155.0" prefHeight="29.0" prefWidth="241.0" text="Report Id" />
-      <JFXTextField layoutX="109.0" layoutY="372.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="110.0" layoutY="350.0" prefHeight="29.0" prefWidth="241.0" text="Discription" />
-      <JFXTextField layoutX="111.0" layoutY="396.0" prefHeight="25.0" prefWidth="264.0" />
-      <JFXTextField layoutX="113.0" layoutY="425.0" prefHeight="25.0" prefWidth="264.0" />
+      <AnchorPane layoutX="42.0" layoutY="42.0" prefHeight="644.0" prefWidth="964.0" style="-fx-background-color: White;">
+         <children>
+            <ComboBox fx:id="CmdCitizenIds" layoutX="66.0" layoutY="198.0" prefHeight="45.0" prefWidth="276.0" promptText="Citizens Ids" />
+            <Label layoutX="351.0" layoutY="7.0" prefHeight="51.0" prefWidth="331.0" text="Police Report">
+               <font>
+                  <Font name="System Bold Italic" size="29.0" />
+               </font>
+            </Label>
+            <TableView fx:id="TablePoliceReportDetails" layoutX="4.0" layoutY="293.0" prefHeight="352.0" prefWidth="955.0">
+              <columns>
+                <TableColumn fx:id="ClmCitizenIds" prefWidth="132.38151168823242" text="CitizenIds" />
+                <TableColumn fx:id="ClmUserIds" minWidth="0.0" prefWidth="169.76268005371094" text="UserIds" />
+                  <TableColumn fx:id="ClmReportId" minWidth="0.0" prefWidth="141.19107055664062" text="Report Id" />
+                  <TableColumn fx:id="ClmDate" minWidth="0.0" prefWidth="127.14334106445312" text="Date" />
+                  <TableColumn fx:id="ClmDescription" prefWidth="406.43035888671875" text="Description" />
+              </columns>
+            </TableView>
+            <ComboBox fx:id="CmdUserIds" layoutX="67.0" layoutY="121.0" prefHeight="49.0" prefWidth="277.0" promptText="Users Ids" />
+         </children></AnchorPane>
+      <JFXTextField fx:id="TxtDate" layoutX="494.0" layoutY="204.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="495.0" layoutY="182.0" prefHeight="29.0" prefWidth="241.0" text="Date" />
+      <JFXTextField fx:id="TxtReportId" layoutX="494.0" layoutY="156.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="492.0" layoutY="133.0" prefHeight="29.0" prefWidth="241.0" text="Report Id" />
+      <JFXTextField fx:id="TxtDescription" layoutX="494.0" layoutY="256.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="495.0" layoutY="234.0" prefHeight="29.0" prefWidth="241.0" text="description" />
+      <Button layoutX="877.0" layoutY="63.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #17c0eb;" text="Search">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="880.0" layoutY="205.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="880.0" layoutY="259.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Update">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="880.0" layoutY="154.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Delete">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="877.0" layoutY="108.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Clear">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

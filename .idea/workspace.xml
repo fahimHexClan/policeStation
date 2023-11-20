@@ -5,16 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="451f0e7f-11a1-4e82-9643-0ff9fd2af8c8" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/dto/CrimeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/dto/PoliceReportDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/CrimeModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/PoliceReportModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/tm/CrimeTm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/tm/EmployeeTm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/tm/PoliceReportTm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCitizenFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCitizenFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageComplaintsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageComplaintsFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCrimeFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCrimeFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageEmployeesFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageEmployeesFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/logInFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/logInFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/dto/CitizenDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/dto/CitizenDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/CitizenModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/CitizenModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManagePoliceReportFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManagePoliceReportFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/EmployeesModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/EmployeesModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/userModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/userModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageCrime_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageCrime_Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageEmployees_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageEmployees_Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManagePoliceReport_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManagePoliceReport_Form.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700254061190</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1700396249106</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700396249106</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,13 +314,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageEmployeesFormController.java</url>
-          <line>263</line>
+          <line>333</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/Wrapper.java</url>
-          <line>6</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

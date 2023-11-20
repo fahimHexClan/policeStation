@@ -1,10 +1,15 @@
 package lk.ijse.policeStation.controller;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.PixelReader;
@@ -15,6 +20,8 @@ import lk.ijse.policeStation.dto.CitizenDto;
 import lk.ijse.policeStation.dto.EmployeesDto;
 import lk.ijse.policeStation.model.CitizenModel;
 import lk.ijse.policeStation.model.EmployeesModel;
+import lk.ijse.policeStation.tm.CitizenTm;
+import lk.ijse.policeStation.tm.EmployeeTm;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -23,11 +30,23 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class ManageEmployeesFormController {
 
+    public TableView <EmployeeTm>TblEmployee;
+    public TableColumn<EmployeeTm, String> ClmEmpId;
+    public TableColumn <EmployeeTm, String> ColmOfficerId;
+    public TableColumn <EmployeeTm, String> ComUserId;
+    public TableColumn <EmployeeTm, String> ColmAddress;
+    public TableColumn <EmployeeTm, String> ColmContactNum;
+    public TableColumn <EmployeeTm, String> ClmEmpName;
+    public TableColumn <EmployeeTm, String> ClmEmployeeType;
+    public TableColumn <EmployeeTm, String> ClmRank;
+    public TableColumn <EmployeeTm, String> ClmDob;
+    public TableColumn <EmployeeTm, String> ClmGender;
     @FXML
     private ImageView ImgEmployee;
 
@@ -60,6 +79,57 @@ public class ManageEmployeesFormController {
 
     @FXML
     private JFXTextField TxtUsrId;
+
+    public void initialize() {
+        setTable();
+        visualize();
+    }
+
+    private void setTable() {
+        try {
+
+            ArrayList<EmployeesDto> allEmployees = EmployeesModel.getAllEmployees();
+
+            ArrayList<EmployeeTm> employee = new ArrayList<>();
+
+            for (EmployeesDto Employee : allEmployees) {
+                EmployeeTm employeeTm = new EmployeeTm();
+                employeeTm.setTxtEmpId(Employee.getTxtEmpId());
+                employeeTm.setTxtEmpName(Employee.getTxtEmpName());
+                employeeTm.setTxtContactNumber(Employee.getTxtContactNumber());
+                employeeTm.setTxtGender(Employee.getTxtGender());
+                employeeTm.setTxtEmpType(Employee.getTxtEmpType());
+                employeeTm.setTxtRank(Employee.getTxtRank());
+                employeeTm.setTxtDob(Employee.getTxtDob());
+                employeeTm.setTxtOfficerId(Employee.getTxtOfficerId());
+                employeeTm.setTxtUsrId(Employee.getTxtUsrId());
+
+                employee.add(employeeTm);
+
+            }
+
+            ObservableList<EmployeeTm> EmployeeTms = FXCollections.observableArrayList(employee);
+
+            TblEmployee.setItems(EmployeeTms);
+
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void visualize() {
+        ClmEmpId.setCellValueFactory(new PropertyValueFactory<>("TxtEmpId"));
+        ClmEmpName.setCellValueFactory(new PropertyValueFactory<>("TxtEmpName"));
+        ColmAddress.setCellValueFactory(new PropertyValueFactory<>("TxtAddress"));
+        ColmContactNum.setCellValueFactory(new PropertyValueFactory<>("TxtContactNumber"));
+        ClmGender.setCellValueFactory(new PropertyValueFactory<>("TxtGender"));
+        ClmEmployeeType.setCellValueFactory(new PropertyValueFactory<>("TxtEmpType"));
+        ClmRank.setCellValueFactory(new PropertyValueFactory<>("TxtRank"));
+        ClmDob.setCellValueFactory(new PropertyValueFactory<>("TxtDob"));
+        ColmOfficerId.setCellValueFactory(new PropertyValueFactory<>("TxtOfficerId"));
+        ComUserId.setCellValueFactory(new PropertyValueFactory<>("TxtUsrId"));
+    }
 
     @FXML
     void ImageAddOnAction(ActionEvent event) {

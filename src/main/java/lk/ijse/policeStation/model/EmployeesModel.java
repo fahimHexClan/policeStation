@@ -7,6 +7,7 @@ import lk.ijse.policeStation.dto.EmployeesDto;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class EmployeesModel {
@@ -140,5 +141,43 @@ public class EmployeesModel {
         } else {
             return false;
         }
+    }
+
+    public static ArrayList<EmployeesDto> getAllEmployees() throws SQLException, ClassNotFoundException {
+
+
+        Connection connection = DatabaseConnection.getInstance().getConnection();
+        String sql = "SELECT * FROM Employee";
+        PreparedStatement stm = connection.prepareStatement(sql);
+        ArrayList<EmployeesDto> List =new ArrayList<>();
+        ResultSet rs=stm.executeQuery();
+        while (rs.next()){
+            String EmployeeId=rs.getString(1);
+            String EmpName=rs.getString(2);
+            String address=rs.getString(3);
+            String contactNumber=rs.getString(4);
+            String gender=rs.getString(5);
+            String EmployeeType=rs.getString(6);
+            String Ranking=rs.getString(7);
+            String dob=rs.getString(8);
+            String OfficerId=rs.getString(9);
+            String UserId=rs.getString(10);
+
+            EmployeesDto employeesDto= new EmployeesDto();
+
+            employeesDto.setTxtEmpId(EmployeeId);
+            employeesDto.setTxtEmpName(EmpName);
+            employeesDto.setTxtAddress(address);
+            employeesDto.setTxtContactNumber(contactNumber);
+            employeesDto.setTxtGender(gender);
+            employeesDto.setTxtEmpType(EmployeeType);
+            employeesDto.setTxtRank(Ranking);
+            employeesDto.setTxtDob(dob);
+            employeesDto.setTxtOfficerId(OfficerId);
+            employeesDto.setTxtUsrId(UserId);
+
+            List.add(employeesDto);
+        }
+        return List;
     }
 }

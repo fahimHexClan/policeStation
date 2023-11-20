@@ -86,9 +86,6 @@ public class ManageCitizenFormController {
     private JFXTextField Txtname;
 
 
-    //need to add imageview to database
-
-
     public void initialize() {
         setTable();
         visualize();
@@ -122,9 +119,7 @@ public class ManageCitizenFormController {
                 boolean isSuccess = CitizenModel.save(citizenDto);
                 if (isSuccess) {
                     new Alert(Alert.AlertType.INFORMATION, "Data added").show();
-                    // Clear the form after successful save
 
-                    // Refresh the table
                     setTable();
                 } else {
                     new Alert(Alert.AlertType.ERROR, "Data Not Added").show();
@@ -277,6 +272,7 @@ public class ManageCitizenFormController {
                 boolean isDeleted = CitizenModel.delete(id);
                 if (isDeleted) {
                     new Alert(Alert.AlertType.INFORMATION, "Data Deleted Successfully").show();
+                    setTable();
                 } else {
                     new Alert(Alert.AlertType.INFORMATION, "Data Not Deleted ").show();
                 }
@@ -405,4 +401,5 @@ public class ManageCitizenFormController {
             }
         }
     }
-}
+
+    }

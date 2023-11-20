@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class userModel {
 
@@ -27,4 +28,19 @@ public class userModel {
         return false;
     }
 
+    public static ArrayList<String> loadUserIds() throws SQLException, ClassNotFoundException {
+        Connection connection = DatabaseConnection.getInstance().getConnection();
+        String sql = "SELECT UserId FROM User";
+
+        try (PreparedStatement stm = connection.prepareStatement(sql)) {
+            ResultSet resultSet = stm.executeQuery();
+
+            ArrayList<String> userIds = new ArrayList<>();
+            while (resultSet.next()) {
+                userIds.add(resultSet.getString("UserId"));
+            }
+
+            return userIds;
+        }
+    }
 }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,7 +23,6 @@
                   <Image url="@../Assets/Background pics/new.jpg" />
                </image>
             </ImageView>
-            <JFXTextField alignment="TOP_RIGHT" layoutX="47.0" layoutY="52.0" prefHeight="25.0" prefWidth="264.0" />
          </children></AnchorPane>
       <JFXButton blendMode="COLOR_BURN" layoutX="35.0" layoutY="255.0" onAction="#ManageComplaints" prefHeight="57.0" prefWidth="288.0" textFill="WHITE">
          <font>

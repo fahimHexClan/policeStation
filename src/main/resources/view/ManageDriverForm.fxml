@@ -31,15 +31,16 @@
       <Label layoutX="429.0" layoutY="228.0" prefHeight="29.0" prefWidth="241.0" text="gender" />
       <JFXTextField fx:id="TxtContactNumber" layoutX="725.0" layoutY="123.0" prefHeight="25.0" prefWidth="248.0" />
       <Label layoutX="725.0" layoutY="100.0" prefHeight="29.0" prefWidth="241.0" text="Contact Number" />
-      <TableView fx:id="TableDriver" layoutX="5.0" layoutY="356.0" prefHeight="304.0" prefWidth="974.0">
+      <TableView fx:id="TableDriver" layoutX="9.0" layoutY="342.0" prefHeight="318.0" prefWidth="970.0">
         <columns>
           <TableColumn fx:id="ClmDriverId" prefWidth="75.0" text="DriverId" />
-          <TableColumn fx:id="ClmDriverName" prefWidth="184.52462005615234" text="DriverName" />
-            <TableColumn fx:id="ClmAddress" prefWidth="167.61973571777344" text="Address" />
-            <TableColumn fx:id="ClmLicenseNumber" prefWidth="129.5243682861328" text="LicenseNumber" />
-            <TableColumn fx:id="ClmDob" prefWidth="135.4766845703125" text="Dob" />
-            <TableColumn fx:id="ClmGender" prefWidth="77.85760498046875" text="Gender" />
-            <TableColumn fx:id="ClmContactNumber" prefWidth="262.85809326171875" text="ContactNumber" />
+          <TableColumn fx:id="ClmDriverName" prefWidth="147.3816375732422" text="DriverName" />
+            <TableColumn fx:id="ClmAddress" prefWidth="146.90533447265625" text="Address" />
+            <TableColumn fx:id="ClmLicenseNumber" prefWidth="119.52423095703125" text="LicenseNumber" />
+            <TableColumn fx:id="ClmDob" minWidth="0.0" prefWidth="92.85757446289062" text="Dob" />
+            <TableColumn fx:id="ClmGender" minWidth="0.0" prefWidth="84.524169921875" text="Gender" />
+            <TableColumn fx:id="ClmContactNumber" prefWidth="144.0482177734375" text="ContactNumber" />
+            <TableColumn fx:id="ClmVehicleId" prefWidth="158.8101806640625" text="VehicleId" />
         </columns>
       </TableView>
       <Button layoutX="844.0" layoutY="296.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">

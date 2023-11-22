@@ -5,22 +5,24 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import lk.ijse.policeStation.dto.DriverDto;
 import lk.ijse.policeStation.dto.PoliceReportDto;
 import lk.ijse.policeStation.model.DriverModel;
 import lk.ijse.policeStation.model.PoliceReportModel;
 import lk.ijse.policeStation.model.VehicleModel;
+import lk.ijse.policeStation.tm.DriverTm;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class ManageDriverFormController {
 
+    public TableColumn ClmVehicleId;
     @FXML
     private TableColumn<?, ?> ClmAddress;
 
@@ -46,7 +48,7 @@ public class ManageDriverFormController {
     private ComboBox<String> CmbVehicleId;
 
     @FXML
-    private TableView<?> TableDriver;
+    private TableView<DriverTm> TableDriver;
 
     @FXML
     private JFXTextField TxtAddress;
@@ -111,7 +113,7 @@ public class ManageDriverFormController {
             return false;
         }
 
-        String LicenceNumber = TxtContactNumber.getText();
+        String LicenceNumber = TxtLicenseNumber.getText();
         boolean isLicenseNumberValidated = Pattern.matches("[0-9]{10}", LicenceNumber);
         if (!isLicenseNumberValidated) {
             new Alert(Alert.AlertType.ERROR, "Invalid Licence number(mustly type 10 numbers)").show();
@@ -120,24 +122,52 @@ public class ManageDriverFormController {
 
         return true;
     }
-   public void initialize() throws SQLException, ClassNotFoundException {
-       setTable();
-       visualize();
-       // Assuming there is a method in VehicleModel to get vehicle IDs
-       ArrayList<String> vehicleIds = VehicleModel.getAllVehicleIds();
+    public void initialize() throws SQLException, ClassNotFoundException {
+        setTable();
+        visualize();
+        ArrayList<String> vehicleIds = VehicleModel.getAllVehicleIds();
 
-       ObservableList<String> vehicleIdList = FXCollections.observableArrayList(vehicleIds);
-       CmbVehicleId.setItems(vehicleIdList);
+        ObservableList<String> vehicleIdList = FXCollections.observableArrayList(vehicleIds);
+        CmbVehicleId.setItems(vehicleIdList);
 
-   }
+    }
 
 
 
     private void visualize() {
+        ClmDriverId.setCellValueFactory(new PropertyValueFactory<>("TxtDriverId"));
+        ClmDriverName.setCellValueFactory(new PropertyValueFactory<>("TxtDriverName"));
+        ClmAddress.setCellValueFactory(new PropertyValueFactory<>("TxtAddress"));
+        ClmContactNumber.setCellValueFactory(new PropertyValueFactory<>("TxtContactNumber"));
+        ClmGender.setCellValueFactory(new PropertyValueFactory<>("TxtGender"));
+        ClmDob.setCellValueFactory(new PropertyValueFactory<>("TxtDob"));
+        ClmLicenseNumber.setCellValueFactory(new PropertyValueFactory<>("TxtLicenseNumber"));
+        ClmVehicleId.setCellValueFactory(new PropertyValueFactory<>("CmbVehicleIdProperty"));
 
     }
 
-    private void setTable() {
+    private void setTable() throws SQLException, ClassNotFoundException {
+
+        ArrayList<DriverDto> allDrivers = DriverModel.getAllDrivers();
+
+        ArrayList<DriverTm> driverList = new ArrayList<>();
+        for (DriverDto driver : allDrivers) {
+            DriverTm driverTm = new DriverTm();
+
+            driverTm.setTxtDriverId(driver.getTxtDriverId());
+            driverTm.setTxtDriverName(driver.getTxtDriverName());
+            driverTm.setTxtAddress(driver.getTxtAddress());
+            driverTm.setTxtContactNumber(driver.getTxtContactNumber());
+            driverTm.setTxtGender(driver.getTxtGender());
+            driverTm.setTxtDob(driver.getTxtDob());
+            driverTm.setTxtLicenseNumber(driver.getTxtLicenseNumber());
+            driverTm.setCmbVehicleId(driver.getCmbVehicleId());
+
+            driverList.add(driverTm);
+        }
+
+        ObservableList<DriverTm> driverTms = FXCollections.observableArrayList(driverList);
+        TableDriver.setItems(driverTms);
 
     }
 
@@ -149,13 +179,43 @@ public class ManageDriverFormController {
 
     @FXML
     void BtnClearOnAction(ActionEvent event) {
-
+        TxtDriverId.clear();
+        TxtDriverName.clear();
+        TxtAddress.clear();
+        TxtContactNumber.clear();
+        TxtGender.clear();
+        TxtDob.clear();
+        TxtLicenseNumber.clear();
+        CmbVehicleId.getSelectionModel().clearSelection();
     }
 
     @FXML
     void BtnDeleteOnAction(ActionEvent event) {
+        String id = TxtDriverId.getText();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to Delete" + id + "?", ButtonType.YES, ButtonType.NO);
 
+        Optional<ButtonType> buttonType = alert.showAndWait();
+        ButtonType pressedButton = null;
+        if (buttonType.isPresent()) {
+            pressedButton = buttonType.get();
+        }
+        if (pressedButton.equals(ButtonType.YES)) {
+            try {
+                boolean isDeleted = DriverModel.delete(id);
+                if (isDeleted) {
+                    new Alert(Alert.AlertType.INFORMATION, "Data Deleted Successfully").show();
+                    setTable();
+                } else {
+                    new Alert(Alert.AlertType.INFORMATION, "Data Not Deleted ").show();
+                }
+            } catch (ClassNotFoundException | SQLException e) {
+                new Alert(Alert.AlertType.INFORMATION, "Operation Fail ").show();
+
+                e.printStackTrace();
+            }
+        }
     }
+
 
     @FXML
     void BtnSaveOnAction(ActionEvent event) {
@@ -196,13 +256,55 @@ public class ManageDriverFormController {
 
 
     @FXML
-    void BtnSearchOnAction(ActionEvent event) {
+    void BtnSearchOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        String code = TxtDriverId.getText();
+
+        Optional<DriverDto> driver = DriverModel.search(code);
+
+        if (driver.isPresent()) {
+            DriverDto driverDto = driver.get();
+            setData(driverDto);
+        } else {
+            new Alert(Alert.AlertType.ERROR, " No Items Found").show();
+        }
+    }
+
+    private void setData(DriverDto driverDto) {
+        TxtDriverId.setText(driverDto.getTxtDriverId());
+        TxtDriverName.setText(driverDto.getTxtDriverName());
+        TxtAddress.setText(driverDto.getTxtAddress());
+        TxtContactNumber.setText(driverDto.getTxtContactNumber());
+        TxtGender.setText(driverDto.getTxtGender());
+        TxtDob.setText(driverDto.getTxtDob());
+        TxtLicenseNumber.setText(driverDto.getTxtLicenseNumber());
+
+        CmbVehicleId.getSelectionModel().select(driverDto.getCmbVehicleId());
 
     }
 
     @FXML
     void BtnUpdateOnAction(ActionEvent event) {
+        if (validateDriver()) {
+            DriverDto updatedDriver = CollectDriverData();
 
+            try {
+                boolean isUpdated = DriverModel.update(updatedDriver);
+
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.INFORMATION, "Data updated successfully").show();
+                    // After updating, refresh the table or perform any other necessary actions
+                    setTable();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Data not updated").show();
+                }
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
+
 
 }

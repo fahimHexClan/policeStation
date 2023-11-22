@@ -18,5 +18,6 @@ public class DriverDto {
     private String TxtDriverName;
     private String TxtGender;
     private String TxtLicenseNumber;
+    private String s;
 
 }

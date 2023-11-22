@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="451f0e7f-11a1-4e82-9643-0ff9fd2af8c8" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/HH.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_14_23,_2_22_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_14_23__2_22_PM__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/dto/FinesDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/FinesModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/tm/FinesTm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/util/CrudUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/DB/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/DB/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageDriverFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageDriverFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageFinesFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageFinesFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/dto/DriverDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/dto/DriverDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/DriverModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/DriverModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/DashBoard_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoard_Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/tm/DriverTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/tm/DriverTm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageDriverForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageDriverForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageFines_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageFines_Form.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/MangeTraffic_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MangeTraffic_Form.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -287,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700523338222</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1700658091803</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700658091803</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

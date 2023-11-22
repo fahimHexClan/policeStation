@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 public class ManageDriverFormController {
 
     public TableColumn ClmVehicleId;
+    public TableColumn ClmFinesStatus;
     @FXML
     private TableColumn<?, ?> ClmAddress;
 
@@ -142,7 +143,8 @@ public class ManageDriverFormController {
         ClmGender.setCellValueFactory(new PropertyValueFactory<>("TxtGender"));
         ClmDob.setCellValueFactory(new PropertyValueFactory<>("TxtDob"));
         ClmLicenseNumber.setCellValueFactory(new PropertyValueFactory<>("TxtLicenseNumber"));
-        ClmVehicleId.setCellValueFactory(new PropertyValueFactory<>("CmbVehicleIdProperty"));
+        ClmVehicleId.setCellValueFactory(new PropertyValueFactory<>("CmbVehicleId"));
+        ClmFinesStatus.setCellValueFactory(new PropertyValueFactory<>("s"));
 
     }
 
@@ -162,7 +164,7 @@ public class ManageDriverFormController {
             driverTm.setTxtDob(driver.getTxtDob());
             driverTm.setTxtLicenseNumber(driver.getTxtLicenseNumber());
             driverTm.setCmbVehicleId(driver.getCmbVehicleId());
-
+            driverTm.setS(driver.getS());
             driverList.add(driverTm);
         }
 

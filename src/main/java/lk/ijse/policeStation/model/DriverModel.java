@@ -2,6 +2,8 @@ package lk.ijse.policeStation.model;
 
 import lk.ijse.policeStation.DB.DatabaseConnection;
 import lk.ijse.policeStation.dto.DriverDto;
+import lk.ijse.policeStation.dto.FinesDto;
+import lk.ijse.policeStation.util.CrudUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -59,6 +61,7 @@ public class DriverModel {
             driverDto.setTxtDob(Dob);
             driverDto.setTxtLicenseNumber(licenseNum);
             driverDto.setCmbVehicleId(VehicleId);
+            driverDto.setS(rs.getString(9));
 
 
             List.add(driverDto);
@@ -134,5 +137,24 @@ public class DriverModel {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    public static ArrayList<String> getAllDriverIds() throws SQLException, ClassNotFoundException {
+        Connection connection = DatabaseConnection.getInstance().getConnection();
+        String sql = "SELECT DriverId FROM Driver";
+        PreparedStatement stm = connection.prepareStatement(sql);
+        ResultSet rs = stm.executeQuery();
+
+        ArrayList<String> driverIds = new ArrayList<>();
+        while (rs.next()) {
+            String driverId = rs.getString("DriverId");
+            driverIds.add(driverId);
+        }
+
+        return driverIds;
+    }
+
+    public  boolean updateStatus(FinesDto finesDto ,String driver_id) throws SQLException, ClassNotFoundException {
+        String sql="UPDATE Driver SET FinesStatus=? where DriverId=?";
+        return CrudUtil.execute(sql,finesDto.getTxtFinesDescrip(),driver_id);
     }
 }

@@ -35,12 +35,13 @@
         <columns>
           <TableColumn fx:id="ClmDriverId" prefWidth="75.0" text="DriverId" />
           <TableColumn fx:id="ClmDriverName" prefWidth="147.3816375732422" text="DriverName" />
-            <TableColumn fx:id="ClmAddress" prefWidth="146.90533447265625" text="Address" />
-            <TableColumn fx:id="ClmLicenseNumber" prefWidth="119.52423095703125" text="LicenseNumber" />
-            <TableColumn fx:id="ClmDob" minWidth="0.0" prefWidth="92.85757446289062" text="Dob" />
-            <TableColumn fx:id="ClmGender" minWidth="0.0" prefWidth="84.524169921875" text="Gender" />
-            <TableColumn fx:id="ClmContactNumber" prefWidth="144.0482177734375" text="ContactNumber" />
-            <TableColumn fx:id="ClmVehicleId" prefWidth="158.8101806640625" text="VehicleId" />
+            <TableColumn fx:id="ClmAddress" prefWidth="112.8575439453125" text="Address" />
+            <TableColumn fx:id="ClmLicenseNumber" prefWidth="122.1434326171875" text="LicenseNumber" />
+            <TableColumn fx:id="ClmDob" minWidth="0.0" prefWidth="113.57186889648438" text="Dob" />
+            <TableColumn fx:id="ClmGender" minWidth="0.0" prefWidth="97.8575439453125" text="Gender" />
+            <TableColumn fx:id="ClmContactNumber" prefWidth="118.572021484375" text="ContactNumber" />
+            <TableColumn fx:id="ClmVehicleId" prefWidth="82.857421875" text="VehicleId" />
+            <TableColumn fx:id="ClmFinesStatus" prefWidth="108.572021484375" text="FinesStatus" />
         </columns>
       </TableView>
       <Button layoutX="844.0" layoutY="296.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">

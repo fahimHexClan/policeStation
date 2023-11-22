@@ -1,21 +1,230 @@
 package lk.ijse.policeStation.controller;
 
+import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import lk.ijse.policeStation.DB.DatabaseConnection;
+import lk.ijse.policeStation.dto.FinesDto;
+import lk.ijse.policeStation.dto.PoliceReportDto;
+import lk.ijse.policeStation.model.DriverModel;
+import lk.ijse.policeStation.model.FinesModel;
+import lk.ijse.policeStation.model.PoliceReportModel;
+import lk.ijse.policeStation.tm.FinesTm;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Optional;
 
 public class ManageFinesFormController {
 
-    public void BtnClearOnAction(ActionEvent actionEvent) {
+    public ComboBox<String> CmbDriverId;
+    @FXML
+    private TableColumn<?, ?> ClmDriverID;
+
+    @FXML
+    private TableColumn<?, ?> ClmFinesAmount;
+
+    @FXML
+    private TableColumn<?, ?> ClmFinesDate;
+
+    @FXML
+    private TableColumn<?, ?> ClmFinesDescription;
+
+    @FXML
+    private TableColumn<?, ?> ClmFinesId;
+
+    @FXML
+    private TableView<FinesTm> TableFines;
+
+    @FXML
+    private JFXTextField TxtFinesAmount;
+
+    @FXML
+    private JFXTextField TxtFinesDate;
+
+    @FXML
+    private JFXTextField TxtFinesDescrip;
+
+    @FXML
+    private JFXTextField TxtFinesId;
+    private FinesModel finesModel;
+    private DriverModel driverModel=new DriverModel();
+
+    public void initialize() throws SQLException, ClassNotFoundException {
+        setTable();
+        visualize();
+        finesModel=new FinesModel();
+        loadDriverIds();
     }
 
-    public void BtnDeleteOnAction(ActionEvent actionEvent) {
+    private void loadDriverIds() {
+        try {
+            ArrayList<String> driverIds = DriverModel.getAllDriverIds();
+            CmbDriverId.getItems().addAll(driverIds);
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void BtnUpdateOnAction(ActionEvent actionEvent) {
+    @FXML
+    void BtnClearOnAction(ActionEvent event) {
+        TxtFinesId.clear();
+        TxtFinesDescrip.clear();
+        TxtFinesAmount.clear();
+        TxtFinesDate.clear();
+        CmbDriverId.getSelectionModel().clearSelection();
     }
 
-    public void BtnSaveOnAction(ActionEvent actionEvent) {
+    @FXML
+    void BtnDeleteOnAction(ActionEvent event) {
+
     }
 
-    public void BtnSearchOnAction(ActionEvent actionEvent) {
+    @FXML
+    void BtnSaveOnAction(ActionEvent event) throws SQLException {
+        if (validateFines()) {
+            FinesDto finesDto = CollectFines();
+            Connection connection = null;
+
+            try {
+                connection = DatabaseConnection.getInstance().getConnection();
+                connection.setAutoCommit(false);
+                boolean isSuccess = finesModel.save(finesDto);
+
+                boolean b = driverModel.updateStatus(finesDto, CmbDriverId.getSelectionModel().getSelectedItem());
+                if (!b) {
+                    connection.rollback();
+                    new Alert(Alert.AlertType.ERROR, "Data Not Added").show();
+                    return;
+                }
+                if (isSuccess) {
+                    new Alert(Alert.AlertType.INFORMATION, "Data added").show();
+                    setTable();
+                } else {
+                    connection.rollback();
+                    new Alert(Alert.AlertType.ERROR, "Data Not Added").show();
+                }
+
+            } catch (SQLException e) {
+                connection.rollback();
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                connection.rollback();
+                e.printStackTrace();
+            }finally {
+                connection.setAutoCommit(true);
+            }
+        }
     }
+    private void visualize() {
+        ClmDriverID.setCellValueFactory(new PropertyValueFactory<>("CmbDriverId"));
+        ClmFinesId.setCellValueFactory(new PropertyValueFactory<>("TxtFinesId"));
+        ClmFinesDescription.setCellValueFactory(new PropertyValueFactory<>("TxtFinesDescrip"));
+        ClmFinesAmount.setCellValueFactory(new PropertyValueFactory<>("TxtFinesAmount"));
+        ClmFinesDate.setCellValueFactory(new PropertyValueFactory<>("TxtFinesDate"));
+
+    }
+    private void setTable() throws SQLException, ClassNotFoundException {
+        ArrayList<FinesDto> finesList = FinesModel.getAllFines();
+
+        ArrayList<FinesTm> fines = new ArrayList<>();
+        for (FinesDto finesDto : finesList) {
+            FinesTm finesTm = new FinesTm();
+            finesTm.setTxtFinesId(finesDto.getTxtFinesId());
+            finesTm.setTxtFinesDescrip(finesDto.getTxtFinesDescrip());
+            finesTm.setTxtFinesAmount(finesDto.getTxtFinesAmount());
+            finesTm.setTxtFinesDate(finesDto.getTxtFinesDate());
+            finesTm.setCmbDriverId(finesDto.getCmbDriverId());
+
+            fines.add(finesTm);
+        }
+
+        ObservableList<FinesTm> finesTms = FXCollections.observableArrayList(fines);
+        TableFines.setItems(finesTms);
+    }
+    private FinesDto CollectFines() {
+        FinesDto finesDto = new FinesDto();
+        finesDto.setCmbDriverId(CmbDriverId.getValue().toString());
+        finesDto.setTxtFinesId(TxtFinesId.getText());
+        finesDto.setTxtFinesDescrip(TxtFinesDescrip.getText());
+        finesDto.setTxtFinesAmount(Double.valueOf(TxtFinesAmount.getText()));
+        finesDto.setTxtFinesDate(TxtFinesDate.getText());
+
+        return finesDto;
+    }
+
+    private boolean validateFines() {
+        return true;
+    }
+
+    @FXML
+    void BtnSearchOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        String code = TxtFinesId.getText();
+
+        Optional<FinesDto> fines = FinesModel.search(code);
+
+        if (fines.isPresent()) {
+            FinesDto finesDto = fines.get();
+            setData(finesDto);
+        } else {
+            new Alert(Alert.AlertType.ERROR, " No Items Found").show();
+        }
+    }
+
+    private void setData(FinesDto finesDto) {
+        TxtFinesId.setText(finesDto.getTxtFinesId());
+        TxtFinesDescrip.setText(finesDto.getTxtFinesDescrip());
+        TxtFinesAmount.setText(String.valueOf(Double.valueOf(finesDto.getTxtFinesAmount())));
+        TxtFinesDate.setText(finesDto.getTxtFinesDate());
+
+        CmbDriverId.getSelectionModel().select(finesDto.getCmbDriverId());
+    }
+
+
+
+
+    @FXML
+    void BtnUpdateOnAction(ActionEvent event) {
+        if (validateFines()) {
+            FinesDto updatedFines = CollectFines();
+
+            try {
+                boolean isUpdated = FinesModel.update(updatedFines);
+
+                if (isUpdated) {
+                    boolean isDriverStatusUpdated = driverModel.updateStatus(updatedFines, CmbDriverId.getValue());
+
+                    if (isDriverStatusUpdated) {
+                        new Alert(Alert.AlertType.INFORMATION, "Data updated successfully").show();
+                        setTable();
+                    } else {
+                        new Alert(Alert.AlertType.ERROR, "Driver status not updated").show();
+                    }
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Data not updated").show();
+                }
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+
+
+    @FXML
+    void ButtonBack(ActionEvent event) {
+
+    }
+
 }

@@ -16,15 +16,14 @@
                   <Image url="@../Assets/Background pics/HH.jpg" />
                </image>
             </ImageView>
-            <Button layoutX="18.0" layoutY="117.0" mnemonicParsing="false" onAction="#ManageFines" opacity="0.78" prefHeight="134.0" prefWidth="232.0" text="Fines Details" />
-            <Button layoutX="263.0" layoutY="119.0" mnemonicParsing="false" onAction="#ManageDriver" opacity="0.78" prefHeight="134.0" prefWidth="232.0" text="Driver Details" />
-            <Button layoutX="505.0" layoutY="118.0" mnemonicParsing="false" onAction="#ManageVehicle" opacity="0.78" prefHeight="134.0" prefWidth="232.0" text="Vehicle Details" />
+            <Button layoutX="32.0" layoutY="117.0" mnemonicParsing="false" onAction="#ManageFines" opacity="0.78" prefHeight="134.0" prefWidth="232.0" text="Fines Details" />
+            <Button layoutX="343.0" layoutY="119.0" mnemonicParsing="false" onAction="#ManageDriver" opacity="0.78" prefHeight="134.0" prefWidth="232.0" text="Driver Details" />
+            <Button layoutX="645.0" layoutY="118.0" mnemonicParsing="false" onAction="#ManageVehicle" opacity="0.78" prefHeight="134.0" prefWidth="232.0" text="Vehicle Details" />
             <Label layoutX="239.0" layoutY="3.0" prefHeight="92.0" prefWidth="498.0" text="Manage Traffic" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="48.0" />
                </font>
             </Label>
-            <Button layoutX="748.0" layoutY="118.0" mnemonicParsing="false" onAction="#ManageVehicle" opacity="0.78" prefHeight="134.0" prefWidth="232.0" text="Transection" />
          </children>
       </AnchorPane>
    </children>

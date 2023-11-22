@@ -5,17 +5,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import lk.ijse.policeStation.dto.CrimeDto;
 import lk.ijse.policeStation.dto.VehicleDto;
 import lk.ijse.policeStation.model.CrimeModel;
 import lk.ijse.policeStation.model.VehicleModel;
 import lk.ijse.policeStation.tm.VehicleTm;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -23,6 +27,7 @@ import java.util.regex.Pattern;
 
 public class ManageVehicleFormController {
 
+    public AnchorPane SubAnchor;
     @FXML
     private TableColumn<?, ?> CLmEngineNum;
 
@@ -125,8 +130,9 @@ public class ManageVehicleFormController {
         return true;
     }
     @FXML
-    void BackOnAction(ActionEvent event) {
-
+    void BackOnAction(ActionEvent event) throws IOException {
+        javafx.scene.Node node = (Node) FXMLLoader.load(getClass().getResource("/view/MangeTraffic_Form.fxml"));
+        SubAnchor.getChildren().setAll(node);
     }
 
     @FXML

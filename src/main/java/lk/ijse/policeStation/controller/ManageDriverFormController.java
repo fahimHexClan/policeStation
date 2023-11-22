@@ -5,8 +5,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.policeStation.dto.DriverDto;
 import lk.ijse.policeStation.dto.PoliceReportDto;
@@ -15,6 +18,7 @@ import lk.ijse.policeStation.model.PoliceReportModel;
 import lk.ijse.policeStation.model.VehicleModel;
 import lk.ijse.policeStation.tm.DriverTm;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -24,6 +28,7 @@ public class ManageDriverFormController {
 
     public TableColumn ClmVehicleId;
     public TableColumn ClmFinesStatus;
+    public AnchorPane DAnchor;
     @FXML
     private TableColumn<?, ?> ClmAddress;
 
@@ -175,8 +180,9 @@ public class ManageDriverFormController {
 
 
     @FXML
-    void BackOnAction(ActionEvent event) {
-
+    void BackOnAction(ActionEvent event) throws IOException {
+        javafx.scene.Node node = (Node) FXMLLoader.load(getClass().getResource("/view/MangeTraffic_Form.fxml"));
+        DAnchor.getChildren().setAll(node);
     }
 
     @FXML

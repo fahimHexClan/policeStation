@@ -19,8 +19,8 @@
       </ImageView>
       <AnchorPane cache="true" depthTest="DISABLE" layoutX="690.0" layoutY="156.0" opacity="0.51" prefHeight="502.0" prefWidth="516.0" style="-fx-border-color: white; -fx-background-color: black;">
          <children>
-            <TextField fx:id="UsrName" layoutX="115.0" layoutY="243.0" prefHeight="45.0" prefWidth="331.0" promptText="Enter UserName" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: blue;" />
-            <TextField fx:id="UsrPassword" layoutX="116.0" layoutY="322.0" prefHeight="45.0" prefWidth="331.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: white;" />
+            <TextField fx:id="UsrName" layoutX="115.0" layoutY="243.0" opacity="0.76" prefHeight="45.0" prefWidth="331.0" promptText="Enter UserName" style="-fx-border-color: white; -fx-border-width: blue;" />
+            <TextField fx:id="UsrPassword" layoutX="116.0" layoutY="322.0" opacity="0.76" prefHeight="45.0" prefWidth="331.0" promptText="Password" style="-fx-border-color: white;" />
             <Button layoutX="223.0" layoutY="407.0" mnemonicParsing="false" onAction="#BtnLogInOnAction" prefHeight="39.0" prefWidth="93.0" text="LogIn" />
             <Text fill="#f9f9f9" layoutX="111.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN PAGE">
                <font>
@@ -37,7 +37,7 @@
                   <Image url="@../Assets/logo/password-100.png" />
                </image>
             </ImageView>
-            <TextField fx:id="UsrId" layoutX="115.0" layoutY="173.0" prefHeight="45.0" prefWidth="331.0" promptText="Enter UserId" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: blue;" />
+            <TextField fx:id="UsrId" layoutX="115.0" layoutY="173.0" opacity="0.74" prefHeight="45.0" prefWidth="331.0" promptText="Enter UserId" style="-fx-border-color: white; -fx-border-width: blue;" />
             <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="66.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Assets/logo/username.png" />

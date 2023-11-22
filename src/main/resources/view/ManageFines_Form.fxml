@@ -10,17 +10,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="673.0" prefWidth="988.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageFinesFormController">
+<AnchorPane fx:id="SubPane" prefHeight="673.0" prefWidth="988.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageFinesFormController">
    <children>
       <JFXTextField fx:id="TxtFinesDate" layoutX="399.0" layoutY="178.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="400.0" layoutY="156.0" prefHeight="29.0" prefWidth="241.0" text="FinesDate" />
-      <JFXTextField fx:id="TxtFinesAmount" layoutX="51.0" layoutY="292.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="51.0" layoutY="268.0" prefHeight="29.0" prefWidth="241.0" text="FinesAmount" />
-      <JFXTextField fx:id="TxtFinesId" layoutX="50.0" layoutY="178.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="48.0" layoutY="155.0" prefHeight="29.0" prefWidth="241.0" text="FinesId" />
-      <JFXTextField fx:id="TxtFinesDescrip" layoutX="49.0" layoutY="238.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="48.0" layoutY="215.0" prefHeight="29.0" prefWidth="241.0" text="FinesDescription" />
-      <Button layoutX="716.0" layoutY="223.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">
+      <JFXTextField fx:id="TxtFinesAmount" layoutX="41.0" layoutY="292.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="41.0" layoutY="268.0" prefHeight="29.0" prefWidth="241.0" text="FinesAmount" />
+      <JFXTextField fx:id="TxtFinesId" layoutX="40.0" layoutY="178.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="40.0" layoutY="155.0" prefHeight="29.0" prefWidth="241.0" text="FinesId" />
+      <JFXTextField fx:id="TxtFinesDescrip" layoutX="39.0" layoutY="238.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="39.0" layoutY="215.0" prefHeight="29.0" prefWidth="241.0" text="FinesDescription" />
+      <Button layoutX="858.0" layoutY="115.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -30,17 +30,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="718.0" layoutY="160.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Delete">
+      <Button layoutX="858.0" layoutY="276.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Clear">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="784.0" layoutY="277.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Clear">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button layoutX="859.0" layoutY="161.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #17c0eb;" text="Search">
+      <Button layoutX="857.0" layoutY="170.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #17c0eb;" text="Search">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -50,7 +45,7 @@
             <Font name="System Bold Italic" size="45.0" />
          </font>
       </Label>
-      <ComboBox fx:id="CmbDriverId" layoutX="392.0" layoutY="243.0" prefHeight="35.0" prefWidth="280.0" promptText="DriverId" />
+      <ComboBox fx:id="CmbDriverId" layoutX="397.0" layoutY="236.0" opacity="0.73" prefHeight="36.0" prefWidth="274.0" promptText="DriverId" />
       <TableView fx:id="TableFines" layoutX="8.0" layoutY="335.0" prefHeight="333.0" prefWidth="969.0">
         <columns>
           <TableColumn fx:id="ClmFinesId" prefWidth="209.28665685653687" text="FinesId" />
@@ -60,6 +55,6 @@
             <TableColumn fx:id="ClmDriverID" prefWidth="171.42919921875" text="DriverId" />
         </columns>
       </TableView>
-      <Button layoutX="17.0" layoutY="18.0" mnemonicParsing="false" onAction="#ButtonBack" prefHeight="55.0" prefWidth="217.0" text="Back to Traffic  Managment" />
+      <Button layoutX="17.0" layoutY="18.0" mnemonicParsing="false" onAction="#ButtonBack" prefHeight="48.0" prefWidth="95.0" text="Back" />
    </children>
 </AnchorPane>

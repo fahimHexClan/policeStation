@@ -46,4 +46,9 @@ public class DashBoardFormController {
         Node node = (Node) FXMLLoader.load(getClass().getResource("/view/ManageCitizen_Form.fxml"));
         anchorDash.getChildren().setAll(node);
     }
+
+    public void SignOutButtonOnAction(ActionEvent actionEvent) throws IOException {
+        Node node = (Node) FXMLLoader.load(getClass().getResource("/view/LogIn_Form .fxml"));
+        MainAnchorPane.getChildren().setAll(node);
+    }
 }

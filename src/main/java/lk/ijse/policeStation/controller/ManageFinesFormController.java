@@ -5,27 +5,31 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import lk.ijse.policeStation.DB.DatabaseConnection;
 import lk.ijse.policeStation.dto.FinesDto;
-import lk.ijse.policeStation.dto.PoliceReportDto;
 import lk.ijse.policeStation.model.DriverModel;
 import lk.ijse.policeStation.model.FinesModel;
-import lk.ijse.policeStation.model.PoliceReportModel;
 import lk.ijse.policeStation.tm.FinesTm;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 public class ManageFinesFormController {
 
     public ComboBox<String> CmbDriverId;
+    public AnchorPane SubPane;
     @FXML
     private TableColumn<?, ?> ClmDriverID;
 
@@ -83,10 +87,6 @@ public class ManageFinesFormController {
         CmbDriverId.getSelectionModel().clearSelection();
     }
 
-    @FXML
-    void BtnDeleteOnAction(ActionEvent event) {
-
-    }
 
     @FXML
     void BtnSaveOnAction(ActionEvent event) throws SQLException {
@@ -162,6 +162,41 @@ public class ManageFinesFormController {
     }
 
     private boolean validateFines() {
+        String FinesId = TxtFinesId.getText();
+        boolean isFinesIdValidated = Pattern.matches("[F][0-9]{3,}", FinesId);
+        if (!isFinesIdValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Driver ID! (must need to use same like this pattern [F00+])").show();
+            return false;
+        }
+
+        String FinesDate = TxtFinesDate.getText();
+        // aniwaren me pattern ekata thiyanna ona 2000-10-08 me wage syntax ekak
+        boolean isDateValidated = Pattern.matches("\\d{4}-\\d{2}-\\d{2}", FinesDate);
+        if (!isDateValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid date of birth the right pattern is (Year-MM-DD)").show();
+            return false;
+        }
+
+        String FinesDescription = TxtFinesDescrip.getText();
+        boolean isFinesValidated = Pattern.matches("[\\w\\d\\s]{3,}", FinesDescription);
+        if (!isFinesValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Address must need to add more than 3 letters").show();
+            return false;
+        }
+
+        String finesAmount = TxtFinesAmount.getText();
+        try {
+            Double.parseDouble(finesAmount);
+        } catch (NumberFormatException e) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Fines Amount! (must be a valid numeric value)").show();
+            return false;
+        }
+        String driverId = CmbDriverId.getValue();
+        if (driverId == null) {
+            new Alert(Alert.AlertType.ERROR, "Please select a Driver ID").show();
+            return false;
+        }
+
         return true;
     }
 
@@ -223,8 +258,10 @@ public class ManageFinesFormController {
 
 
     @FXML
-    void ButtonBack(ActionEvent event) {
+    void ButtonBack(ActionEvent event) throws IOException {
+        javafx.scene.Node node = (Node) FXMLLoader.load(getClass().getResource("/view/MangeTraffic_Form.fxml"));
+        SubPane.getChildren().setAll(node);
 
     }
 
-}
+    }

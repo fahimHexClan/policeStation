@@ -108,7 +108,7 @@
             </RadialGradient>
          </ripplerFill>
       </JFXButton>
-      <JFXButton blendMode="COLOR_BURN" layoutX="37.0" layoutY="495.0" onAction="#MangePoliceReport" prefHeight="48.0" prefWidth="284.0" textFill="WHITE">
+      <JFXButton blendMode="COLOR_BURN" layoutX="37.0" layoutY="495.0" onAction="#MangePoliceReport" prefHeight="48.0" prefWidth="284.0" text="Button" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
@@ -129,11 +129,6 @@
             </RadialGradient>
          </ripplerFill>
       </JFXButton>
-      <ImageView fitHeight="60.0" fitWidth="52.0" layoutX="134.0" layoutY="635.0" pickOnBounds="true">
-         <image>
-            <Image url="@../Assets/logo/Log-out.png" />
-         </image>
-      </ImageView>
       <JFXButton blendMode="COLOR_BURN" layoutX="14.0" layoutY="192.0" onAction="#ManageCitizen" prefHeight="50.0" prefWidth="309.0" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="20.0" />
@@ -181,5 +176,28 @@
             <Image url="@../Assets/gifs/flag-of-sri-lanka-7.gif" />
          </image>
       </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="53.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/logo/LogOut.png" />
+         </image>
+      </ImageView>
+      <JFXButton blendMode="COLOR_BURN" layoutX="45.0" layoutY="603.0" onAction="#SignOutButtonOnAction" prefHeight="42.0" prefWidth="172.0" text="." textFill="WHITE">
+         <ripplerFill>
+            <RadialGradient centerX="0.519762874281829" centerY="0.4932203581951306" radius="0.4586777147752318">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.7490196228027344" blue="0.38823530077934265" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+      </JFXButton>
    </children>
 </AnchorPane>

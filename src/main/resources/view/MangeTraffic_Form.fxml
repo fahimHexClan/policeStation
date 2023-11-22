@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.MangeTrafficFormController">
+<AnchorPane fx:id="mgAnchore" prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.MangeTrafficFormController">
    <children>
       <AnchorPane fx:id="SubAnchorPane" layoutX="28.0" layoutY="23.0" prefHeight="673.0" prefWidth="988.0" style="-fx-background-color: White;">
          <children>

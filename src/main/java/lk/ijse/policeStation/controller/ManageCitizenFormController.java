@@ -255,6 +255,7 @@ public class ManageCitizenFormController {
         TxtGender.clear();
         TxtDob.clear();
         imageView.setImage(null);
+        
     }
 
     @FXML

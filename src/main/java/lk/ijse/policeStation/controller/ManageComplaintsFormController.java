@@ -5,18 +5,24 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.util.StringConverter;
 import lk.ijse.policeStation.dto.ComplaintDto;
 import lk.ijse.policeStation.model.CitizenModel;
 import lk.ijse.policeStation.model.ComplaintModel;
+import lk.ijse.policeStation.model.OfficerModel;
 import org.controlsfx.control.textfield.TextFields;
 
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Properties;
 import java.util.regex.Pattern;
-
 public class ManageComplaintsFormController {
 
+    public JFXTextField TxtSuspectEmail;
     @FXML
     private JFXTextField TxtCitizenId;
 
@@ -58,7 +64,7 @@ public class ManageComplaintsFormController {
 
     public void initialize() throws SQLException, ClassNotFoundException {
     LoardCitizen();
-
+    LoardOfficers();
     }
 
     @FXML
@@ -114,7 +120,10 @@ public class ManageComplaintsFormController {
                 if (isCitizenIdValid(complaintDto.getCitizenId())) {
                     boolean isSuccess = ComplaintModel.save(complaintDto);
                     if (isSuccess) {
-                        new Alert(Alert.AlertType.INFORMATION, "Data added").show();
+                        new Alert(Alert.AlertType.INFORMATION, "Data added.... Successfully sent an email to the suspect.").show();
+                      //mail ekak swnd karanawa
+                        sendEmailToSuspect(complaintDto.getSuspectEmail(), "Kandegedara PoliceStation Complaint Inquiry", "You have a complaint. Please come to the police office within a week.");
+
                     } else {
                         new Alert(Alert.AlertType.ERROR, "Data Not Added").show();
                     }
@@ -138,6 +147,39 @@ public class ManageComplaintsFormController {
         }
 
     }
+
+    private void sendEmailToSuspect(String suspectEmail, String subject, String body) {
+        final String username = "fahim1998108@gmail.com";
+        final String password = "eugz nweg qmow yjvq";
+
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com"); // Assuming you are using Gmail
+        props.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(props, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+        });
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(suspectEmail));
+            message.setSubject(subject);
+            message.setText(body);
+
+            Transport.send(message);
+
+            System.out.println("Email sent to " + suspectEmail);
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     private boolean validateComplaints() {
         //wordes or number 3kata wediya thiyanna onee A-z,a-z,and 0-9 add karanna puluwan
@@ -233,7 +275,20 @@ public class ManageComplaintsFormController {
             new Alert(Alert.AlertType.ERROR, "Invalid Status the rigt format is(Pending|Investigating|Closed)").show();
             return false;
         }
+        String txtSuspectEmailText = TxtSuspectEmail.getText();
+        boolean isSuspectEmailValidated = validateEmail(txtSuspectEmailText);
+        if (!isSuspectEmailValidated) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Suspect Email!").show();
+            return false;
+        }
         return true;
+    }
+
+    private boolean validateEmail(String txtSuspectEmailText) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        return pattern.matcher(txtSuspectEmailText).matches();
+
     }
 
     //sql error ekak aapu hindha
@@ -255,6 +310,7 @@ public class ManageComplaintsFormController {
         String SuspectAddress = TxtSuspectAddress.getText();
         String SuspectContactNumber = TxtSuspectContactNumber.getText();
         String StatusOfTheComplaint = TxtStatusOfTheComplaint.getText();
+        String SuspectEmail = TxtSuspectEmail.getText();
 
         ComplaintDto complaintDto = new ComplaintDto();
         complaintDto.setComplainId(ComplaintId);
@@ -270,6 +326,8 @@ public class ManageComplaintsFormController {
         complaintDto.setSuspectAddress(SuspectAddress);
         complaintDto.setSuspectContactNumber(SuspectContactNumber);
         complaintDto.setStatusOfTheComplaint(StatusOfTheComplaint);
+        complaintDto.setSuspectEmail(SuspectEmail);
+
 
         return complaintDto;
     }
@@ -288,6 +346,7 @@ public class ManageComplaintsFormController {
         TxtSuspectAddress.setText(complaintDto.getSuspectAddress());
         TxtSuspectContactNumber.setText(complaintDto.getSuspectContactNumber());
         TxtStatusOfTheComplaint.setText(complaintDto.getStatusOfTheComplaint());
+        TxtSuspectEmail.setText(complaintDto.getSuspectEmail());
 
     }
 
@@ -347,5 +406,9 @@ public class ManageComplaintsFormController {
         TextFields.bindAutoCompletion(TxtCitizenId,cusId);
 }
 
+    private void LoardOfficers() throws SQLException, ClassNotFoundException {
+        List<String> officerIds = OfficerModel.getOfficerIds();
+        TextFields.bindAutoCompletion(TxtOfficerId, officerIds);
+    }
 
 }

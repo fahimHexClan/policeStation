@@ -16,7 +16,7 @@ public class ComplaintModel {
 
     public static boolean save(ComplaintDto complaintDto) throws SQLException, ClassNotFoundException {
         Connection connection = DatabaseConnection.getInstance().getConnection();
-        String sql = "insert into Complaint(ComplaintId ,description,date,CitizenId ,OfficerId,TypeOfIncident,LocationOfIncident,Evidence,WitnessInformation,SuspectName,SuspectAddress,SuspectContactNumber,StatusOfTheComplaint) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into Complaint(ComplaintId ,description,date,CitizenId ,OfficerId,TypeOfIncident,LocationOfIncident,Evidence,WitnessInformation,SuspectName,SuspectAddress,SuspectContactNumber,StatusOfTheComplaint,SuspectEmail) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement stm = connection.prepareStatement(sql);
 
         stm.setString(1, complaintDto.getComplainId());
@@ -32,6 +32,7 @@ public class ComplaintModel {
         stm.setString(11, complaintDto.getSuspectAddress());
         stm.setString(12, complaintDto.getSuspectContactNumber());
         stm.setString(13, complaintDto.getStatusOfTheComplaint());
+        stm.setString(14, complaintDto.getSuspectEmail());
 
         int affectedRows = stm.executeUpdate();
         if (affectedRows > 0) {
@@ -78,6 +79,7 @@ public class ComplaintModel {
             String SuspectAddress = rs.getString(11);
             String SuspectContactNumber = rs.getString(12);
             String StatusOfTheComplaint = rs.getString(13);
+            String SuspectEmail = rs.getString(14);
 
             ComplaintDto complaintDto = new ComplaintDto();
             complaintDto.setComplainId(code);
@@ -93,6 +95,7 @@ public class ComplaintModel {
             complaintDto.setSuspectAddress(SuspectAddress);
             complaintDto.setSuspectContactNumber(SuspectContactNumber);
             complaintDto.setStatusOfTheComplaint(StatusOfTheComplaint);
+            complaintDto.setSuspectEmail(SuspectEmail);
 
 
             return Optional.of(complaintDto);
@@ -104,7 +107,7 @@ public class ComplaintModel {
 
     public static boolean update(ComplaintDto complaintDto) throws SQLException, ClassNotFoundException {
         Connection connection = DatabaseConnection.getInstance().getConnection();
-        String sql = "UPDATE Complaint SET description=?, date=?, CitizenId=?, OfficerId=?, TypeOfIncident=?, LocationOfIncident=?, Evidence=?, WitnessInformation=?, SuspectName=?, SuspectAddress=?, SuspectContactNumber=?, StatusOfTheComplaint=? WHERE ComplaintId=?";
+        String sql = "UPDATE Complaint SET description=?, date=?, CitizenId=?, OfficerId=?, TypeOfIncident=?, LocationOfIncident=?, Evidence=?, WitnessInformation=?, SuspectName=?, SuspectAddress=?, SuspectContactNumber=?, StatusOfTheComplaint=?,SuspectEmail=?WHERE ComplaintId=?";
         try (PreparedStatement stm = connection.prepareStatement(sql)) {
             stm.setString(1, complaintDto.getDescriptionOfIncident());
             stm.setString(2, complaintDto.getDate());
@@ -119,6 +122,7 @@ public class ComplaintModel {
             stm.setString(11, complaintDto.getSuspectContactNumber());
             stm.setString(12, complaintDto.getStatusOfTheComplaint());
             stm.setString(13, complaintDto.getComplainId());
+            stm.setString(14, complaintDto.getSuspectEmail());
 
             int affectedRows = stm.executeUpdate();
             return affectedRows > 0;

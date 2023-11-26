@@ -21,5 +21,5 @@ public class ComplaintDto {
     private String SuspectName;
     private String TypeOfIncident;
     private String WitnessInformation;
-
+    private String SuspectEmail;
 }

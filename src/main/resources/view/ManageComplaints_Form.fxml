@@ -50,12 +50,12 @@
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font></Label>
-      <JFXTextField fx:id="TxtCitizenId" layoutX="77.0" layoutY="191.0" prefHeight="25.0" prefWidth="361.0" />
+      <JFXTextField fx:id="TxtCitizenId" layoutX="77.0" layoutY="191.0" onAction="#CitizenIdOnAction" prefHeight="25.0" prefWidth="361.0" />
       <Label layoutX="76.0" layoutY="172.0" prefHeight="29.0" prefWidth="241.0" text="Citizen Id">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font></Label>
-      <JFXTextField fx:id="TxtOfficerId" layoutX="79.0" layoutY="242.0" prefHeight="25.0" prefWidth="361.0" />
+      <JFXTextField fx:id="TxtOfficerId" layoutX="79.0" layoutY="242.0" onAction="#OfficerOnAction" prefHeight="25.0" prefWidth="361.0" />
       <Label layoutX="78.0" layoutY="224.0" prefHeight="29.0" prefWidth="241.0" text="Officer Id ">
          <font>
             <Font name="System Bold Italic" size="13.0" />

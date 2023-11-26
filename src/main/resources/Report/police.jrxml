@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2023-11-23T04:07:18 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="police" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b844e2a3-6437-42ed-b489-e09e0203bbb4">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PoliceStation.xml"/>
+	<queryString>
+		<![CDATA[SELECT * FROM PoliceReport;]]>
+	</queryString>
+	<field name="policeReportId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CitizenId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="UserId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="215" y="44" width="225" height="30" uuid="e475a146-7987-4ab0-95b6-6ee8bca1ec86"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[POLICE REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="0" width="100" height="30" uuid="4734a361-37ad-4eac-ab2b-33582693082f"/>
+				<text><![CDATA[policeReportId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="0" width="100" height="30" uuid="268993aa-db33-4b94-9fc9-4f0f5d41dbbb"/>
+				<text><![CDATA[description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="0" width="100" height="30" uuid="99c73bbc-6573-4f78-9611-e408fbf2d6da"/>
+				<text><![CDATA[date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="0" width="100" height="30" uuid="478e5eb5-62c4-4a7f-aae7-5960e9f18c15"/>
+				<text><![CDATA[CitizenId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="0" width="100" height="30" uuid="3747d164-fe1d-4211-af1d-5a305f2aa020"/>
+				<text><![CDATA[UserId]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="3" width="100" height="30" uuid="840dddbd-d275-44f4-93d5-c0ea96020f4c"/>
+				<textFieldExpression><![CDATA[$F{policeReportId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="6" width="100" height="30" uuid="c4a72570-6662-492a-a40c-81766463da0e"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="-1" width="100" height="30" uuid="fb992650-854e-4dd3-8504-6c4cb6fba1e9"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="-1" width="100" height="30" uuid="9c35df72-c211-4ba8-95ff-b7e58e95984f"/>
+				<textFieldExpression><![CDATA[$F{CitizenId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="1" width="100" height="30" uuid="da323f9a-f687-4c28-a86b-8dd841e82735"/>
+				<textFieldExpression><![CDATA[$F{UserId}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

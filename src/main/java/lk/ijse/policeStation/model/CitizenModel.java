@@ -8,6 +8,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class CitizenModel {
@@ -153,4 +154,17 @@ public class CitizenModel {
             return affectedRows > 0;
         }
     }
+
+    public static List<String> getCitizenIds() throws SQLException, ClassNotFoundException {
+        Connection connection = DatabaseConnection.getInstance().getConnection();
+        ResultSet resultSet = connection.prepareStatement("SELECT CitizenId FROM Citizen").executeQuery();
+
+        List<String> ids = new ArrayList<>();
+        while (resultSet.next()) {
+            ids.add(resultSet.getString("CitizenId"));
+        }
+        return ids;
+    }
+
+
 }

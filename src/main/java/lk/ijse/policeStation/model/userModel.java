@@ -43,4 +43,20 @@ public class userModel {
             return userIds;
         }
     }
+
+    public static boolean registerUser(UserDto userDto) throws SQLException, ClassNotFoundException {
+        Connection connection = DatabaseConnection.getInstance().getConnection();
+        String sql = "INSERT INTO User (UserName, Password, UserId) VALUES (?, ?, ?)";
+
+        try (PreparedStatement stm = connection.prepareStatement(sql)) {
+            stm.setObject(1, userDto.getUsrName());
+            stm.setObject(2, userDto.getPassword());
+            stm.setObject(3, userDto.getUsrId());
+
+            int affectedRows = stm.executeUpdate();
+            return affectedRows > 0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

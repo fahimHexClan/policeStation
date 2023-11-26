@@ -66,4 +66,13 @@ public class logInFormController {
     private javafx.stage.Stage getStage() {
         return (javafx.stage.Stage) UsrName.getScene().getWindow();
     }
+
+    public void BtnSignUpOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SignIn_Form.fxml"));
+        Object signUpRoot = loader.load();
+
+        // Set the Sign-Up Scene
+        setScene(signUpRoot);
+
+    }
 }

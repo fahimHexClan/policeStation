@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="SubPane" prefHeight="673.0" prefWidth="988.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageFinesFormController">
+<AnchorPane fx:id="SubPane" prefHeight="724.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageFinesFormController">
    <children>
       <JFXTextField fx:id="TxtFinesDate" layoutX="399.0" layoutY="178.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="400.0" layoutY="156.0" prefHeight="29.0" prefWidth="241.0" text="FinesDate" />

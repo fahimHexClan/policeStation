@@ -6,9 +6,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import lk.ijse.policeStation.dto.ComplaintDto;
+import lk.ijse.policeStation.model.CitizenModel;
 import lk.ijse.policeStation.model.ComplaintModel;
+import org.controlsfx.control.textfield.TextFields;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
@@ -52,6 +55,11 @@ public class ManageComplaintsFormController {
 
     @FXML
     private JFXTextField TxtWitnessInformation;
+
+    public void initialize() throws SQLException, ClassNotFoundException {
+    LoardCitizen();
+
+    }
 
     @FXML
     void BtnClearOnAction(ActionEvent event) {
@@ -326,4 +334,18 @@ public class ManageComplaintsFormController {
         }
 
     }
+
+    public void CitizenIdOnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void OfficerOnAction(ActionEvent actionEvent) {
+
+    }
+    private void LoardCitizen() throws SQLException, ClassNotFoundException {
+        List<String> cusId = CitizenModel.getCitizenIds();
+        TextFields.bindAutoCompletion(TxtCitizenId,cusId);
+}
+
+
 }

@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import lk.ijse.policeStation.DB.DatabaseConnection;
 import lk.ijse.policeStation.dto.CitizenDto;
 import lk.ijse.policeStation.dto.PoliceReportDto;
 import lk.ijse.policeStation.model.CitizenModel;
@@ -14,8 +15,14 @@ import lk.ijse.policeStation.model.PoliceReportModel;
 import lk.ijse.policeStation.model.userModel;
 import lk.ijse.policeStation.tm.CitizenTm;
 import lk.ijse.policeStation.tm.PoliceReportTm;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
 import java.io.ByteArrayInputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -227,5 +234,17 @@ public class ManagePoliceReportFormController {
         TxtDate.clear();
         CmdCitizenIds.getSelectionModel().clearSelection();
         CmdUserIds.getSelectionModel().clearSelection();
+    }
+
+    public void ReportOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException, JRException {
+        Connection connection = connection = DatabaseConnection.getInstance().getConnection();
+        String query = "SELECT * FROM PoliceReport;";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        JRResultSetDataSource resultSetDataSource = new JRResultSetDataSource(resultSet);
+        JasperDesign jasperDesign = JRXmlLoader.load(this.getClass().getResourceAsStream("/Report/police.jrxml"));
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, resultSetDataSource);
+        net.sf.jasperreports.view.JasperViewer.viewReport(jasperPrint, false);
     }
 }

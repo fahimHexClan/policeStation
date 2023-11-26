@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -23,6 +24,17 @@
                   <Image url="@../Assets/Background pics/new.jpg" />
                </image>
             </ImageView>
+            <Label text="Label" />
+            <Label fx:id="NumberOfCrimes" layoutX="61.0" layoutY="216.0" prefHeight="51.0" prefWidth="143.0" text="44" textAlignment="CENTER">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
+            <Label fx:id="NumberOfFines" layoutX="49.0" layoutY="476.0" prefHeight="51.0" prefWidth="143.0" text="44" textAlignment="CENTER">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
       <JFXButton fx:id="btnComplaints" blendMode="COLOR_BURN" layoutX="35.0" layoutY="255.0" onAction="#ManageComplaints" prefHeight="57.0" prefWidth="288.0" textFill="WHITE">
          <font>

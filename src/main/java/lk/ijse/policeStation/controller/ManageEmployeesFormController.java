@@ -19,8 +19,11 @@ import lk.ijse.policeStation.dto.CitizenDto;
 import lk.ijse.policeStation.dto.EmployeesDto;
 import lk.ijse.policeStation.model.CitizenModel;
 import lk.ijse.policeStation.model.EmployeesModel;
+import lk.ijse.policeStation.model.OfficerModel;
+import lk.ijse.policeStation.model.userModel;
 import lk.ijse.policeStation.tm.CitizenTm;
 import lk.ijse.policeStation.tm.EmployeeTm;
+import org.controlsfx.control.textfield.TextFields;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -30,6 +33,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
@@ -79,9 +83,27 @@ public class ManageEmployeesFormController {
     @FXML
     private JFXTextField TxtUsrId;
 
-    public void initialize() {
+    public void initialize() throws SQLException, ClassNotFoundException {
+        LoardUsers();
+        LoardOfficers();
         setTable();
         visualize();
+    }
+
+    private void LoardUsers() {
+        try {
+            List<String> userIds = userModel.loadUserIds();
+            TextFields.bindAutoCompletion(TxtUsrId, userIds);
+        } catch (SQLException | ClassNotFoundException e) {
+            new Alert(Alert.AlertType.ERROR, "Error loading user IDs").show();
+            e.printStackTrace();
+        }
+    }
+
+    private void LoardOfficers() throws SQLException, ClassNotFoundException {
+        List<String> officerIds = OfficerModel.getOfficerIds();
+        TextFields.bindAutoCompletion(TxtOfficerId, officerIds);
+
     }
 
     private void setTable() {

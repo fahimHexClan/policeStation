@@ -5,9 +5,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.policeStation.model.CrimeModel;
+import lk.ijse.policeStation.model.FinesModel;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class DashBoardFormController {
     public AnchorPane anchorDash;
@@ -20,8 +24,14 @@ public class DashBoardFormController {
     public JFXButton btnEmployee;
     public JFXButton btnCrime;
     public JFXButton btnTraffic;
+    public Label NumberOfCrimes;
+    public Label NumberOfFines;
 
-
+    public void initialize() {
+        // Call updateNumberOfCrimes on initialization
+        updateNumberOfCrimes();
+        updateNumberOfFines();
+    }
     @FXML
     void ManageTraffic(ActionEvent event) throws IOException {
         resetButtonStyles();
@@ -100,4 +110,27 @@ public class DashBoardFormController {
         MainAnchorPane.getChildren().setAll(node);
 
     }
+    private void updateNumberOfCrimes() {
+        try {
+            // Get the number of crimes from the database
+            int numberOfCrimes = CrimeModel.getAllCrimes().size();
+
+            // Update the label text
+            NumberOfCrimes.setText(String.valueOf(numberOfCrimes));
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    private void updateNumberOfFines() {
+        try {
+            // Get the number of fines from the database
+            int numberOfFines = FinesModel.getAllFines().size();
+
+            // Update the label text
+            NumberOfFines.setText(String.valueOf(numberOfFines));
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
+

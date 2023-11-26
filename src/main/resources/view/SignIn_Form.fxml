@@ -10,9 +10,9 @@
 
 <AnchorPane prefHeight="718.0" prefWidth="1371.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.SignInFormController">
    <children>
-      <ImageView fitHeight="713.0" fitWidth="763.0" layoutX="606.0" layoutY="1.0" pickOnBounds="true">
+      <ImageView fitHeight="719.0" fitWidth="1372.0" layoutY="-1.0" pickOnBounds="true">
          <image>
-            <Image url="@../Assets/Background pics/ligtblue.png" />
+            <Image url="@../Assets/Background pics/SignInPage.png" />
          </image>
       </ImageView>
       <TextField fx:id="UsrName" layoutX="805.0" layoutY="345.0" opacity="0.97" prefHeight="45.0" prefWidth="331.0" promptText="Enter UserName" style="-fx-border-color: blue; -fx-border-width: blue; -fx-background-color: #dfe6e9;" />
@@ -42,11 +42,11 @@
             <Image url="@../Assets/logo/id.png" />
          </image>
       </ImageView>
-      <Button layoutX="891.0" layoutY="511.0" mnemonicParsing="false" onAction="#SignInOnAction" prefHeight="49.0" prefWidth="129.0" text="SigIn" />
+      <Button layoutX="891.0" layoutY="511.0" mnemonicParsing="false" onAction="#SignInOnAction" prefHeight="49.0" prefWidth="129.0" style="-fx-border-color: blue;" text="SigIn" />
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="713.0" fitWidth="607.0" layoutX="-1.0" pickOnBounds="true">
+      <ImageView fitHeight="383.0" fitWidth="471.0" layoutX="31.0" layoutY="270.0" pickOnBounds="true">
          <image>
-            <Image url="@../Assets/Background pics/20944201.jpg" />
+            <Image url="@../Assets/Background pics/80_cG9saWNlX3dvcmstMDM.jpg" />
          </image>
       </ImageView>
    </children>

@@ -123,7 +123,6 @@ public class ManageComplaintsFormController {
                         new Alert(Alert.AlertType.INFORMATION, "Data added.... Successfully sent an email to the suspect.").show();
                       //mail ekak swnd karanawa
                         sendEmailToSuspect(complaintDto.getSuspectEmail(), "Kandegedara PoliceStation Complaint Inquiry", "You have a complaint. Please come to the police office within a week.");
-
                     } else {
                         new Alert(Alert.AlertType.ERROR, "Data Not Added").show();
                     }

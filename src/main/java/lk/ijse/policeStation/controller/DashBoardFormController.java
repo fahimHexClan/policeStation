@@ -1,17 +1,29 @@
 package lk.ijse.policeStation.controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import lk.ijse.policeStation.model.CrimeModel;
-import lk.ijse.policeStation.model.FinesModel;
+import lk.ijse.policeStation.dto.CitizenDto;
+import lk.ijse.policeStation.model.*;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class DashBoardFormController {
     public AnchorPane anchorDash;
@@ -26,11 +38,64 @@ public class DashBoardFormController {
     public JFXButton btnTraffic;
     public Label NumberOfCrimes;
     public Label NumberOfFines;
+    public BarChart ComplaintDetails;
+    public CategoryAxis ComplaintsDay;
+    public NumberAxis ComplaintsCount;
+    public ImageView img5;
+    public ImageView img4;
+    public ImageView img3;
+    public ImageView Img1;
+    public ImageView Img2;
+    public Label NumberOfEmployee;
+    public Label NumberOfCitizens;
+    public Label NumberOfComplaints;
+    public Label NumberOfReports;
 
-    public void initialize() {
-        // Call updateNumberOfCrimes on initialization
+    public void initialize() throws SQLException {
         updateNumberOfCrimes();
         updateNumberOfFines();
+        updateComplaintDetailsChart();
+        updateNumberOfEmployees();
+        updateNumberOfCitizens();
+        updateNumberOfComplaints();
+        updateNumberOfReports();
+    }
+    private void updateComplaintDetailsChart() {
+        try {
+            // Get complaint details from the database
+            Map<String, Integer> complaintDetails = ComplaintModel.getComplaintDetails();
+
+            // Create a data series for the bar chart
+            XYChart.Series<String, Number> series = new XYChart.Series<>();
+            series.setName("Complaints Count");
+
+            // Add data to the series
+            for (Map.Entry<String, Integer> entry : complaintDetails.entrySet()) {
+                series.getData().add(new XYChart.Data<>(entry.getKey(), entry.getValue()));
+            }
+
+            // Set the data to the bar chart
+            ObservableList<XYChart.Series<String, Number>> chartData = FXCollections.observableArrayList();
+            chartData.add(series);
+            ComplaintDetails.setData(chartData);
+
+            // Manually set tick marks with whole numbers
+            ObservableList<String> categories = FXCollections.observableArrayList(complaintDetails.keySet());
+            ComplaintsDay.setCategories(categories);
+            ComplaintsCount.setAutoRanging(false);
+            ComplaintsCount.setLowerBound(0);
+            ComplaintsCount.setUpperBound(getMaxComplaintCount(complaintDetails) + 1);
+            ComplaintsCount.setTickUnit(1);
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    private int getMaxComplaintCount(Map<String, Integer> complaintDetails) {
+        return complaintDetails.values().stream()
+                .mapToInt(Integer::intValue)
+                .max()
+                .orElse(0);
     }
     @FXML
     void ManageTraffic(ActionEvent event) throws IOException {
@@ -128,6 +193,53 @@ public class DashBoardFormController {
 
             // Update the label text
             NumberOfFines.setText(String.valueOf(numberOfFines));
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void updateNumberOfEmployees() {
+        try {
+            // Get the number of employees from the database
+            int numberOfEmployees = EmployeesModel.getAllEmployees().size();
+
+            // Update the label text
+            NumberOfEmployee.setText(String.valueOf(numberOfEmployees));
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    private void updateNumberOfCitizens() {
+        try {
+            // Get the number of citizens from the database
+            int numberOfCitizens = CitizenModel.getAllCitizens().size();
+
+            // Update the label text
+            NumberOfCitizens.setText(String.valueOf(numberOfCitizens));
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void updateNumberOfComplaints() {
+        try {
+            // Get the number of complaints from the database
+            int numberOfComplaints = ComplaintModel.getComplaintDetails().size();
+
+            // Update the label text
+            NumberOfComplaints.setText(String.valueOf(numberOfComplaints));
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void updateNumberOfReports() {
+        try {
+            // Get the number of police reports from the database
+            int numberOfReports = PoliceReportModel.getAllReports().size();
+
+            // Update the label text
+            NumberOfReports.setText(String.valueOf(numberOfReports));
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

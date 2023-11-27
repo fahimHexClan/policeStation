@@ -165,6 +165,6 @@ public class CitizenModel {
         }
         return ids;
     }
-
-
 }
+
+

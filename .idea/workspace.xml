@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="451f0e7f-11a1-4e82-9643-0ff9fd2af8c8" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/3766797.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/80_cG9saWNlX3dvcmstMDM.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/SignInPage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/Dashboard1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/Dashboard2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/employees-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/icons8-arrest-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/icons8-citizen-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/icons8-complaint-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/icons8-report-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/icons8-traffic-jam-100.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/DB/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/DB/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/DashBoardFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/DashBoardFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageComplaintsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageComplaintsFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageEmployeesFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageEmployeesFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/CitizenModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/CitizenModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/ComplaintModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/ComplaintModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/DashBoard_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoard_Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SignIn_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SignIn_Form.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,26 +70,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_directory_selection&quot;: &quot;/home/fahim8421/IdeaProjects/policeStation/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/fahim8421/IdeaProjects/policeStation/src/main/resources/Assets/Background pics&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_directory_selection": "/home/fahim8421/IdeaProjects/policeStation/src/main/java",
+    "last_opened_file_path": "/home/fahim8421/IdeaProjects/policeStation/src/main/resources/Assets/logo",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="lk.ijse.policeStation.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/Assets/Background pics" />
       <recent name="$PROJECT_DIR$/src/main/resources/Assets/logo" />
+      <recent name="$PROJECT_DIR$/src/main/resources/Assets/Background pics" />
       <recent name="$PROJECT_DIR$/src/main/resources/Report" />
       <recent name="$PROJECT_DIR$/src/main/resources/Assets/gifs" />
       <recent name="$PROJECT_DIR$/src/main/resources/Assets" />
@@ -328,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701006880906</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1701024696534</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1701024696534</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

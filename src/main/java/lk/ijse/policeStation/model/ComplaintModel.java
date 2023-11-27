@@ -8,9 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class ComplaintModel {
 
@@ -129,5 +127,24 @@ public class ComplaintModel {
         }
     }
 
+//bar chart eke complaints details tika ganna
+    public static Map<String, Integer> getComplaintDetails() throws SQLException, ClassNotFoundException {
+        Connection connection = DatabaseConnection.getInstance().getConnection();
+        String sql = "SELECT date, COUNT(*) FROM Complaint GROUP BY date";
+        PreparedStatement stm = connection.prepareStatement(sql);
 
+        ResultSet rs = stm.executeQuery();
+        Map<String, Integer> complaintDetails = new HashMap<>();
+
+        while (rs.next()) {
+            String date = rs.getString("date");
+            int count = rs.getInt(2);
+
+            // Assuming the date is in a format suitable for the chart, you might need to adjust this
+            complaintDetails.put(date, count);
+        }
+
+        return complaintDetails;
+
+    }
 }

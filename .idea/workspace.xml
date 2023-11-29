@@ -5,50 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="451f0e7f-11a1-4e82-9643-0ff9fd2af8c8" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/1911.i505.019.detective board.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/2307.i032.004.S.m005.c13.isometric police isolated.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/36618.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/3832.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/5715.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/8170283.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/Road18.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/brown-wooden-mallet-judge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/cars-city-traffic-daylight.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/hands-car-steering-wheel.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/laptop-form-with-ticks.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/Background pics/roadsign9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/clear-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/delete-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/icons8-cash-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/icons8-driver-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/icons8-vehicles-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/save-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/search-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Assets/logo/update-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Report/policeReport.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/DashBoardFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/DashBoardFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCitizenFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCitizenFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageComplaintsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageComplaintsFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCrimeFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCrimeFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageDriverFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageDriverFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageEmployeesFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageEmployeesFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageFinesFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageFinesFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManagePoliceReportFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManagePoliceReportFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageVehicleFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageVehicleFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/logInFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/logInFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Report/police.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Report/police.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/DashBoard_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoard_Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/LogIn_Form .fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/LogIn_Form .fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageCitizen_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageCitizen_Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageComplaints_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageComplaints_Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageCrime_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageCrime_Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageDriverForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageDriverForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageEmployees_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageEmployees_Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageFines_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageFines_Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManagePoliceReport_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManagePoliceReport_Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageVehicle_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageVehicle_Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/MangeTraffic_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MangeTraffic_Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SignIn_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SignIn_Form.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,19 +60,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_directory_selection": "/home/fahim8421/IdeaProjects/policeStation/src/main/java",
-    "last_opened_file_path": "/home/fahim8421/IdeaProjects/policeStation/src/main/resources/Report",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/fahim8421/IdeaProjects/policeStation/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/fahim8421/IdeaProjects/policeStation/src/main/resources/Report&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="lk.ijse.policeStation.dto" />
@@ -379,7 +339,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701080021412</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1701256454998</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1701256454998</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

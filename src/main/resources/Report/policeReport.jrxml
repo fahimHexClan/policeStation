@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2023-11-29T20:24:49 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="policeReport" pageWidth="1000" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="226ef15e-ea18-4688-a1ab-3a927e0251a5">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT
+    c.CitizenId,
+    c.name,
+    c.address,
+    c.contactNumber,
+    c.gender,
+    c.Dob,
+    cd.CrimeId,
+    com.ComplaintId,
+    pr.policeReportId
+FROM
+    Citizen c
+LEFT JOIN crimeDetails cd ON c.CitizenId = cd.CitizenId
+LEFT JOIN Complaint com ON c.CitizenId = com.CitizenId
+LEFT JOIN PoliceReport pr ON c.CitizenId = pr.CitizenId;]]>
+	</queryString>
+	<field name="CitizenId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contactNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gender" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Dob" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CrimeId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ComplaintId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="policeReportId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="CitizenId">
+		<groupExpression><![CDATA[$F{CitizenId}]]></groupExpression>
+	</group>
+	<group name="name">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+	</group>
+	<group name="address">
+		<groupExpression><![CDATA[$F{address}]]></groupExpression>
+	</group>
+	<group name="contactNumber">
+		<groupExpression><![CDATA[$F{contactNumber}]]></groupExpression>
+	</group>
+	<group name="gender">
+		<groupExpression><![CDATA[$F{gender}]]></groupExpression>
+	</group>
+	<group name="Dob">
+		<groupExpression><![CDATA[$F{Dob}]]></groupExpression>
+	</group>
+	<group name="CrimeId">
+		<groupExpression><![CDATA[$F{CrimeId}]]></groupExpression>
+	</group>
+	<group name="ComplaintId">
+		<groupExpression><![CDATA[$F{ComplaintId}]]></groupExpression>
+	</group>
+	<group name="policeReportId">
+		<groupExpression><![CDATA[$F{policeReportId}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="404" y="30" width="196" height="30" uuid="4e21998f-c0b9-409c-8b6a-1165750190be"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[POLICE REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="2" width="100" height="30" uuid="5f209943-e19e-4929-b496-f7d71702d556"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CitizenId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="2" width="100" height="30" uuid="9054ca74-0c9a-4ec4-9a60-871c8bd8d372"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="2" width="100" height="30" uuid="142280d3-17b0-43bc-926f-cf1bcecb429d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="3" width="100" height="30" uuid="f20bd1ba-eb18-4df9-9fe1-0f9c1f0ad8c4"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[contactNumber]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="1" width="100" height="30" uuid="9a0c5be3-eed0-4c6c-9bcb-1f8fdf214e61"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="2" width="100" height="30" uuid="9000d123-f095-472b-88e6-ef6b72ebc833"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dob]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="581" y="1" width="100" height="30" uuid="ca744858-dbf3-4173-8e9f-2900eec12cae"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CrimeId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="683" y="0" width="100" height="30" uuid="5edb3ae6-5bed-4af6-93e6-cd8b0a83e7ca"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ComplaintId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="794" y="0" width="100" height="30" uuid="db905a65-437a-4a09-aa0c-3ea2970d6cb7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[policeReportId]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="4" width="100" height="30" uuid="542c72d9-503a-4210-a194-f118eb301a49"/>
+				<textFieldExpression><![CDATA[$F{CitizenId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="93" y="3" width="100" height="30" uuid="839e56bc-832b-4ce3-ab90-c02d4d3de89f"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="8" width="100" height="30" uuid="cef65571-e2a0-41b3-8170-50992867f2b6"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="6" width="107" height="30" uuid="cdf27888-03ed-43db-b74b-8826b1bb0e48"/>
+				<textFieldExpression><![CDATA[$F{contactNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="5" width="100" height="30" uuid="9a88338b-6450-4a7f-9d59-161c42253407"/>
+				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="6" width="100" height="30" uuid="5ee80ed3-ced1-4c17-b81d-3e4fedec8056"/>
+				<textFieldExpression><![CDATA[$F{Dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="583" y="4" width="100" height="30" uuid="1b15d2fc-0b21-4e9a-aafb-d510a387e60e"/>
+				<textFieldExpression><![CDATA[$F{CrimeId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="688" y="5" width="100" height="30" uuid="b7cd45f2-8572-4235-8c0a-d37ed8e309df"/>
+				<textFieldExpression><![CDATA[$F{ComplaintId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="800" y="3" width="100" height="30" uuid="2ea81528-a8ff-46a8-9b6e-a5f73abae33d"/>
+				<textFieldExpression><![CDATA[$F{policeReportId}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -20,6 +20,9 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
 import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -115,7 +118,7 @@ public class ManagePoliceReportFormController {
 
             } catch (SQLException e) {
                 e.printStackTrace();
-                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Error occurred while saving data").show();
@@ -173,7 +176,7 @@ public class ManagePoliceReportFormController {
             policeReport.add(policeReportTm);
         }
 
-        ObservableList<PoliceReportTm>policeReportTms  = FXCollections.observableArrayList(policeReport);
+        ObservableList<PoliceReportTm> policeReportTms = FXCollections.observableArrayList(policeReport);
 
         TablePoliceReportDetails.setItems(policeReportTms);
 
@@ -197,7 +200,7 @@ public class ManagePoliceReportFormController {
 
             } catch (SQLException e) {
                 e.printStackTrace();
-                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Error").show();
@@ -226,7 +229,7 @@ public class ManagePoliceReportFormController {
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
-                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Error").show();
@@ -234,23 +237,60 @@ public class ManagePoliceReportFormController {
         }
     }
 
-    public void BtnClearOnAction(ActionEvent actionEvent) {
+    public void ReportOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException, JRException {
+            Connection connection = null;
+            try {
+                // Get a connection to the database
+                connection = DatabaseConnection.getInstance().getConnection();
+
+                // Provide the SQL query to fetch data for the report
+                String query = "SELECT " +
+                        "c.CitizenId, " +
+                        "c.name, " +
+                        "c.address, " +
+                        "c.contactNumber, " +
+                        "c.gender, " +
+                        "c.Dob, " +
+                        "cd.CrimeId, " +
+                        "com.ComplaintId, " +
+                        "pr.policeReportId " +
+                        "FROM Citizen c " +
+                        "LEFT JOIN crimeDetails cd ON c.CitizenId = cd.CitizenId " +
+                        "LEFT JOIN Complaint com ON c.CitizenId = com.CitizenId " +
+                        "LEFT JOIN PoliceReport pr ON c.CitizenId = pr.CitizenId";
+
+                // Create a PreparedStatement and execute the query
+                PreparedStatement preparedStatement = connection.prepareStatement(query);
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                // Create a JasperReports data source from the result set
+                JRResultSetDataSource resultSetDataSource = new JRResultSetDataSource(resultSet);
+
+                // Load the JasperReport design from the JRXML file
+                InputStream reportStream = getClass().getResourceAsStream("/Report/policeReport.jrxml");
+                JasperDesign jasperDesign = JRXmlLoader.load(reportStream);
+
+                // Compile the JasperReport
+                JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+
+                // Fill the report with data and create a JasperPrint object
+                JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, resultSetDataSource);
+
+                // Display the JasperViewer with the filled report
+                net.sf.jasperreports.view.JasperViewer.viewReport(jasperPrint, false);
+            } finally {
+                // Close the database connection in a finally block to ensure it's closed even if an exception occurs
+                if (connection != null) {
+                    connection.close();
+                }
+            }
+        }
+
+        public void BtnClearOnAction(ActionEvent actionEvent) {
         TxtReportId.clear();
         TxtDescription.clear();
         TxtDate.clear();
         CmdCitizenIds.getSelectionModel().clearSelection();
         CmdUserIds.getSelectionModel().clearSelection();
-    }
-
-    public void ReportOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException, JRException {
-        Connection connection = connection = DatabaseConnection.getInstance().getConnection();
-        String query = "SELECT * FROM PoliceReport;";
-        PreparedStatement preparedStatement = connection.prepareStatement(query);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        JRResultSetDataSource resultSetDataSource = new JRResultSetDataSource(resultSet);
-        JasperDesign jasperDesign = JRXmlLoader.load(this.getClass().getResourceAsStream("/Report/police.jrxml"));
-        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
-        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, resultSetDataSource);
-        net.sf.jasperreports.view.JasperViewer.viewReport(jasperPrint, false);
     }
 }

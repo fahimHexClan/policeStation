@@ -219,9 +219,9 @@ public class ManageEmployeesFormController {
 
         // Validate Employee Type
         String employeeTypeText = TxtEmpType.getText();
-        boolean isEmployeeTypeValidated = Pattern.matches("Full Time|Part Time", employeeTypeText);
+        boolean isEmployeeTypeValidated = Pattern.matches("[A-Za-z0-9/.\\s]{3,}", employeeTypeText);
         if (!isEmployeeTypeValidated) {
-            new Alert(Alert.AlertType.ERROR, "Invalid Employee Type because u chosse this(Full Time|Part Time) ").show();
+            new Alert(Alert.AlertType.ERROR, "Invalid Employee Type  ").show();
             return false;
         }
 

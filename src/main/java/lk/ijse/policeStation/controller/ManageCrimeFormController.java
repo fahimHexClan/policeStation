@@ -251,7 +251,7 @@ public class ManageCrimeFormController {
         }
 
         String typeOfCrimeText = TxtTypeOfCrime.getText();
-        boolean isTypeOfCrimeValidated = Pattern.matches("[A-Za-z0-9/.\\s]{3,}", typeOfCrimeText);
+        boolean isTypeOfCrimeValidated = Pattern.matches("[A-Za-z0-9/.\\s]{1,}", typeOfCrimeText);
         if (!isTypeOfCrimeValidated) {
             new Alert(Alert.AlertType.ERROR, "Invalid typeOfCrime").show();
             return false;
@@ -264,7 +264,7 @@ public class ManageCrimeFormController {
         }
 
         String criminalRecordText = TxtCriminalRecord.getText();
-        boolean isCriminalRecordValidated = Pattern.matches("[A-Za-z0-9/.\\s]{3,}", criminalRecordText);
+        boolean isCriminalRecordValidated = Pattern.matches("[A-Za-z0-9/.\\s]{1,}", criminalRecordText);
         if (!isCriminalRecordValidated) {
             new Alert(Alert.AlertType.ERROR, "Invalid criminalRecord").show();
             return false;

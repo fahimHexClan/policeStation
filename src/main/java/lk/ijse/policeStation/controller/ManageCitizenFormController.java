@@ -126,10 +126,14 @@ public class ManageCitizenFormController {
                 }
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace(); // You can log the exception or show a more user-friendly message
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+                // Handle class not found exception
+                e.printStackTrace(); // You can log the exception or show a more user-friendly message
+                new Alert(Alert.AlertType.ERROR, "Error occurred while saving data").show();
             }
+
         }
     }
 
@@ -277,10 +281,12 @@ public class ManageCitizenFormController {
                 } else {
                     new Alert(Alert.AlertType.INFORMATION, "Data Not Deleted ").show();
                 }
-            } catch (ClassNotFoundException | SQLException e) {
-                new Alert(Alert.AlertType.INFORMATION, "Operation Fail ").show();
-
+            } catch (SQLException e) {
                 e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Error occurred while saving data").show();
             }
         }
     }
@@ -302,9 +308,11 @@ public class ManageCitizenFormController {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Error occurred while saving data").show();
         }
     }
     }
@@ -321,9 +329,12 @@ public class ManageCitizenFormController {
             } else {
                 new Alert(Alert.AlertType.ERROR, " No Items Found").show();
             }
-        } catch (ClassNotFoundException | SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "Something Wrong").show();
+        } catch (SQLException e) {
             e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Error occurred while saving data").show();
         }
     }
 

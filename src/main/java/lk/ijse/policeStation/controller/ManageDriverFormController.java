@@ -138,8 +138,6 @@ public class ManageDriverFormController {
 
     }
 
-
-
     private void visualize() {
         ClmDriverId.setCellValueFactory(new PropertyValueFactory<>("TxtDriverId"));
         ClmDriverName.setCellValueFactory(new PropertyValueFactory<>("TxtDriverName"));
@@ -217,7 +215,7 @@ public class ManageDriverFormController {
                     new Alert(Alert.AlertType.INFORMATION, "Data Not Deleted ").show();
                 }
             } catch (ClassNotFoundException | SQLException e) {
-                new Alert(Alert.AlertType.INFORMATION, "Operation Fail ").show();
+                new Alert(Alert.AlertType.INFORMATION,e.getMessage()).show();
 
                 e.printStackTrace();
             }
@@ -241,9 +239,11 @@ public class ManageDriverFormController {
                 }
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Error occurred while saving data").show();
             }
         }
     }
@@ -300,16 +300,17 @@ public class ManageDriverFormController {
 
                 if (isUpdated) {
                     new Alert(Alert.AlertType.INFORMATION, "Data updated successfully").show();
-                    // After updating, refresh the table or perform any other necessary actions
                     setTable();
                 } else {
                     new Alert(Alert.AlertType.ERROR, "Data not updated").show();
                 }
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Error occurred while Update data").show();
             }
         }
     }

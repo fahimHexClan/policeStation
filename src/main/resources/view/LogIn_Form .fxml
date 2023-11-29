@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -16,38 +17,59 @@
             <Image url="@../Assets/Background pics/NW.png" />
          </image>
       </ImageView>
-      <TextField fx:id="UsrName" layoutX="795.0" layoutY="335.0" opacity="0.97" prefHeight="45.0" prefWidth="331.0" promptText="Enter UserName" style="-fx-border-color: blue; -fx-border-width: blue; -fx-background-color: #dfe6e9;" />
-      <TextField fx:id="UsrPassword" layoutX="796.0" layoutY="414.0" prefHeight="45.0" prefWidth="331.0" promptText="Password" style="-fx-border-color: blue; -fx-background-color: #dfe6e9;">
+      <TextField fx:id="UsrName" layoutX="795.0" layoutY="335.0" opacity="0.97" prefHeight="45.0" prefWidth="320.0" promptText="Enter UserName" style="-fx-border-width: blue; -fx-background-color: White; -fx-background-radius: 10px;">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold Italic" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="UsrPassword" layoutX="796.0" layoutY="414.0" prefHeight="45.0" prefWidth="320.0" promptText="Password" style="-fx-background-radius: 10px; -fx-background-color: White;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </TextField>
-      <Button layoutX="868.0" layoutY="493.0" mnemonicParsing="false" onAction="#BtnLogInOnAction" prefHeight="39.0" prefWidth="151.0" style="-fx-border-color: blue;" text="LogIn" />
-      <Text fill="#170606" layoutX="789.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN PAGE">
+      <Button layoutX="796.0" layoutY="492.0" mnemonicParsing="false" onAction="#BtnLogInOnAction" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 10px; -fx-background-color: #c8d6e5; -fx-border-color: blue;" text="LogIn">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Text fill="#070707" layoutX="789.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN PAGE">
          <font>
             <Font name="System Bold" size="46.0" />
          </font>
       </Text>
-      <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="727.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="742.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Assets/logo/username-100.png" />
+            <Image url="@../Assets/logo/username.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="727.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="743.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Assets/logo/icons8-passcodes-50.png" />
+            <Image url="@../Assets/logo/password-100.png" />
          </image>
       </ImageView>
-      <TextField fx:id="UsrId" layoutX="795.0" layoutY="265.0" prefHeight="45.0" prefWidth="331.0" promptText="Enter UserId" style="-fx-border-color: blue; -fx-border-width: blue; -fx-background-color: #dfe6e9;" />
-      <ImageView fitHeight="50.0" fitWidth="42.0" layoutX="733.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Assets/logo/id.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="868.0" layoutY="566.0" mnemonicParsing="false" onAction="#BtnSignUpOnAction" prefHeight="39.0" prefWidth="151.0" style="-fx-border-color: blue;" text="SignUp" />
-      <Label layoutX="923.0" layoutY="536.0" text="OR" textFill="#070101">
+      <TextField fx:id="UsrId" layoutX="795.0" layoutY="265.0" prefHeight="45.0" prefWidth="320.0" promptText="Enter UserId" style="-fx-border-width: blue; -fx-background-color: White; -fx-background-radius: 10px;">
          <font>
-            <Font name="System Bold" size="22.0" />
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <ImageView fitHeight="50.0" fitWidth="42.0" layoutX="748.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/logo/UserId.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="799.0" layoutY="579.0" mnemonicParsing="false" onAction="#BtnSignUpOnAction" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 10px; -fx-background-color: #c8d6e5; -fx-border-color: blue;" text="SignUp">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="811.0" layoutY="547.0" prefHeight="26.0" prefWidth="296.0" text="-----  Or Create New Account ?  -----" textFill="#dcd8d8">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
       <ImageView fitHeight="99.0" fitWidth="219.0" layoutX="307.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">

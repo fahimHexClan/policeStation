@@ -47,11 +47,9 @@ public class logInFormController {
 
     private void createDashboard() {
         try {
-            // Load the Dashboard Form
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DashBoard_Form.fxml"));
             Object dashboardRoot = loader.load();
 
-            // Set the Dashboard Scene
             setScene(dashboardRoot);
         } catch (IOException e) {
             e.printStackTrace();
@@ -59,7 +57,6 @@ public class logInFormController {
     }
 
     private void setScene(Object root) {
-        // Set the scene for the current window
         getStage().getScene().setRoot((javafx.scene.Parent) root);
     }
 
@@ -70,8 +67,6 @@ public class logInFormController {
     public void BtnSignUpOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SignIn_Form.fxml"));
         Object signUpRoot = loader.load();
-
-        // Set the Sign-Up Scene
         setScene(signUpRoot);
 
     }

@@ -129,11 +129,6 @@ public class ManageVehicleFormController {
 
         return true;
     }
-    @FXML
-    void BackOnAction(ActionEvent event) throws IOException {
-        javafx.scene.Node node = (Node) FXMLLoader.load(getClass().getResource("/view/MangeTraffic_Form.fxml"));
-        SubAnchor.getChildren().setAll(node);
-    }
 
     @FXML
     void BtnClearOnAction(ActionEvent event) {
@@ -184,7 +179,10 @@ public class ManageVehicleFormController {
                     new Alert(Alert.AlertType.ERROR, "Data Not Added").show();
                 }
 
-            } catch (SQLException | ClassNotFoundException e) {
+            } catch (SQLException e) {
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            } catch (ClassNotFoundException e) {
                 e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Error occurred while saving data").show();
             }
@@ -260,9 +258,12 @@ public class ManageVehicleFormController {
             } else {
                 new Alert(Alert.AlertType.ERROR, " No Items Found").show();
             }
-        } catch (ClassNotFoundException | SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "Something Wrong").show();
+        } catch (SQLException e) {
             e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Error").show();
         }
     }
 
@@ -294,9 +295,11 @@ public class ManageVehicleFormController {
                 }
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Error ").show();
             }
         }
     }

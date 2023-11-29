@@ -344,8 +344,12 @@ public class ManageEmployeesFormController {
                     new Alert(Alert.AlertType.ERROR, "Data not updated").show();
                 }
 
-            } catch (SQLException | ClassNotFoundException e) {
-                throw new RuntimeException(e);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Error").show();
             }
         }
     }

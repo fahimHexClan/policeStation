@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageCrimeFormController">
     <children>
-        <AnchorPane layoutX="26.0" layoutY="30.0" prefHeight="649.0" prefWidth="1015.0" style="-fx-background-color: white;">
+        <AnchorPane layoutX="13.0" layoutY="24.0" prefHeight="685.0" prefWidth="1029.0" style="-fx-background-color: white;">
             <children>
-                <Button layoutX="840.0" layoutY="2.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="148.0" style="-fx-background-color: Yellow;" text="Crime Details Print" />
-                <Label layoutX="369.0" prefHeight="36.0" prefWidth="424.0" text="Crime ">
+                <Label layoutX="369.0" prefHeight="44.0" prefWidth="141.0" text="Crime ">
                     <font>
                         <Font name="System Bold Italic" size="35.0" />
                     </font>
                 </Label>
-                <TableView fx:id="TableCrimeDetails" layoutX="4.0" layoutY="304.0" prefHeight="345.0" prefWidth="984.0">
+                <TableView fx:id="TableCrimeDetails" layoutX="4.0" layoutY="272.0" prefHeight="409.0" prefWidth="1019.0">
                     <columns>
                         <TableColumn fx:id="clmCrimeId" prefWidth="75.0" text="CrimeId" />
                         <TableColumn fx:id="ClmLocation" prefWidth="75.0" text="Location" />
@@ -29,85 +32,141 @@
                         <TableColumn fx:id="ClmCriminalRecord" prefWidth="161.42926025390625" text="CriminalRecord" />
                         <TableColumn fx:id="ClmMotiveReson" prefWidth="99.048095703125" text="MotiveReson" />
                         <TableColumn fx:id="ClmStatus" prefWidth="63.095458984375" text="Status" />
-                        <TableColumn fx:id="lmTypeOfCrime" prefWidth="100.2386474609375" text="TypeOfCrime" />
-                        <TableColumn fx:id="ClmWeponsUsed" prefWidth="107.6195068359375" text="Wepons Used" />
+                        <TableColumn fx:id="lmTypeOfCrime" prefWidth="115.0003662109375" text="TypeOfCrime" />
+                        <TableColumn fx:id="ClmWeponsUsed" prefWidth="130.0006103515625" text="Wepons Used" />
                     </columns>
                 </TableView>
-                <Button layoutX="865.0" layoutY="262.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">
+                <Button layoutX="896.0" layoutY="52.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="106.0" style="-fx-background-color: #c8d6e5;" text="Save">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/logo/save-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Button>
-                <Button layoutX="725.0" layoutY="261.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Update">
+                <Button layoutX="895.0" layoutY="140.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Update">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/logo/update-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Button>
-                <Button layoutX="724.0" layoutY="221.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Delete">
+                <Button layoutX="897.0" layoutY="94.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="36.0" prefWidth="106.0" style="-fx-background-color: #c8d6e5;" text="Delete">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/logo/delete-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Button>
-                <Button layoutX="865.0" layoutY="218.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Clear">
+                <Button layoutX="896.0" layoutY="186.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Clear">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/logo/clear-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Button>
+            <Separator layoutX="4.0" layoutY="43.0" prefHeight="3.0" prefWidth="1020.0" style="-fx-background-color: #00BF63;" />
+            <ImageView fitHeight="244.0" fitWidth="260.0" layoutX="5.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Background pics/1911.i505.019.detective board.jpg" />
+               </image>
+            </ImageView>
             </children></AnchorPane>
-        <JFXTextField fx:id="TxtCrimeID" layoutX="62.0" layoutY="138.0" prefHeight="25.0" prefWidth="264.0" />
-        <Label layoutX="62.0" layoutY="115.0" prefHeight="29.0" prefWidth="241.0" text="Crime Id">
+        <JFXTextField fx:id="TxtCrimeID" layoutX="291.0" layoutY="88.0" prefHeight="25.0" prefWidth="264.0" />
+        <Label layoutX="291.0" layoutY="75.0" prefHeight="29.0" prefWidth="241.0" text="Crime Id">
             <font>
-                <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="11.0" />
             </font></Label>
-        <JFXTextField fx:id="TxtDate" layoutX="61.0" layoutY="293.0" prefHeight="25.0" prefWidth="264.0" />
-        <Label layoutX="61.0" layoutY="270.0" prefHeight="29.0" prefWidth="241.0" text="Date">
+        <JFXTextField fx:id="TxtDate" layoutX="291.0" layoutY="263.0" prefHeight="25.0" prefWidth="264.0" />
+        <Label layoutX="291.0" layoutY="245.0" prefHeight="29.0" prefWidth="241.0" text="Date">
             <font>
-                <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="11.0" />
             </font></Label>
-        <JFXTextField fx:id="TxtLocation" layoutX="62.0" layoutY="192.0" prefHeight="25.0" prefWidth="264.0" />
-        <Label layoutX="62.0" layoutY="168.0" prefHeight="29.0" prefWidth="241.0" text="Location">
+        <JFXTextField fx:id="TxtLocation" layoutX="603.0" layoutY="88.0" prefHeight="25.0" prefWidth="256.0" />
+        <Label layoutX="602.0" layoutY="70.0" prefHeight="29.0" prefWidth="241.0" text="Location">
             <font>
-                <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="11.0" />
             </font></Label>
-        <JFXTextField fx:id="TxtTypeOfCrime" layoutX="703.0" layoutY="137.0" prefHeight="25.0" prefWidth="264.0" />
-        <Label layoutX="702.0" layoutY="114.0" prefHeight="29.0" prefWidth="241.0" text="Type Of Crime">
+        <JFXTextField fx:id="TxtTypeOfCrime" layoutX="603.0" layoutY="133.0" prefHeight="25.0" prefWidth="255.0" />
+        <Label layoutX="602.0" layoutY="114.0" prefHeight="29.0" prefWidth="241.0" text="Type Of Crime">
             <font>
-                <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="11.0" />
             </font></Label>
-        <JFXTextField fx:id="TxtCriminalRecord" layoutX="402.0" layoutY="192.0" prefHeight="25.0" prefWidth="264.0" />
-        <Label layoutX="403.0" layoutY="167.0" prefHeight="29.0" prefWidth="241.0" text="Criminal Record">
+        <JFXTextField fx:id="TxtCriminalRecord" layoutX="291.0" layoutY="175.0" prefHeight="25.0" prefWidth="264.0" />
+        <Label layoutX="292.0" layoutY="155.0" prefHeight="29.0" prefWidth="241.0" text="Criminal Record">
             <font>
-                <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="11.0" />
             </font></Label>
-        <JFXTextField fx:id="TxtMotiveReson" layoutX="400.0" layoutY="240.0" prefHeight="25.0" prefWidth="264.0" />
-        <Label layoutX="401.0" layoutY="218.0" prefHeight="29.0" prefWidth="241.0" text="Motive reason">
+        <JFXTextField fx:id="TxtMotiveReson" layoutX="603.0" layoutY="218.0" prefHeight="25.0" prefWidth="258.0" />
+        <Label layoutX="604.0" layoutY="197.0" prefHeight="29.0" prefWidth="241.0" text="Motive reason">
             <font>
-                <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="11.0" />
             </font></Label>
-        <JFXTextField fx:id="TxtInjuries" layoutX="401.0" layoutY="138.0" prefHeight="25.0" prefWidth="264.0" />
-        <Label layoutX="401.0" layoutY="117.0" prefHeight="29.0" prefWidth="241.0" text="Injuries or Casualties">
+        <JFXTextField fx:id="TxtInjuries" layoutX="290.0" layoutY="132.0" prefHeight="25.0" prefWidth="264.0" />
+        <Label layoutX="290.0" layoutY="112.0" prefHeight="29.0" prefWidth="241.0" text="Injuries or Casualties">
             <font>
-                <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="11.0" />
             </font></Label>
-        <JFXTextField fx:id="TxtStatus" layoutX="404.0" layoutY="291.0" prefHeight="25.0" prefWidth="264.0" />
-        <Label layoutX="404.0" layoutY="271.0" prefHeight="29.0" prefWidth="241.0" text="Status">
+        <JFXTextField fx:id="TxtStatus" layoutX="606.0" layoutY="261.0" prefHeight="25.0" prefWidth="256.0" />
+        <Label layoutX="606.0" layoutY="243.0" prefHeight="29.0" prefWidth="241.0" text="Status">
             <font>
-                <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="11.0" />
             </font></Label>
-        <JFXTextField fx:id="TxtDeatails" layoutX="61.0" layoutY="242.0" prefHeight="25.0" prefWidth="264.0" />
-        <Label layoutX="62.0" layoutY="218.0" prefHeight="29.0" prefWidth="241.0" text="Details about crime">
+        <JFXTextField fx:id="TxtDeatails" layoutX="291.0" layoutY="219.0" prefHeight="25.0" prefWidth="264.0" />
+        <Label layoutX="292.0" layoutY="199.0" prefHeight="29.0" prefWidth="241.0" text="Details about crime">
             <font>
-                <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="11.0" />
             </font></Label>
-        <JFXTextField fx:id="TxtWeponUsed" layoutX="705.0" layoutY="191.0" prefHeight="25.0" prefWidth="264.0" />
-        <Label layoutX="704.0" layoutY="168.0" prefHeight="29.0" prefWidth="241.0" text="Weapons Used">
+        <JFXTextField fx:id="TxtWeponUsed" layoutX="605.0" layoutY="176.0" prefHeight="25.0" prefWidth="253.0" />
+        <Label layoutX="604.0" layoutY="155.0" prefHeight="29.0" prefWidth="241.0" text="Weapons Used">
             <font>
-                <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="11.0" />
             </font></Label>
-        <Button layoutX="272.0" layoutY="126.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="35.0" prefWidth="68.0" style="-fx-background-color: #17c0eb;" text="Search">
+        <Button layoutX="501.0" layoutY="74.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="33.0" prefWidth="34.0" style="-fx-background-color: white;">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/search-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
         </Button>
+      <JFXButton layoutX="933.0" layoutY="253.0" onAction="#ReportOnAction" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: #c8d6e5;">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/icons8-report-100.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
     </children>
 </AnchorPane>

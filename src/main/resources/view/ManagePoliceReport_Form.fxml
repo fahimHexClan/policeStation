@@ -6,63 +6,114 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManagePoliceReportFormController">
    <children>
-      <AnchorPane layoutX="42.0" layoutY="42.0" prefHeight="644.0" prefWidth="964.0" style="-fx-background-color: White;">
+      <AnchorPane layoutX="19.0" layoutY="18.0" prefHeight="694.0" prefWidth="1012.0" style="-fx-background-color: White;">
          <children>
-            <ComboBox fx:id="CmdCitizenIds" layoutX="66.0" layoutY="198.0" prefHeight="45.0" prefWidth="276.0" promptText="Citizens Ids" />
-            <Label layoutX="351.0" layoutY="7.0" prefHeight="51.0" prefWidth="331.0" text="Police Report">
+            <ComboBox fx:id="CmdCitizenIds" layoutX="236.0" layoutY="172.0" prefHeight="34.0" prefWidth="276.0" promptText="Citizens Ids" style="-fx-background-radius: 30px;" />
+            <Label layoutX="387.0" layoutY="-3.0" prefHeight="51.0" prefWidth="331.0" text="Police Report">
                <font>
                   <Font name="System Bold Italic" size="29.0" />
                </font>
             </Label>
-            <TableView fx:id="TablePoliceReportDetails" layoutX="4.0" layoutY="293.0" prefHeight="352.0" prefWidth="955.0">
-              <columns>
-                <TableColumn fx:id="ClmCitizenIds" prefWidth="132.38151168823242" text="CitizenIds" />
-                <TableColumn fx:id="ClmUserIds" minWidth="0.0" prefWidth="169.76268005371094" text="UserIds" />
+            <TableView fx:id="TablePoliceReportDetails" layoutX="4.0" layoutY="232.0" prefHeight="460.0" prefWidth="1003.0">
+               <columns>
+                  <TableColumn fx:id="ClmCitizenIds" prefWidth="132.38151168823242" text="CitizenIds" />
+                  <TableColumn fx:id="ClmUserIds" minWidth="0.0" prefWidth="169.76268005371094" text="UserIds" />
                   <TableColumn fx:id="ClmReportId" minWidth="0.0" prefWidth="141.19107055664062" text="Report Id" />
                   <TableColumn fx:id="ClmDate" minWidth="0.0" prefWidth="127.14334106445312" text="Date" />
                   <TableColumn fx:id="ClmDescription" prefWidth="406.43035888671875" text="Description" />
-              </columns>
+               </columns>
             </TableView>
-            <ComboBox fx:id="CmdUserIds" layoutX="67.0" layoutY="121.0" prefHeight="49.0" prefWidth="277.0" promptText="Users Ids" />
-            <JFXButton layoutX="173.0" layoutY="34.0" onAction="#ReportOnAction" text="report" />
+            <ComboBox fx:id="CmdUserIds" layoutX="237.0" layoutY="117.0" prefHeight="34.0" prefWidth="276.0" promptText="Users Ids" style="-fx-background-radius: 30px;" />
+            <JFXButton layoutX="792.0" layoutY="185.0" onAction="#ReportOnAction" prefHeight="39.0" prefWidth="62.0" style="-fx-background-color: #c8d6e5;" text="Report">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/logo/icons8-report-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <Separator layoutX="-5.0" layoutY="42.0" prefHeight="0.0" prefWidth="1015.0" style="-fx-background-color: #00BF63;" />
+            <ImageView fitHeight="125.0" fitWidth="231.0" layoutX="4.0" layoutY="74.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Assets/Background pics/laptop-form-with-ticks.jpg" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
-      <JFXTextField fx:id="TxtDate" layoutX="494.0" layoutY="204.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="495.0" layoutY="182.0" prefHeight="29.0" prefWidth="241.0" text="Date" />
-      <JFXTextField fx:id="TxtReportId" layoutX="494.0" layoutY="156.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="492.0" layoutY="133.0" prefHeight="29.0" prefWidth="241.0" text="Report Id" />
-      <JFXTextField fx:id="TxtDescription" layoutX="494.0" layoutY="256.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="495.0" layoutY="234.0" prefHeight="29.0" prefWidth="241.0" text="description" />
-      <Button layoutX="877.0" layoutY="63.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #17c0eb;" text="Search">
+      <JFXTextField fx:id="TxtDate" layoutX="584.0" layoutY="104.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="585.0" layoutY="82.0" prefHeight="29.0" prefWidth="241.0" text="Date" />
+      <JFXTextField fx:id="TxtReportId" layoutX="264.0" layoutY="94.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="262.0" layoutY="75.0" prefHeight="29.0" prefWidth="241.0" text="Report Id" />
+      <JFXTextField fx:id="TxtDescription" layoutX="584.0" layoutY="156.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="585.0" layoutY="134.0" prefHeight="29.0" prefWidth="241.0" text="description" />
+      <Button layoutX="487.0" layoutY="71.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="25.0" prefWidth="32.0" style="-fx-background-color: White;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/search-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button layoutX="880.0" layoutY="205.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">
+      <Button layoutX="910.0" layoutY="80.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/save-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button layoutX="880.0" layoutY="259.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Update">
+      <Button layoutX="910.0" layoutY="121.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Update">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/update-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button layoutX="880.0" layoutY="154.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Delete">
+      <Button layoutX="911.0" layoutY="165.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Delete">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/delete-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button layoutX="877.0" layoutY="108.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Clear">
+      <Button layoutX="913.0" layoutY="209.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Clear">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/clear-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

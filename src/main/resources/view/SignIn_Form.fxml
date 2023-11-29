@@ -21,7 +21,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </TextField>
-      <Text fill="#170606" layoutX="799.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SignIn PAGE">
+      <Text fill="#f6f3f3" layoutX="799.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SignIn PAGE">
          <font>
             <Font name="System Bold" size="46.0" />
          </font>

@@ -86,8 +86,6 @@ public class ManageFinesFormController {
         TxtFinesDate.clear();
         CmbDriverId.getSelectionModel().clearSelection();
     }
-
-
     @FXML
     void BtnSaveOnAction(ActionEvent event) throws SQLException {
         if (validateFines()) {
@@ -248,9 +246,11 @@ public class ManageFinesFormController {
                 }
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Error").show();
             }
         }
     }

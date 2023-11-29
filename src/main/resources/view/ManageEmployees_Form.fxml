@@ -4,86 +4,129 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageEmployeesFormController">
    <children>
-      <AnchorPane layoutX="41.0" layoutY="33.0" prefHeight="650.0" prefWidth="962.0" style="-fx-background-color: white;">
+      <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="698.0" prefWidth="1014.0" style="-fx-background-color: white;">
          <children>
-            <ImageView fx:id="ImgEmployee" fitHeight="270.0" fitWidth="277.0" layoutX="683.0" layoutY="2.0" pickOnBounds="true">
+            <ImageView fx:id="ImgEmployee" fitHeight="261.0" fitWidth="271.0" layoutX="13.0" layoutY="52.0" pickOnBounds="true">
                <image>
                   <Image url="@../Assets/Background pics/S(1).jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="75.0" fitWidth="94.0" layoutX="784.0" layoutY="83.0" opacity="0.54" pickOnBounds="true">
+            <ImageView fitHeight="75.0" fitWidth="94.0" layoutX="114.0" layoutY="133.0" opacity="0.54" pickOnBounds="true">
                <image>
                   <Image url="@../Assets/logo/plus-100.png" />
                </image>
             </ImageView>
-            <Button layoutX="761.0" layoutY="74.0" mnemonicParsing="false" onAction="#ImageAddOnAction" opacity="0.06" prefHeight="101.0" prefWidth="145.0" />
-            <TableView fx:id="TblEmployee" layoutY="336.0" prefHeight="310.0" prefWidth="959.0">
+            <Button layoutX="91.0" layoutY="124.0" mnemonicParsing="false" onAction="#ImageAddOnAction" opacity="0.06" prefHeight="101.0" prefWidth="145.0" />
+            <TableView fx:id="TblEmployee" layoutX="4.0" layoutY="316.0" prefHeight="378.0" prefWidth="1006.0">
               <columns>
                 <TableColumn fx:id="ClmEmpId" prefWidth="75.0" text="Emp Id" />
                 <TableColumn fx:id="ColmOfficerId" prefWidth="71.90506744384766" text="OfficerId" />
                   <TableColumn fx:id="ComUserId" prefWidth="64.52413940429688" text="User Id" />
-                  <TableColumn fx:id="ColmAddress" prefWidth="106.90522766113281" text="Address" />
-                  <TableColumn fx:id="ColmContactNum" prefWidth="95.47665405273438" text="ContactNum" />
-                  <TableColumn fx:id="ClmEmpName" prefWidth="125.23861694335938" text="EmpName" />
-                  <TableColumn fx:id="ClmEmployeeType" prefWidth="130.2386474609375" text="EmployeeType" />
-                  <TableColumn fx:id="ClmRank" prefWidth="111.19097900390625" text="Rank" />
-                  <TableColumn fx:id="ClmDob" prefWidth="95.71484375" text="Dob" />
-                  <TableColumn fx:id="ClmGender" prefWidth="90.71466064453125" text="Gender" />
+                  <TableColumn fx:id="ColmAddress" prefWidth="147.1435089111328" text="Address" />
+                  <TableColumn fx:id="ColmContactNum" prefWidth="94.2861328125" text="ContactNum" />
+                  <TableColumn fx:id="ClmEmpName" prefWidth="109.04800415039062" text="EmpName" />
+                  <TableColumn fx:id="ClmEmployeeType" prefWidth="129.0482177734375" text="EmployeeType" />
+                  <TableColumn fx:id="ClmRank" prefWidth="112.38140869140625" text="Rank" />
+                  <TableColumn fx:id="ClmDob" prefWidth="103.57196044921875" text="Dob" />
+                  <TableColumn fx:id="ClmGender" prefWidth="99.048095703125" text="Gender" />
               </columns>
             </TableView>
+            <Separator layoutX="-1.0" layoutY="42.0" prefHeight="0.0" prefWidth="1012.0" style="-fx-background-color: #00BF63;" />
+            <Label layoutX="360.0" layoutY="1.0" prefHeight="40.0" prefWidth="360.0" text="Manage Employee">
+               <font>
+                  <Font name="System Bold Italic" size="27.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
-      <JFXTextField fx:id="TxtContactNumber" layoutX="79.0" layoutY="289.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="80.0" layoutY="267.0" prefHeight="29.0" prefWidth="241.0" text="Contact Number" />
-      <JFXTextField fx:id="TxtAddress" layoutX="81.0" layoutY="237.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="81.0" layoutY="216.0" prefHeight="29.0" prefWidth="241.0" text="address" />
-      <JFXTextField fx:id="TxtEmpId" layoutX="80.0" layoutY="83.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="78.0" layoutY="64.0" prefHeight="29.0" prefWidth="241.0" text="Emp Id" />
-      <JFXTextField fx:id="TxtEmpName" layoutX="389.0" layoutY="82.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="388.0" layoutY="61.0" prefHeight="29.0" prefWidth="241.0" text="Emp Name" />
-      <JFXTextField fx:id="TxtDob" layoutX="392.0" layoutY="238.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="392.0" layoutY="217.0" prefHeight="29.0" prefWidth="241.0" text="Dirth Of Birth" />
-      <JFXTextField fx:id="TxtGender" layoutX="396.0" layoutY="286.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="395.0" layoutY="267.0" prefHeight="29.0" prefWidth="241.0" text="gender" />
-      <JFXTextField fx:id="TxtOfficerId" layoutX="80.0" layoutY="140.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="78.0" layoutY="119.0" prefHeight="29.0" prefWidth="241.0" text="Officer Id" />
-      <JFXTextField fx:id="TxtUsrId" layoutX="79.0" layoutY="187.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="78.0" layoutY="167.0" prefHeight="29.0" prefWidth="241.0" text="user Id" />
-      <JFXTextField fx:id="TxtEmpType" layoutX="389.0" layoutY="140.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="388.0" layoutY="117.0" prefHeight="29.0" prefWidth="241.0" text="EmployeeType" />
-      <JFXTextField fx:id="TxtRank" layoutX="390.0" layoutY="187.0" prefHeight="25.0" prefWidth="264.0" />
-      <Label layoutX="394.0" layoutY="168.0" prefHeight="29.0" prefWidth="241.0" text="Rank" />
-      <Button layoutX="76.0" layoutY="323.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">
+      <JFXTextField fx:id="TxtContactNumber" layoutX="329.0" layoutY="289.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="330.0" layoutY="267.0" prefHeight="29.0" prefWidth="241.0" text="Contact Number" />
+      <JFXTextField fx:id="TxtAddress" layoutX="331.0" layoutY="237.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="331.0" layoutY="216.0" prefHeight="29.0" prefWidth="241.0" text="address" />
+      <JFXTextField fx:id="TxtEmpId" layoutX="330.0" layoutY="83.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="328.0" layoutY="64.0" prefHeight="29.0" prefWidth="241.0" text="Emp Id" />
+      <JFXTextField fx:id="TxtEmpName" layoutX="638.0" layoutY="82.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="636.0" layoutY="61.0" prefHeight="29.0" prefWidth="241.0" text="Emp Name" />
+      <JFXTextField fx:id="TxtDob" layoutX="640.0" layoutY="238.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="638.0" layoutY="217.0" prefHeight="29.0" prefWidth="241.0" text="Dirth Of Birth" />
+      <JFXTextField fx:id="TxtGender" layoutX="640.0" layoutY="286.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="641.0" layoutY="267.0" prefHeight="29.0" prefWidth="241.0" text="gender" />
+      <JFXTextField fx:id="TxtOfficerId" layoutX="330.0" layoutY="140.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="328.0" layoutY="119.0" prefHeight="29.0" prefWidth="241.0" text="Officer Id" />
+      <JFXTextField fx:id="TxtUsrId" layoutX="329.0" layoutY="187.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="328.0" layoutY="167.0" prefHeight="29.0" prefWidth="241.0" text="user Id" />
+      <JFXTextField fx:id="TxtEmpType" layoutX="638.0" layoutY="140.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="638.0" layoutY="117.0" prefHeight="29.0" prefWidth="241.0" text="EmployeeType" />
+      <JFXTextField fx:id="TxtRank" layoutX="638.0" layoutY="187.0" prefHeight="25.0" prefWidth="264.0" />
+      <Label layoutX="639.0" layoutY="168.0" prefHeight="29.0" prefWidth="241.0" text="Rank" />
+      <Button layoutX="913.0" layoutY="155.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/save-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button layoutX="233.0" layoutY="322.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Update">
+      <Button layoutX="911.0" layoutY="102.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Update">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/update-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button layoutX="486.0" layoutY="322.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Delete">
+      <Button layoutX="916.0" layoutY="260.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Delete">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/delete-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button layoutX="355.0" layoutY="322.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Clear">
+      <Button layoutX="915.0" layoutY="208.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Clear">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/clear-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Button layoutX="623.0" layoutY="321.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #17c0eb;" text="Search">
+      <Button layoutX="549.0" layoutY="60.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="39.0" prefWidth="29.0" style="-fx-background-color: White;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/logo/search-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

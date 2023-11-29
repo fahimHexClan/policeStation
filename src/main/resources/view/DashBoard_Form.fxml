@@ -22,9 +22,19 @@
             <Image url="@../Assets/Background pics/1 Desktop Prototype (2).png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="anchorDash" layoutX="331.0" layoutY="-4.0" prefHeight="720.0" prefWidth="1038.0" style="-fx-background-color: white;">
+      <AnchorPane fx:id="anchorDash" layoutX="331.0" layoutY="-4.0" prefHeight="726.0" prefWidth="1011.0" style="-fx-background-color: white;">
          <children>
-            <AnchorPane layoutX="9.0" layoutY="55.0" prefHeight="140.0" prefWidth="271.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
+            <AnchorPane layoutX="281.0" layoutY="258.0" prefHeight="460.0" prefWidth="746.0" style="-fx-background-color: White; -fx-background-radius: 30px;">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+            <ImageView fitHeight="86.0" fitWidth="1046.0" layoutX="-10.0" layoutY="3.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Assets/Background pics/ligtblue.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="9.0" layoutY="121.0" prefHeight="120.0" prefWidth="260.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
                <effect>
                   <DropShadow />
                </effect>
@@ -34,14 +44,15 @@
                         <Image url="@../Assets/logo/icons8-arrest-100.png" />
                      </image>
                   </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="262.0" layoutX="-3.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <Label layoutX="16.0" layoutY="57.0" prefHeight="51.0" prefWidth="247.0" text="Number of New Crimes">
+            <Label layoutX="16.0" layoutY="126.0" prefHeight="51.0" prefWidth="247.0" text="Number of New Crimes">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="9.0" layoutY="233.0" prefHeight="140.0" prefWidth="271.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
+            <AnchorPane layoutX="9.0" layoutY="273.0" prefHeight="120.0" prefWidth="260.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
                <effect>
                   <DropShadow />
                </effect>
@@ -53,18 +64,18 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Label fx:id="NumberOfCrimes" layoutX="150.0" layoutY="129.0" prefHeight="51.0" prefWidth="143.0" text="44" textAlignment="CENTER" textFill="#1f1313">
+            <Label fx:id="NumberOfCrimes" layoutX="150.0" layoutY="194.0" prefHeight="51.0" prefWidth="143.0" text="44" textAlignment="CENTER" textFill="#1f1313">
                <font>
                   <Font name="System Bold Italic" size="38.0" />
                </font>
             </Label>
-            <Label fx:id="NumberOfFines" layoutX="146.0" layoutY="298.0" prefHeight="51.0" prefWidth="143.0" text="44" textAlignment="CENTER">
+            <Label fx:id="NumberOfFines" layoutX="146.0" layoutY="334.0" prefHeight="51.0" prefWidth="143.0" text="44" textAlignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="39.0" />
                </font>
             </Label>
             <Separator layoutX="-18.0" layoutY="6.0" orientation="VERTICAL" prefHeight="719.0" prefWidth="0.0" style="-fx-background-color: black;" />
-            <AnchorPane layoutX="13.0" layoutY="409.0" prefHeight="140.0" prefWidth="275.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
+            <AnchorPane layoutX="13.0" layoutY="424.0" prefHeight="120.0" prefWidth="260.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
                <effect>
                   <DropShadow />
                </effect>
@@ -81,7 +92,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="10.0" layoutY="566.0" prefHeight="140.0" prefWidth="271.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
+            <AnchorPane layoutX="10.0" layoutY="579.0" prefHeight="120.0" prefWidth="260.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
                <effect>
                   <DropShadow />
                </effect>
@@ -98,7 +109,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="317.0" layoutY="54.0" prefHeight="140.0" prefWidth="271.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
+            <AnchorPane layoutX="294.0" layoutY="122.0" prefHeight="120.0" prefWidth="260.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
                <effect>
                   <DropShadow />
                </effect>
@@ -120,12 +131,12 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Label layoutX="30.0" layoutY="239.0" prefHeight="51.0" prefWidth="247.0" text="Number of Fines">
+            <Label layoutX="33.0" layoutY="272.0" prefHeight="51.0" prefWidth="247.0" text="Number of Fines">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Label>
-            <BarChart fx:id="ComplaintDetails" layoutX="308.0" layoutY="314.0" legendSide="TOP" prefHeight="400.0" prefWidth="705.0">
+            <BarChart fx:id="ComplaintDetails" barGap="6.0" categoryGap="13.0" layoutX="282.0" layoutY="259.0" prefHeight="464.0" prefWidth="754.0" titleSide="BOTTOM">
               <xAxis>
                 <CategoryAxis fx:id="ComplaintsDay" side="BOTTOM" />
               </xAxis>
@@ -133,42 +144,17 @@
                 <NumberAxis fx:id="ComplaintsCount" side="LEFT" />
               </yAxis>
             </BarChart>
-            <ImageView fx:id="Img2" fitHeight="70.0" fitWidth="100.0" layoutX="478.0" layoutY="218.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../Assets/gifs/finger.gif" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="Img1" fitHeight="70.0" fitWidth="100.0" layoutX="358.0" layoutY="218.0" pickOnBounds="true" smooth="false">
-               <image>
-                  <Image url="@../Assets/gifs/finger.gif" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="img3" fitHeight="70.0" fitWidth="100.0" layoutX="588.0" layoutY="220.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../Assets/gifs/finger.gif" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="img4" fitHeight="70.0" fitWidth="100.0" layoutX="696.0" layoutY="220.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../Assets/gifs/finger.gif" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="img5" fitHeight="70.0" fitWidth="100.0" layoutX="808.0" layoutY="220.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../Assets/gifs/finger.gif" />
-               </image>
-            </ImageView>
-            <Label fx:id="NumberOfEmployee" layoutX="151.0" layoutY="472.0" prefHeight="51.0" prefWidth="143.0" text="44" textAlignment="CENTER">
+            <Label fx:id="NumberOfEmployee" layoutX="151.0" layoutY="483.0" prefHeight="51.0" prefWidth="143.0" text="44" textAlignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="39.0" />
                </font>
             </Label>
-            <Label fx:id="NumberOfCitizens" layoutX="141.0" layoutY="617.0" prefHeight="51.0" prefWidth="143.0" text="44" textAlignment="CENTER">
+            <Label fx:id="NumberOfCitizens" layoutX="146.0" layoutY="645.0" prefHeight="51.0" prefWidth="143.0" text="44" textAlignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="39.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="617.0" layoutY="54.0" prefHeight="140.0" prefWidth="271.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
+            <AnchorPane layoutX="586.0" layoutY="120.0" prefHeight="100.0" prefWidth="276.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
                <effect>
                   <DropShadow />
                </effect>
@@ -183,13 +169,51 @@
                         <Font name="System Bold Italic" size="39.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="94.0" fitWidth="124.0" layoutX="7.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="88.0" fitWidth="84.0" layoutX="7.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Assets/logo/icons8-report-100.png" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
+            <Label fx:id="TimeLbl" layoutX="122.0" layoutY="30.0" prefHeight="45.0" prefWidth="237.0" text="18:12:12" textFill="#fbf9f9">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="LblDate" layoutX="826.0" layoutY="26.0" prefHeight="45.0" prefWidth="204.0" text="12-2022-21" textFill="#fffefe">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="379.0" layoutY="20.0" prefHeight="56.0" prefWidth="277.0" text="DashBoard" textFill="#fefcfc">
+               <font>
+                  <Font name="System Bold Italic" size="41.0" />
+               </font>
+            </Label>
+            <Label layoutX="722.0" layoutY="25.0" prefHeight="44.0" prefWidth="133.0" text="Date :" textFill="#fefbfb">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="28.0" prefHeight="44.0" prefWidth="133.0" text="Time :" textFill="#f2f0f0">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="879.0" layoutY="93.0" prefHeight="157.0" prefWidth="154.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <ImageView fitHeight="155.0" fitWidth="130.0" layoutX="18.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/Background%20pics/police.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children></AnchorPane>
       <JFXButton fx:id="btnComplaints" blendMode="COLOR_BURN" layoutX="35.0" layoutY="255.0" onAction="#ManageComplaints" prefHeight="57.0" prefWidth="288.0" textFill="WHITE">
          <font>
@@ -200,12 +224,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color />
+                        <Color red="0.32156863808631897" green="0.6196078658103943" blue="0.4470588266849518" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.7490196228027344" blue="0.38823530077934265" />
+                        <Color red="0.1568627506494522" green="0.6901960968971252" blue="0.7882353067398071" />
                      </color>
                   </Stop>
                </stops>
@@ -221,12 +245,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color />
+                        <Color red="0.32156863808631897" green="0.6196078658103943" blue="0.4470588266849518" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.7490196228027344" blue="0.38823530077934265" />
+                        <Color red="0.1568627506494522" green="0.6901960968971252" blue="0.7882353067398071" />
                      </color>
                   </Stop>
                </stops>
@@ -242,12 +266,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.07794813066720963" green="0.08270711451768875" blue="0.08040694147348404" />
+                        <Color red="0.32156863808631897" green="0.6196078658103943" blue="0.4470588266849518" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.7490196228027344" blue="0.38823530077934265" />
+                        <Color red="0.1568627506494522" green="0.6901960968971252" blue="0.7882353067398071" />
                      </color>
                   </Stop>
                </stops>
@@ -263,12 +287,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.09902013093233109" green="0.10150407999753952" blue="0.10030350834131241" />
+                        <Color red="0.32156863808631897" green="0.6196078658103943" blue="0.4470588266849518" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.7490196228027344" blue="0.38823530077934265" />
+                        <Color red="0.1568627506494522" green="0.6901960968971252" blue="0.7882353067398071" />
                      </color>
                   </Stop>
                </stops>
@@ -284,12 +308,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color />
+                        <Color red="0.32156863808631897" green="0.6196078658103943" blue="0.4470588266849518" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.7490196228027344" blue="0.38823530077934265" />
+                        <Color red="0.1568627506494522" green="0.6901960968971252" blue="0.7882353067398071" />
                      </color>
                   </Stop>
                </stops>
@@ -305,12 +329,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color />
+                        <Color red="0.32156863808631897" green="0.6196078658103943" blue="0.4470588266849518" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.7490196228027344" blue="0.38823530077934265" />
+                        <Color red="0.1568627506494522" green="0.6901960968971252" blue="0.7882353067398071" />
                      </color>
                   </Stop>
                </stops>
@@ -326,12 +350,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color />
+                        <Color red="0.32156863808631897" green="0.6196078658103943" blue="0.4470588266849518" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.7490196228027344" blue="0.38823530077934265" />
+                        <Color red="0.6666666865348816" green="0.9764705896377563" blue="1.0" />
                      </color>
                   </Stop>
                </stops>
@@ -348,26 +372,23 @@
             <Image url="@../Assets/logo/LogOut.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnSignOut" blendMode="COLOR_BURN" layoutX="45.0" layoutY="603.0" onAction="#SignOutButtonOnAction" prefHeight="42.0" prefWidth="172.0" text="." textFill="WHITE">
+      <JFXButton fx:id="btnSignOut" blendMode="COLOR_BURN" layoutX="45.0" layoutY="603.0" onAction="#SignOutButtonOnAction" prefHeight="49.0" prefWidth="226.0" text="." textFill="WHITE">
          <ripplerFill>
             <RadialGradient centerX="0.519762874281829" centerY="0.4932203581951306" radius="0.4586777147752318">
                <stops>
                   <Stop>
                      <color>
-                        <Color />
+                        <Color red="0.32156863808631897" green="0.6196078658103943" blue="0.4470588266849518" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color green="0.7490196228027344" blue="0.38823530077934265" />
+                        <Color red="0.1568627506494522" green="0.6901960968971252" blue="0.7882353067398071" />
                      </color>
                   </Stop>
                </stops>
             </RadialGradient>
          </ripplerFill>
       </JFXButton>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

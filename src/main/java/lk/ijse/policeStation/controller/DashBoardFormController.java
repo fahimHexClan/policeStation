@@ -1,6 +1,9 @@
 package lk.ijse.policeStation.controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,13 +19,17 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 import lk.ijse.policeStation.dto.CitizenDto;
 import lk.ijse.policeStation.model.*;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 public class DashBoardFormController {
@@ -41,15 +48,12 @@ public class DashBoardFormController {
     public BarChart ComplaintDetails;
     public CategoryAxis ComplaintsDay;
     public NumberAxis ComplaintsCount;
-    public ImageView img5;
-    public ImageView img4;
-    public ImageView img3;
-    public ImageView Img1;
-    public ImageView Img2;
     public Label NumberOfEmployee;
     public Label NumberOfCitizens;
     public Label NumberOfComplaints;
     public Label NumberOfReports;
+    public Label TimeLbl;
+    public Label LblDate;
 
     public void initialize() throws SQLException {
         updateNumberOfCrimes();
@@ -59,7 +63,26 @@ public class DashBoardFormController {
         updateNumberOfCitizens();
         updateNumberOfComplaints();
         updateNumberOfReports();
+        LoadDateAndTime();
     }
+    private void LoadDateAndTime() {
+        Date date = new Date();
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        LblDate.setText(f.format(date));
+
+        //time set karaganna
+        Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            LocalTime currentTime = LocalTime.now();
+            TimeLbl.setText(
+                    currentTime.getHour() + " : " + currentTime.getMinute() + " : " + currentTime.getSecond()
+            );
+        }),
+                new KeyFrame(Duration.seconds(1))
+        );
+        time.setCycleCount(Animation.INDEFINITE);
+        time.play();
+    }
+
     private void updateComplaintDetailsChart() {
         try {
             // Get complaint details from the database
@@ -67,7 +90,7 @@ public class DashBoardFormController {
 
             // Create a data series for the bar chart
             XYChart.Series<String, Number> series = new XYChart.Series<>();
-            series.setName("Complaints Count");
+            series.setName("Complaints Details"); // Change this line with your desired heading
 
             // Add data to the series
             for (Map.Entry<String, Integer> entry : complaintDetails.entrySet()) {
@@ -87,10 +110,37 @@ public class DashBoardFormController {
             ComplaintsCount.setUpperBound(getMaxComplaintCount(complaintDetails) + 1);
             ComplaintsCount.setTickUnit(1);
 
+            // Set custom colors for the bars
+            for (XYChart.Data<String, Number> data : series.getData()) {
+                int value = data.getYValue().intValue();
+                String color;
+                if (value < 5) {
+                    color = "#25CCF7"; // Green color for values less than 5
+                } else if (value < 10) {
+                    color = "#ffcc00"; // Yellow color for values between 5 and 10
+                } else {
+                    color = "#ff0000"; // Red color for values greater than or equal to 10
+                }
+                Node node = data.getNode();
+                node.setStyle("-fx-bar-fill: " + color + ";");
+                addTooltip(node, String.valueOf(value));
+            }
+            // Set the heading color directly on the CategoryAxis label
+            String headingColor = "#25CCF7"; // Change this color as per your requirement
+            Node axisLabel = ComplaintsDay.lookup(".label");
+            if (axisLabel != null) {
+                axisLabel.setStyle("-fx-text-fill: " + headingColor + ";");
+            }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
+
+    private void addTooltip(Node node, String text) {
+        Tooltip tooltip = new Tooltip(text);
+        Tooltip.install(node, tooltip);
+    }
+
     private int getMaxComplaintCount(Map<String, Integer> complaintDetails) {
         return complaintDetails.values().stream()
                 .mapToInt(Integer::intValue)

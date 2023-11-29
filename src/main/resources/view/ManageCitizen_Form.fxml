@@ -16,101 +16,136 @@
    <children>
       <AnchorPane layoutX="26.0" layoutY="19.0" prefHeight="668.0" prefWidth="1000.0" style="-fx-background-color: white;">
          <children>
-            <JFXTextField fx:id="TxtCitizenId" layoutX="341.0" layoutY="99.0" prefHeight="25.0" prefWidth="264.0" />
-            <Label layoutX="343.0" layoutY="75.0" prefHeight="29.0" prefWidth="241.0" text="Citizen Id">
+            <JFXTextField fx:id="TxtCitizenId" layoutX="290.0" layoutY="119.0" prefHeight="25.0" prefWidth="264.0" />
+            <Label layoutX="292.0" layoutY="95.0" prefHeight="29.0" prefWidth="241.0" text="Citizen Id">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font></Label>
-            <JFXTextField fx:id="TxtContactNumber" layoutX="638.0" layoutY="269.0" prefHeight="25.0" prefWidth="264.0" />
-            <Label fx:id="ContactNumberTxt" layoutX="637.0" layoutY="241.0" prefHeight="29.0" prefWidth="241.0" text="Contact Number">
+            <JFXTextField fx:id="TxtContactNumber" layoutX="587.0" layoutY="259.0" prefHeight="25.0" prefWidth="264.0" />
+            <Label fx:id="ContactNumberTxt" layoutX="586.0" layoutY="231.0" prefHeight="29.0" prefWidth="241.0" text="Contact Number">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font></Label>
-            <JFXTextField fx:id="TxtAddress" layoutX="633.0" layoutY="100.0" prefHeight="25.0" prefWidth="264.0" />
-            <Label layoutX="631.0" layoutY="76.0" prefHeight="29.0" prefWidth="241.0" text="Address">
+            <JFXTextField fx:id="TxtAddress" layoutX="581.0" layoutY="120.0" prefHeight="25.0" prefWidth="264.0" />
+            <Label layoutX="581.0" layoutY="96.0" prefHeight="29.0" prefWidth="241.0" text="Address">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font></Label>
-            <JFXTextField fx:id="Txtname" layoutX="342.0" layoutY="183.0" prefHeight="25.0" prefWidth="264.0" />
-            <Label layoutX="343.0" layoutY="157.0" prefHeight="29.0" prefWidth="241.0" text="Name">
+            <JFXTextField fx:id="Txtname" layoutX="291.0" layoutY="183.0" prefHeight="25.0" prefWidth="264.0" />
+            <Label layoutX="292.0" layoutY="157.0" prefHeight="29.0" prefWidth="241.0" text="Name">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font></Label>
-            <JFXTextField fx:id="TxtGender" layoutX="342.0" layoutY="271.0" prefHeight="25.0" prefWidth="264.0" />
-            <Label layoutX="343.0" layoutY="244.0" prefHeight="29.0" prefWidth="241.0" text="Gender">
+            <JFXTextField fx:id="TxtGender" layoutX="291.0" layoutY="261.0" prefHeight="25.0" prefWidth="264.0" />
+            <Label layoutX="292.0" layoutY="234.0" prefHeight="29.0" prefWidth="241.0" text="Gender">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font></Label>
-            <TableView fx:id="TblCitizen" layoutX="15.0" layoutY="371.0" prefHeight="283.0" prefWidth="967.0" style="-fx-background-color: White;">
+            <TableView fx:id="TblCitizen" layoutX="6.0" layoutY="310.0" prefHeight="354.0" prefWidth="986.0" style="-fx-background-color: White;">
               <columns>
                 <TableColumn fx:id="ColCitzenId" prefWidth="132.1434326171875" text="Citizen Id" />
                 <TableColumn fx:id="ColName" prefWidth="180.0008544921875" text="Name" />
                   <TableColumn fx:id="ColAddress" prefWidth="205.0008544921875" text="Address" />
                   <TableColumn fx:id="ColContactNumber" prefWidth="189.2864990234375" text="Contact Number" />
-                  <TableColumn fx:id="ColGender" prefWidth="114.2862548828125" text="Gender" />
-                  <TableColumn fx:id="ColDob" prefWidth="143.5718994140625" text="Dob" />
+                  <TableColumn fx:id="ColGender" prefWidth="132.14337158203125" text="Gender" />
+                  <TableColumn fx:id="ColDob" prefWidth="142.85784912109375" text="Dob" />
               </columns>
             </TableView>
-            <JFXTextField fx:id="TxtDob" layoutX="635.0" layoutY="183.0" prefHeight="25.0" prefWidth="264.0" />
-            <Label layoutX="637.0" layoutY="154.0" prefHeight="29.0" prefWidth="241.0" text="DOB">
+            <JFXTextField fx:id="TxtDob" layoutX="584.0" layoutY="183.0" prefHeight="25.0" prefWidth="264.0" />
+            <Label layoutX="586.0" layoutY="154.0" prefHeight="29.0" prefWidth="241.0" text="DOB">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font></Label>
-            <ImageView fx:id="imageView" fitHeight="296.0" fitWidth="313.0" layoutX="9.0" layoutY="73.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imageView" fitHeight="237.0" fitWidth="282.0" layoutX="9.0" layoutY="68.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Assets/Background pics/S(1).jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="135.0" layoutY="191.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="111.0" layoutY="150.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Assets/logo/plus-100.png" />
                </image>
             </ImageView>
-            <Button layoutX="476.0" layoutY="322.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Save">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button layoutX="604.0" layoutY="322.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Update">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button layoutX="736.0" layoutY="322.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Delete">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button layoutX="875.0" layoutY="322.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #34ace0;" text="Clear">
+            <Button layoutX="872.0" layoutY="98.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Save">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-            </Button>
-            <Button layoutX="343.0" layoutY="321.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #17c0eb;" text="Search">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="27.0">
+                     <image>
+                        <Image url="@../Assets/logo/save-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="873.0" layoutY="146.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Update">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="26.0">
+                     <image>
+                        <Image url="@../Assets/logo/update-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="874.0" layoutY="197.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Delete">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="32.0">
+                     <image>
+                        <Image url="@../Assets/logo/delete-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="875.0" layoutY="249.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Clear">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../Assets/logo/clear-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button layoutX="63.0" layoutY="170.0" mnemonicParsing="false" onAction="#PhotoAddButtonOnAction" prefHeight="108.0" prefWidth="204.0" style="-fx-background-color: transparent;" />
+            <Button layoutX="497.0" layoutY="95.0" mnemonicParsing="false" onAction="#BtnSearchOnAction" prefHeight="41.0" prefWidth="55.0" style="-fx-background-color: white; -fx-background-radius: 30px;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="44.0">
+                     <image>
+                        <Image url="@../Assets/logo/search-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="48.0" layoutY="119.0" mnemonicParsing="false" onAction="#PhotoAddButtonOnAction" prefHeight="108.0" prefWidth="204.0" style="-fx-background-color: transparent;" />
             <Separator layoutX="-4.0" layoutY="60.0" prefHeight="4.0" prefWidth="998.0" style="-fx-background-color: green;" />
-            <Label layoutX="371.0" layoutY="12.0" prefHeight="27.0" prefWidth="321.0" text="Citizen Deatails">
+            <Label layoutX="371.0" layoutY="12.0" prefHeight="27.0" prefWidth="321.0" text="Citizen Deatails" textFill="#131212">
                <font>
                   <Font name="System Bold Italic" size="34.0" />
                </font>
             </Label>
-            <Label fx:id="LblDate" layoutX="83.0" layoutY="25.0" prefHeight="25.0" prefWidth="204.0" text="16-11-2023">
+            <Label fx:id="LblDate" layoutX="83.0" layoutY="25.0" prefHeight="25.0" prefWidth="204.0" text="16-11-2023" textFill="#151515">
                <font>
                   <Font name="Times New Roman Cyr Bold" size="26.0" />
                </font>
             </Label>
-            <Label layoutX="23.0" layoutY="25.0" prefHeight="25.0" prefWidth="204.0" text="Date:">
+            <Label layoutX="23.0" layoutY="25.0" prefHeight="25.0" prefWidth="204.0" text="Date:" textFill="#131212">
                <font>
                   <Font name="Times New Roman Cyr Bold" size="26.0" />
                </font>
             </Label>
-            <Label layoutX="746.0" layoutY="25.0" prefHeight="25.0" prefWidth="204.0" text="Time  :">
+            <Label layoutX="746.0" layoutY="25.0" prefHeight="25.0" prefWidth="204.0" text="Time  :" textFill="#0e0e0e">
                <font>
                   <Font name="Times New Roman Cyr Bold" size="26.0" />
                </font>
             </Label>
-            <Label fx:id="lblTime" layoutX="831.0" layoutY="25.0" prefHeight="30.0" prefWidth="133.0" text="18:36:00">
+            <Label fx:id="lblTime" layoutX="831.0" layoutY="25.0" prefHeight="30.0" prefWidth="133.0" text="18:36:00" textFill="#151414">
                <font>
                   <Font name="Times New Roman Cyr Bold" size="26.0" />
                </font>

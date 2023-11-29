@@ -1,10 +1,16 @@
 package lk.ijse.policeStation.controller;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.util.Duration;
 import javafx.util.StringConverter;
 import lk.ijse.policeStation.dto.ComplaintDto;
 import lk.ijse.policeStation.model.CitizenModel;
@@ -16,6 +22,9 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
@@ -23,6 +32,8 @@ import java.util.regex.Pattern;
 public class ManageComplaintsFormController {
 
     public JFXTextField TxtSuspectEmail;
+    public Label LblDate;
+    public Label lblTime;
     @FXML
     private JFXTextField TxtCitizenId;
 
@@ -65,6 +76,24 @@ public class ManageComplaintsFormController {
     public void initialize() throws SQLException, ClassNotFoundException {
     LoardCitizen();
     LoardOfficers();
+    LoadDateAndTime();
+    }
+    private void LoadDateAndTime() {
+        Date date = new Date();
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        LblDate.setText(f.format(date));
+
+        //time set karaganna
+        Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            LocalTime currentTime = LocalTime.now();
+            lblTime.setText(
+                    currentTime.getHour() + " : " + currentTime.getMinute() + " : " + currentTime.getSecond()
+            );
+        }),
+                new KeyFrame(Duration.seconds(1))
+        );
+        time.setCycleCount(Animation.INDEFINITE);
+        time.play();
     }
 
     @FXML
@@ -102,10 +131,12 @@ public class ManageComplaintsFormController {
                 } else {
                     new Alert(Alert.AlertType.INFORMATION, "Data Not Deleted ").show();
                 }
-            } catch (ClassNotFoundException | SQLException e) {
-                new Alert(Alert.AlertType.INFORMATION, "Operation Fail ").show();
-
+            } catch (SQLException e) {
                 e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Error occurred while saving data").show();
             }
         }
     }
@@ -134,7 +165,7 @@ public class ManageComplaintsFormController {
                 System.err.println("SQL Error saving complaint:");
                 System.err.println("OfficerId: " + complaintDto.getOfficerId());
                 e.printStackTrace();
-                new Alert(Alert.AlertType.ERROR, "Error saving complaint. Check logs for details.").show();
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             } catch (ClassNotFoundException e) {
 
                 //officer id foreign key case ekak wena hindaha meka use kara
@@ -362,9 +393,12 @@ public class ManageComplaintsFormController {
             } else {
                 new Alert(Alert.AlertType.ERROR, " No Items Found").show();
             }
-        } catch (ClassNotFoundException | SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "Something Wrong").show();
+        } catch (SQLException e) {
             e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Error ").show();
         }
     }
 
@@ -385,9 +419,11 @@ public class ManageComplaintsFormController {
                 }
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Error ").show();
             }
         }
 

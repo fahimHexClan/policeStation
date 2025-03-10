@@ -61,11 +61,6 @@
                   <Image url="@../Assets/Background pics/S(1).jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="111.0" layoutY="150.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Assets/logo/plus-100.png" />
-               </image>
-            </ImageView>
             <Button layoutX="872.0" layoutY="98.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Save">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -125,7 +120,7 @@
             </Button>
             <Button layoutX="48.0" layoutY="119.0" mnemonicParsing="false" onAction="#PhotoAddButtonOnAction" prefHeight="108.0" prefWidth="204.0" style="-fx-background-color: transparent;" />
             <Separator layoutX="-4.0" layoutY="60.0" prefHeight="4.0" prefWidth="998.0" style="-fx-background-color: green;" />
-            <Label layoutX="371.0" layoutY="12.0" prefHeight="27.0" prefWidth="321.0" text="Citizen Deatails" textFill="#131212">
+            <Label layoutX="371.0" layoutY="12.0" prefHeight="27.0" prefWidth="321.0" text="Citizen Details" textFill="#131212">
                <font>
                   <Font name="System Bold Italic" size="34.0" />
                </font>

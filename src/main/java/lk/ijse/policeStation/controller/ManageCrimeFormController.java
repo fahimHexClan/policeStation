@@ -334,7 +334,6 @@ public class ManageCrimeFormController {
 
                 if (isUpdated) {
                     new Alert(Alert.AlertType.INFORMATION, "Data updated successfully").show();
-                    // After updating, refresh the table or perform any other necessary actions
                     setTable();
                 } else {
                     new Alert(Alert.AlertType.ERROR, "Data not updated").show();

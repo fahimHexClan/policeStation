@@ -20,7 +20,7 @@ public class Appinitailizer extends Application {
         Parent rootNode=FXMLLoader.load(this.getClass().getResource("/view/LogIn_Form .fxml"));
 
         Scene scene = new Scene(rootNode);
-        stage.setTitle("LogInPage");
+        stage.setTitle("Police Management System");
         stage.centerOnScreen();
         stage.setScene(scene);
 

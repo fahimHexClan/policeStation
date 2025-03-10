@@ -140,7 +140,6 @@ public class ComplaintModel {
             String date = rs.getString("date");
             int count = rs.getInt(2);
 
-            // Assuming the date is in a format suitable for the chart, you might need to adjust this
             complaintDetails.put(date, count);
         }
 

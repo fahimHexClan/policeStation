@@ -16,7 +16,7 @@
 
 <AnchorPane prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManagePoliceReportFormController">
    <children>
-      <AnchorPane layoutX="19.0" layoutY="18.0" prefHeight="694.0" prefWidth="1012.0" style="-fx-background-color: White;">
+      <AnchorPane layoutX="19.0" layoutY="18.0" prefHeight="694.0" prefWidth="1003.0" style="-fx-background-color: White;">
          <children>
             <ComboBox fx:id="CmdCitizenIds" layoutX="236.0" layoutY="172.0" prefHeight="34.0" prefWidth="276.0" promptText="Citizens Ids" style="-fx-background-radius: 30px;" />
             <Label layoutX="387.0" layoutY="-3.0" prefHeight="51.0" prefWidth="331.0" text="Police Report">
@@ -34,7 +34,7 @@
                </columns>
             </TableView>
             <ComboBox fx:id="CmdUserIds" layoutX="237.0" layoutY="117.0" prefHeight="34.0" prefWidth="276.0" promptText="Users Ids" style="-fx-background-radius: 30px;" />
-            <JFXButton layoutX="792.0" layoutY="185.0" onAction="#ReportOnAction" prefHeight="39.0" prefWidth="62.0" style="-fx-background-color: #c8d6e5;" text="Report">
+            <JFXButton layoutX="778.0" layoutY="185.0" onAction="#ReportOnAction" prefHeight="28.0" prefWidth="62.0" style="-fx-background-color: #c8d6e5;" text="Report">
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -67,7 +67,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="910.0" layoutY="80.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Save">
+      <Button layoutX="890.0" layoutY="80.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #c8d6e5;" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -79,7 +79,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="910.0" layoutY="121.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Update">
+      <Button layoutX="890.0" layoutY="121.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #c8d6e5;" text="Update">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -91,7 +91,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="911.0" layoutY="165.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Delete">
+      <Button layoutX="891.0" layoutY="165.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #c8d6e5;" text="Delete">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -103,7 +103,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="913.0" layoutY="209.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Clear">
+      <Button layoutX="891.0" layoutY="209.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #c8d6e5;" text="Clear">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

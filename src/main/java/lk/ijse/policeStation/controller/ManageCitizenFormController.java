@@ -126,11 +126,10 @@ public class ManageCitizenFormController {
                 }
 
             } catch (SQLException e) {
-                e.printStackTrace(); // You can log the exception or show a more user-friendly message
+                e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
             } catch (ClassNotFoundException e) {
-                // Handle class not found exception
-                e.printStackTrace(); // You can log the exception or show a more user-friendly message
+                e.printStackTrace();
                 new Alert(Alert.AlertType.ERROR, "Error occurred while saving data").show();
             }
 
@@ -259,7 +258,7 @@ public class ManageCitizenFormController {
         TxtGender.clear();
         TxtDob.clear();
         imageView.setImage(null);
-        
+
     }
 
     @FXML
@@ -301,7 +300,6 @@ public class ManageCitizenFormController {
 
             if (isUpdated) {
                 new Alert(Alert.AlertType.INFORMATION, "Data updated successfully").show();
-                // After updating, refresh the table or perform any other necessary actions
                 setTable();
             } else {
                 new Alert(Alert.AlertType.ERROR, "Data not updated").show();
@@ -350,7 +348,6 @@ public class ManageCitizenFormController {
             Image photo = new Image(new ByteArrayInputStream(imageData));
             imageView.setImage(photo);
         } else {
-            // If there is no image data, you may want to clear the existing image in the ImageView
             imageView.setImage(null);
         }
     }

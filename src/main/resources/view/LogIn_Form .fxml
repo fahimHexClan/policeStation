@@ -32,11 +32,14 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <Button layoutX="796.0" layoutY="492.0" mnemonicParsing="false" onAction="#BtnLogInOnAction" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 10px; -fx-background-color: #c8d6e5; -fx-border-color: blue;" text="LogIn">
+      <Button layoutX="796.0" layoutY="492.0" mnemonicParsing="false" onAction="#BtnLogInOnAction" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 10px; -fx-background-color: #1e90ff;" text="LogIn" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Text fill="#070707" layoutX="789.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN PAGE">
+         </cursor>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
+      <Text fill="#091153" layoutX="786.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN PAGE">
          <font>
             <Font name="System Bold" size="46.0" />
          </font>
@@ -63,11 +66,14 @@
             <Image url="@../Assets/logo/UserId.png" />
          </image>
       </ImageView>
-      <Button layoutX="799.0" layoutY="579.0" mnemonicParsing="false" onAction="#BtnSignUpOnAction" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 10px; -fx-background-color: #c8d6e5; -fx-border-color: blue;" text="SignUp">
+      <Button layoutX="799.0" layoutY="579.0" mnemonicParsing="false" onAction="#BtnSignUpOnAction" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 10px; -fx-background-color: #1e90ff;" text="SignUp" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Label layoutX="811.0" layoutY="547.0" prefHeight="26.0" prefWidth="296.0" text="-----  Or Create New Account ?  -----" textFill="#dcd8d8">
+         </cursor>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
+      <Label layoutX="811.0" layoutY="544.0" prefHeight="26.0" prefWidth="296.0" text="-----  Or Create New Account ?  -----" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>

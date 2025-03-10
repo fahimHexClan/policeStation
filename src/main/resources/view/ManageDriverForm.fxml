@@ -41,13 +41,13 @@
             <TableColumn fx:id="ClmAddress" prefWidth="112.8575439453125" text="Address" />
             <TableColumn fx:id="ClmLicenseNumber" prefWidth="122.1434326171875" text="LicenseNumber" />
             <TableColumn fx:id="ClmDob" minWidth="0.0" prefWidth="113.57186889648438" text="Dob" />
-            <TableColumn fx:id="ClmGender" minWidth="0.0" prefWidth="97.8575439453125" text="Gender" />
-            <TableColumn fx:id="ClmContactNumber" prefWidth="118.572021484375" text="ContactNumber" />
-            <TableColumn fx:id="ClmVehicleId" prefWidth="82.857421875" text="VehicleId" />
-            <TableColumn fx:id="ClmFinesStatus" prefWidth="108.572021484375" text="FinesStatus" />
+            <TableColumn fx:id="ClmGender" minWidth="0.0" prefWidth="65.95263671875" text="Gender" />
+            <TableColumn fx:id="ClmContactNumber" prefWidth="126.19097900390625" text="ContactNumber" />
+            <TableColumn fx:id="ClmVehicleId" prefWidth="82.8575439453125" text="VehicleId" />
+            <TableColumn fx:id="ClmFinesStatus" prefWidth="136.9053955078125" text="FinesStatus" />
         </columns>
       </TableView>
-      <Button layoutX="866.0" layoutY="81.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Save">
+      <Button layoutX="862.0" layoutY="81.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -59,7 +59,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="866.0" layoutY="180.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Update">
+      <Button layoutX="862.0" layoutY="180.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Update">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -71,7 +71,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="866.0" layoutY="132.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Delete">
+      <Button layoutX="862.0" layoutY="132.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Delete">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -83,7 +83,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="868.0" layoutY="231.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Clear">
+      <Button layoutX="864.0" layoutY="231.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Clear">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

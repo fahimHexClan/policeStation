@@ -50,7 +50,7 @@ public class ManagePoliceReportFormController {
         visualize();
         try {
             ArrayList<String> citizenIds = loadCitizenIds();
-            ArrayList<String> userIds = userModel.loadUserIds(); // Call the method from UserModel
+            ArrayList<String> userIds = userModel.loadUserIds();
             CmdCitizenIds.getItems().addAll(citizenIds);
             CmdUserIds.getItems().addAll(userIds);
         } catch (SQLException | ClassNotFoundException e) {
@@ -238,55 +238,51 @@ public class ManagePoliceReportFormController {
     }
 
     public void ReportOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException, JRException {
-            Connection connection = null;
-            try {
-                // Get a connection to the database
-                connection = DatabaseConnection.getInstance().getConnection();
+        Connection connection = null;
+        try {
+            connection = DatabaseConnection.getInstance().getConnection();
 
-                // Provide the SQL query to fetch data for the report
-                String query = "SELECT " +
-                        "c.CitizenId, " +
-                        "c.name, " +
-                        "c.address, " +
-                        "c.contactNumber, " +
-                        "c.gender, " +
-                        "c.Dob, " +
-                        "cd.CrimeId, " +
-                        "com.ComplaintId, " +
-                        "pr.policeReportId " +
-                        "FROM Citizen c " +
-                        "LEFT JOIN crimeDetails cd ON c.CitizenId = cd.CitizenId " +
-                        "LEFT JOIN Complaint com ON c.CitizenId = com.CitizenId " +
-                        "LEFT JOIN PoliceReport pr ON c.CitizenId = pr.CitizenId";
+            // Get the selected CitizenId from the ComboBox or wherever it is entered
+            String selectedCitizenId = CmdCitizenIds.getValue().toString();
 
-                // Create a PreparedStatement and execute the query
-                PreparedStatement preparedStatement = connection.prepareStatement(query);
-                ResultSet resultSet = preparedStatement.executeQuery();
+            String query = "SELECT " +
+                    "c.CitizenId, " +
+                    "c.name, " +
+                    "c.address, " +
+                    "c.contactNumber, " +
+                    "c.gender, " +
+                    "c.Dob, " +
+                    "cd.CrimeId, " +
+                    "com.ComplaintId, " +
+                    "pr.policeReportId " +
+                    "FROM Citizen c " +
+                    "LEFT JOIN crimeDetails cd ON c.CitizenId = cd.CitizenId " +
+                    "LEFT JOIN Complaint com ON c.CitizenId = com.CitizenId " +
+                    "LEFT JOIN PoliceReport pr ON c.CitizenId = pr.CitizenId " +
+                    "WHERE c.CitizenId = ?";  // Add a WHERE clause to filter by CitizenId
 
-                // Create a JasperReports data source from the result set
-                JRResultSetDataSource resultSetDataSource = new JRResultSetDataSource(resultSet);
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, selectedCitizenId);  // Set the parameter for the WHERE clause
 
-                // Load the JasperReport design from the JRXML file
-                InputStream reportStream = getClass().getResourceAsStream("/Report/policeReport.jrxml");
-                JasperDesign jasperDesign = JRXmlLoader.load(reportStream);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-                // Compile the JasperReport
-                JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+            JRResultSetDataSource resultSetDataSource = new JRResultSetDataSource(resultSet);
+            InputStream reportStream = getClass().getResourceAsStream("/Report/policeStation2.jrxml");
+            JasperDesign jasperDesign = JRXmlLoader.load(reportStream);
 
-                // Fill the report with data and create a JasperPrint object
-                JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, resultSetDataSource);
+            JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
 
-                // Display the JasperViewer with the filled report
-                net.sf.jasperreports.view.JasperViewer.viewReport(jasperPrint, false);
-            } finally {
-                // Close the database connection in a finally block to ensure it's closed even if an exception occurs
-                if (connection != null) {
-                    connection.close();
-                }
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, resultSetDataSource);
+
+            net.sf.jasperreports.view.JasperViewer.viewReport(jasperPrint, false);
+        } finally {
+            if (connection != null) {
+                connection.close();
             }
         }
+    }
 
-        public void BtnClearOnAction(ActionEvent actionEvent) {
+    public void BtnClearOnAction(ActionEvent actionEvent) {
         TxtReportId.clear();
         TxtDescription.clear();
         TxtDate.clear();

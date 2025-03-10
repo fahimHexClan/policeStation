@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="SubPane" prefHeight="724.0" prefWidth="1046.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageFinesFormController">
+<AnchorPane fx:id="SubPane" prefHeight="724.0" prefWidth="1002.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageFinesFormController">
    <children>
       <JFXTextField fx:id="TxtFinesDate" layoutX="609.0" layoutY="149.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="610.0" layoutY="127.0" prefHeight="29.0" prefWidth="241.0" text="FinesDate" />
@@ -23,7 +23,7 @@
       <Label layoutX="290.0" layoutY="65.0" prefHeight="29.0" prefWidth="241.0" text="FinesId" />
       <JFXTextField fx:id="TxtFinesDescrip" layoutX="289.0" layoutY="148.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="289.0" layoutY="125.0" prefHeight="29.0" prefWidth="241.0" text="FinesDescription" />
-      <Button layoutX="919.0" layoutY="175.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Save">
+      <Button layoutX="899.0" layoutY="175.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #c8d6e5;" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -35,7 +35,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="917.0" layoutY="72.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Update">
+      <Button layoutX="897.0" layoutY="72.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #c8d6e5;" text="Update">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -47,7 +47,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="918.0" layoutY="126.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Clear">
+      <Button layoutX="898.0" layoutY="126.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #c8d6e5;" text="Clear">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -77,13 +77,13 @@
          </font>
       </Label>
       <ComboBox fx:id="CmbDriverId" layoutX="606.0" layoutY="76.0" opacity="0.73" prefHeight="28.0" prefWidth="274.0" promptText="DriverId" style="-fx-background-radius: 30px;" />
-      <TableView fx:id="TableFines" layoutX="8.0" layoutY="237.0" prefHeight="479.0" prefWidth="1031.0">
+      <TableView fx:id="TableFines" layoutX="8.0" layoutY="242.0" prefHeight="474.0" prefWidth="1023.0">
          <columns>
             <TableColumn fx:id="ClmFinesId" prefWidth="209.28665685653687" text="FinesId" />
             <TableColumn fx:id="ClmFinesDescription" prefWidth="223.81051635742188" text="FinesDescription" />
             <TableColumn fx:id="ClmFinesAmount" prefWidth="202.6199951171875" text="FinesAmount" />
             <TableColumn fx:id="ClmFinesDate" prefWidth="159.28643798828125" text="FinesDate" />
-            <TableColumn fx:id="ClmDriverID" prefWidth="171.42919921875" text="DriverId" />
+            <TableColumn fx:id="ClmDriverID" prefWidth="225.71523426989313" text="DriverId" />
          </columns>
       </TableView>
       <Separator layoutX="3.0" layoutY="41.0" prefHeight="0.0" prefWidth="1039.0" style="-fx-background-color: #00BF63;" />

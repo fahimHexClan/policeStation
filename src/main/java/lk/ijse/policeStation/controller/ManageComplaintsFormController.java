@@ -158,7 +158,6 @@ public class ManageComplaintsFormController {
                         new Alert(Alert.AlertType.ERROR, "Data Not Added").show();
                     }
                 } else {
-                    // Display an alert if the CitizenId is not valid
                     new Alert(Alert.AlertType.ERROR, "Invalid CitizenId. Please check the Citizen table.").show();
                 }
             } catch (SQLException e) {
@@ -185,8 +184,7 @@ public class ManageComplaintsFormController {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com"); // Assuming you are using Gmail
-        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.host", "smtp.gmail.com");
 
         Session session = Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {

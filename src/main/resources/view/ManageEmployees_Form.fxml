@@ -16,17 +16,12 @@
    <children>
       <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="698.0" prefWidth="1014.0" style="-fx-background-color: white;">
          <children>
-            <ImageView fx:id="ImgEmployee" fitHeight="261.0" fitWidth="271.0" layoutX="13.0" layoutY="52.0" pickOnBounds="true">
+            <ImageView fx:id="ImgEmployee" fitHeight="248.0" fitWidth="258.0" layoutX="13.0" layoutY="52.0" pickOnBounds="true">
                <image>
                   <Image url="@../Assets/Background pics/S(1).jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="75.0" fitWidth="94.0" layoutX="114.0" layoutY="133.0" opacity="0.54" pickOnBounds="true">
-               <image>
-                  <Image url="@../Assets/logo/plus-100.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="91.0" layoutY="124.0" mnemonicParsing="false" onAction="#ImageAddOnAction" opacity="0.06" prefHeight="101.0" prefWidth="145.0" />
+            <Button layoutX="43.0" layoutY="98.0" mnemonicParsing="false" onAction="#ImageAddOnAction" opacity="0.06" prefHeight="166.0" prefWidth="209.0" />
             <TableView fx:id="TblEmployee" layoutX="4.0" layoutY="316.0" prefHeight="378.0" prefWidth="1006.0">
               <columns>
                 <TableColumn fx:id="ClmEmpId" prefWidth="75.0" text="Emp Id" />
@@ -35,8 +30,8 @@
                   <TableColumn fx:id="ColmAddress" prefWidth="147.1435089111328" text="Address" />
                   <TableColumn fx:id="ColmContactNum" prefWidth="94.2861328125" text="ContactNum" />
                   <TableColumn fx:id="ClmEmpName" prefWidth="109.04800415039062" text="EmpName" />
-                  <TableColumn fx:id="ClmEmployeeType" prefWidth="129.0482177734375" text="EmployeeType" />
-                  <TableColumn fx:id="ClmRank" prefWidth="112.38140869140625" text="Rank" />
+                  <TableColumn fx:id="ClmEmployeeType" prefWidth="121.667236328125" text="EmployeeType" />
+                  <TableColumn fx:id="ClmRank" prefWidth="120.4766845703125" text="Rank" />
                   <TableColumn fx:id="ClmDob" prefWidth="103.57196044921875" text="Dob" />
                   <TableColumn fx:id="ClmGender" prefWidth="99.048095703125" text="Gender" />
               </columns>
@@ -54,21 +49,21 @@
       <Label layoutX="331.0" layoutY="216.0" prefHeight="29.0" prefWidth="241.0" text="address" />
       <JFXTextField fx:id="TxtEmpId" layoutX="330.0" layoutY="83.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="328.0" layoutY="64.0" prefHeight="29.0" prefWidth="241.0" text="Emp Id" />
-      <JFXTextField fx:id="TxtEmpName" layoutX="638.0" layoutY="82.0" prefHeight="25.0" prefWidth="264.0" />
+      <JFXTextField fx:id="TxtEmpName" layoutX="638.0" layoutY="82.0" prefHeight="25.0" prefWidth="250.0" />
       <Label layoutX="636.0" layoutY="61.0" prefHeight="29.0" prefWidth="241.0" text="Emp Name" />
-      <JFXTextField fx:id="TxtDob" layoutX="640.0" layoutY="238.0" prefHeight="25.0" prefWidth="264.0" />
+      <JFXTextField fx:id="TxtDob" layoutX="640.0" layoutY="238.0" prefHeight="25.0" prefWidth="250.0" />
       <Label layoutX="638.0" layoutY="217.0" prefHeight="29.0" prefWidth="241.0" text="Dirth Of Birth" />
-      <JFXTextField fx:id="TxtGender" layoutX="640.0" layoutY="286.0" prefHeight="25.0" prefWidth="264.0" />
+      <JFXTextField fx:id="TxtGender" layoutX="640.0" layoutY="286.0" prefHeight="25.0" prefWidth="250.0" />
       <Label layoutX="641.0" layoutY="267.0" prefHeight="29.0" prefWidth="241.0" text="gender" />
       <JFXTextField fx:id="TxtOfficerId" layoutX="330.0" layoutY="140.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="328.0" layoutY="119.0" prefHeight="29.0" prefWidth="241.0" text="Officer Id" />
       <JFXTextField fx:id="TxtUsrId" layoutX="329.0" layoutY="187.0" prefHeight="25.0" prefWidth="264.0" />
       <Label layoutX="328.0" layoutY="167.0" prefHeight="29.0" prefWidth="241.0" text="user Id" />
-      <JFXTextField fx:id="TxtEmpType" layoutX="638.0" layoutY="140.0" prefHeight="25.0" prefWidth="264.0" />
+      <JFXTextField fx:id="TxtEmpType" layoutX="638.0" layoutY="140.0" prefHeight="25.0" prefWidth="250.0" />
       <Label layoutX="638.0" layoutY="117.0" prefHeight="29.0" prefWidth="241.0" text="EmployeeType" />
-      <JFXTextField fx:id="TxtRank" layoutX="638.0" layoutY="187.0" prefHeight="25.0" prefWidth="264.0" />
+      <JFXTextField fx:id="TxtRank" layoutX="638.0" layoutY="187.0" prefHeight="25.0" prefWidth="250.0" />
       <Label layoutX="639.0" layoutY="168.0" prefHeight="29.0" prefWidth="241.0" text="Rank" />
-      <Button layoutX="913.0" layoutY="155.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Save">
+      <Button layoutX="906.0" layoutY="155.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #c8d6e5;" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -80,7 +75,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="911.0" layoutY="102.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Update">
+      <Button layoutX="907.0" layoutY="102.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #c8d6e5;" text="Update">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -92,7 +87,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="916.0" layoutY="260.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Delete">
+      <Button layoutX="909.0" layoutY="260.0" mnemonicParsing="false" onAction="#BtnDeleteOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #c8d6e5;" text="Delete">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -104,7 +99,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="915.0" layoutY="208.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Clear">
+      <Button layoutX="908.0" layoutY="208.0" mnemonicParsing="false" onAction="#BtnClearOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #c8d6e5;" text="Clear">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

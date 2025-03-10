@@ -15,34 +15,37 @@
             <Image url="@../Assets/Background pics/SignInPage.png" />
          </image>
       </ImageView>
-      <TextField fx:id="UsrName" layoutX="805.0" layoutY="345.0" opacity="0.97" prefHeight="45.0" prefWidth="331.0" promptText="Enter UserName" style="-fx-border-color: blue; -fx-border-width: blue; -fx-background-color: #dfe6e9;" />
-      <TextField fx:id="UsrPassword" layoutX="806.0" layoutY="424.0" prefHeight="45.0" prefWidth="331.0" promptText="Password" style="-fx-border-color: blue; -fx-background-color: #dfe6e9;">
+      <TextField fx:id="UsrName" layoutX="805.0" layoutY="345.0" opacity="0.97" prefHeight="45.0" prefWidth="331.0" promptText="Enter UserName" style="-fx-border-width: blue; -fx-background-color: White; -fx-background-radius: 20px;" />
+      <TextField fx:id="UsrPassword" layoutX="806.0" layoutY="424.0" prefHeight="45.0" prefWidth="331.0" promptText="Password" style="-fx-background-color: White; -fx-background-radius: 20px;">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </TextField>
-      <Text fill="#f6f3f3" layoutX="799.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SignIn PAGE">
+      <Text fill="#091153" layoutX="795.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN-UP PAGE">
          <font>
             <Font name="System Bold" size="46.0" />
          </font>
       </Text>
       <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="737.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Assets/logo/username-100.png" />
+            <Image url="@../Assets/logo/username.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="51.0" fitWidth="57.0" layoutX="737.0" layoutY="419.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Assets/logo/icons8-passcodes-50.png" />
+            <Image url="@../Assets/logo/password-100.png" />
          </image>
       </ImageView>
-      <TextField fx:id="UsrId" layoutX="805.0" layoutY="275.0" prefHeight="45.0" prefWidth="331.0" promptText="Enter UserId" style="-fx-border-color: Blue; -fx-border-width: blue; -fx-background-color: #dfe6e9;" />
+      <TextField fx:id="UsrId" layoutX="805.0" layoutY="275.0" prefHeight="45.0" prefWidth="331.0" promptText="Enter UserId" style="-fx-border-width: blue; -fx-background-color: white; -fx-background-radius: 20px;" />
       <ImageView fitHeight="50.0" fitWidth="42.0" layoutX="743.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Assets/logo/id.png" />
+            <Image url="@../Assets/logo/UserId.png" />
          </image>
       </ImageView>
-      <Button layoutX="891.0" layoutY="511.0" mnemonicParsing="false" onAction="#SignInOnAction" prefHeight="49.0" prefWidth="129.0" style="-fx-border-color: blue;" text="SigIn" />
+      <Button layoutX="800.0" layoutY="511.0" mnemonicParsing="false" onAction="#SignInOnAction" prefHeight="49.0" prefWidth="332.0" style="-fx-background-radius: 30px; -fx-background-color: #1e90ff;" text="SigUp" textFill="#fbfbfb">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font></Button>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="383.0" fitWidth="471.0" layoutX="31.0" layoutY="270.0" pickOnBounds="true">
          <image>

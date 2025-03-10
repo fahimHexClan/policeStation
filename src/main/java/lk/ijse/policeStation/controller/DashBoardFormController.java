@@ -85,24 +85,19 @@ public class DashBoardFormController {
 
     private void updateComplaintDetailsChart() {
         try {
-            // Get complaint details from the database
             Map<String, Integer> complaintDetails = ComplaintModel.getComplaintDetails();
 
-            // Create a data series for the bar chart
             XYChart.Series<String, Number> series = new XYChart.Series<>();
-            series.setName("Complaints Details"); // Change this line with your desired heading
+            series.setName("Complaints Details");
 
-            // Add data to the series
             for (Map.Entry<String, Integer> entry : complaintDetails.entrySet()) {
                 series.getData().add(new XYChart.Data<>(entry.getKey(), entry.getValue()));
             }
 
-            // Set the data to the bar chart
             ObservableList<XYChart.Series<String, Number>> chartData = FXCollections.observableArrayList();
             chartData.add(series);
             ComplaintDetails.setData(chartData);
 
-            // Manually set tick marks with whole numbers
             ObservableList<String> categories = FXCollections.observableArrayList(complaintDetails.keySet());
             ComplaintsDay.setCategories(categories);
             ComplaintsCount.setAutoRanging(false);
@@ -110,23 +105,21 @@ public class DashBoardFormController {
             ComplaintsCount.setUpperBound(getMaxComplaintCount(complaintDetails) + 1);
             ComplaintsCount.setTickUnit(1);
 
-            // Set custom colors for the bars
             for (XYChart.Data<String, Number> data : series.getData()) {
                 int value = data.getYValue().intValue();
                 String color;
                 if (value < 5) {
-                    color = "#25CCF7"; // Green color for values less than 5
+                    color = "#25CCF7";
                 } else if (value < 10) {
-                    color = "#ffcc00"; // Yellow color for values between 5 and 10
+                    color = "#ffcc00";
                 } else {
-                    color = "#ff0000"; // Red color for values greater than or equal to 10
+                    color = "#ff0000";
                 }
                 Node node = data.getNode();
                 node.setStyle("-fx-bar-fill: " + color + ";");
                 addTooltip(node, String.valueOf(value));
             }
-            // Set the heading color directly on the CategoryAxis label
-            String headingColor = "#25CCF7"; // Change this color as per your requirement
+            String headingColor = "#25CCF7";
             Node axisLabel = ComplaintsDay.lookup(".label");
             if (axisLabel != null) {
                 axisLabel.setStyle("-fx-text-fill: " + headingColor + ";");
@@ -227,10 +220,8 @@ public class DashBoardFormController {
     }
     private void updateNumberOfCrimes() {
         try {
-            // Get the number of crimes from the database
             int numberOfCrimes = CrimeModel.getAllCrimes().size();
 
-            // Update the label text
             NumberOfCrimes.setText(String.valueOf(numberOfCrimes));
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -238,10 +229,7 @@ public class DashBoardFormController {
     }
     private void updateNumberOfFines() {
         try {
-            // Get the number of fines from the database
             int numberOfFines = FinesModel.getAllFines().size();
-
-            // Update the label text
             NumberOfFines.setText(String.valueOf(numberOfFines));
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -250,10 +238,7 @@ public class DashBoardFormController {
 
     private void updateNumberOfEmployees() {
         try {
-            // Get the number of employees from the database
             int numberOfEmployees = EmployeesModel.getAllEmployees().size();
-
-            // Update the label text
             NumberOfEmployee.setText(String.valueOf(numberOfEmployees));
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -261,10 +246,8 @@ public class DashBoardFormController {
     }
     private void updateNumberOfCitizens() {
         try {
-            // Get the number of citizens from the database
             int numberOfCitizens = CitizenModel.getAllCitizens().size();
 
-            // Update the label text
             NumberOfCitizens.setText(String.valueOf(numberOfCitizens));
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -273,10 +256,8 @@ public class DashBoardFormController {
 
     private void updateNumberOfComplaints() {
         try {
-            // Get the number of complaints from the database
             int numberOfComplaints = ComplaintModel.getComplaintDetails().size();
 
-            // Update the label text
             NumberOfComplaints.setText(String.valueOf(numberOfComplaints));
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -285,10 +266,7 @@ public class DashBoardFormController {
 
     private void updateNumberOfReports() {
         try {
-            // Get the number of police reports from the database
             int numberOfReports = PoliceReportModel.getAllReports().size();
-
-            // Update the label text
             NumberOfReports.setText(String.valueOf(numberOfReports));
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

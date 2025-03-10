@@ -33,14 +33,12 @@ public class logInFormController {
         UserDto userDto = new UserDto(UsrName.getText(), UsrPassword.getText(), UsrId.getText());
 
         if (userModel.validateUser(userDto)) {
-            // Login successful
             createDashboard();
         } else {
-            // Login failed
             new Alert(Alert.AlertType.WARNING, "Try again with the correct username and password").show();
             UsrPassword.clear();
             UsrName.clear();
-            UsrId.clear();  // Clear user ID as well
+            UsrId.clear();
         }
     }
 

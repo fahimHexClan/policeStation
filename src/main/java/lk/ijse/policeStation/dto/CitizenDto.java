@@ -16,3 +16,4 @@ public class CitizenDto {
     private String Address;
     private byte[] imgview;
 }
+//hey

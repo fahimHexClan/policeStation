@@ -124,6 +124,7 @@ public class ManageEmployeesFormController {
                 employeeTm.setTxtDob(Employee.getTxtDob());
                 employeeTm.setTxtOfficerId(Employee.getTxtOfficerId());
                 employeeTm.setTxtUsrId(Employee.getTxtUsrId());
+                employeeTm.setTxtAddress(Employee.getTxtAddress());
 
                 employee.add(employeeTm);
 
@@ -421,7 +422,6 @@ public class ManageEmployeesFormController {
             Image photo = new Image(new ByteArrayInputStream(imageData));
             ImgEmployee.setImage(photo);
         } else {
-            // If there is no image data, you may want to clear the existing image in the ImageView
             ImgEmployee.setImage(null);
         }
 

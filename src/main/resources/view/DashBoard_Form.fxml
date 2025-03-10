@@ -29,7 +29,7 @@
                   <DropShadow />
                </effect>
             </AnchorPane>
-            <ImageView fitHeight="86.0" fitWidth="1046.0" layoutX="-10.0" layoutY="3.0" pickOnBounds="true">
+            <ImageView fitHeight="92.0" fitWidth="1046.0" layoutX="-10.0" layoutY="3.0" pickOnBounds="true">
                <image>
                   <Image url="@../Assets/Background pics/ligtblue.png" />
                </image>
@@ -176,44 +176,43 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Label fx:id="TimeLbl" layoutX="122.0" layoutY="30.0" prefHeight="45.0" prefWidth="237.0" text="18:12:12" textFill="#fbf9f9">
+            <Label fx:id="TimeLbl" layoutX="122.0" layoutY="21.0" prefHeight="45.0" prefWidth="237.0" text="18:12:12" textFill="#fbf9f9">
                <font>
                   <Font name="System Bold Italic" size="30.0" />
                </font>
             </Label>
-            <Label fx:id="LblDate" layoutX="826.0" layoutY="26.0" prefHeight="45.0" prefWidth="204.0" text="12-2022-21" textFill="#fffefe">
+            <Label fx:id="LblDate" layoutX="826.0" layoutY="17.0" prefHeight="45.0" prefWidth="204.0" text="12-2022-21" textFill="#fffefe">
                <font>
                   <Font name="System Bold Italic" size="30.0" />
                </font>
             </Label>
-            <Label layoutX="379.0" layoutY="20.0" prefHeight="56.0" prefWidth="277.0" text="DashBoard" textFill="#fefcfc">
+            <Label layoutX="379.0" layoutY="11.0" prefHeight="56.0" prefWidth="277.0" text="DashBoard" textFill="#fefcfc">
                <font>
                   <Font name="System Bold Italic" size="41.0" />
                </font>
             </Label>
-            <Label layoutX="722.0" layoutY="25.0" prefHeight="44.0" prefWidth="133.0" text="Date :" textFill="#fefbfb">
+            <Label layoutX="722.0" layoutY="16.0" prefHeight="44.0" prefWidth="133.0" text="Date :" textFill="#fefbfb">
                <font>
                   <Font name="System Bold Italic" size="30.0" />
                </font>
             </Label>
-            <Label layoutX="17.0" layoutY="28.0" prefHeight="44.0" prefWidth="133.0" text="Time :" textFill="#f2f0f0">
+            <Label layoutX="17.0" layoutY="19.0" prefHeight="44.0" prefWidth="133.0" text="Time :" textFill="#f2f0f0">
                <font>
                   <Font name="System Bold Italic" size="30.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="879.0" layoutY="93.0" prefHeight="157.0" prefWidth="154.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
+            <AnchorPane layoutX="878.0" layoutY="100.0" prefHeight="150.0" prefWidth="142.0" style="-fx-background-radius: 30px; -fx-background-color: white;">
                <effect>
                   <DropShadow />
                </effect>
                <children>
-                  <ImageView fitHeight="155.0" fitWidth="130.0" layoutX="18.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="138.0" fitWidth="119.0" layoutX="19.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/Background%20pics/police.png" />
+                        <Image url="@../Assets/Background pics/police.png" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children></AnchorPane>
       <JFXButton fx:id="btnComplaints" blendMode="COLOR_BURN" layoutX="35.0" layoutY="255.0" onAction="#ManageComplaints" prefHeight="57.0" prefWidth="288.0" textFill="WHITE">
          <font>

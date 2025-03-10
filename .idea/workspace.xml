@@ -5,15 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="451f0e7f-11a1-4e82-9643-0ff9fd2af8c8" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Report/policeReport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Report/policeStation2.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/Appinitailizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/Appinitailizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/DashBoardFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/DashBoardFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCitizenFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCitizenFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageComplaintsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageComplaintsFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCrimeFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageCrimeFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageEmployeesFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageEmployeesFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManagePoliceReportFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManagePoliceReportFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageVehicleFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageVehicleFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/logInFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/logInFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/ComplaintModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/model/ComplaintModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/DashBoard_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DashBoard_Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/LogIn_Form .fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/LogIn_Form .fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageCitizen_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageCitizen_Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageCrime_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageCrime_Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageDriverForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageDriverForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageEmployees_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageEmployees_Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageFines_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageFines_Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManagePoliceReport_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManagePoliceReport_Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/ManageVehicle_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ManageVehicle_Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SignIn_Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SignIn_Form.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -39,14 +63,12 @@
     &quot;assignee&quot;: &quot;fahimHexClan&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="6d22ab04-d0bf-4151-b482-bd15872c0204" />
-        <option name="url" value="https://github.com/fahimHexClan/policeStation.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/fahimHexClan/policeStation.git&quot;,
+    &quot;accountId&quot;: &quot;835f2a9a-98cf-49af-9e44-d2b7f6b5b1f8&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -60,19 +82,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_directory_selection&quot;: &quot;/home/fahim8421/IdeaProjects/policeStation/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/fahim8421/IdeaProjects/policeStation/src/main/resources/Report&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.lk.ijse.policeStation.Wrapper.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/home/fahim8421/IdeaProjects/policeStation/src/main/java",
+    "last_opened_file_path": "/home/fahim8421/IdeaProjects/policeStation",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="lk.ijse.policeStation.dto" />
@@ -148,11 +185,19 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.lk.ijse.policeStation.Wrapper" />
-        <item itemvalue="Application.Appinitailizer" />
-        <item itemvalue="Application.Wrapper" />
         <item itemvalue="Application.lk.ijse.policeStation.Appinitailizer" />
+        <item itemvalue="Application.Wrapper" />
+        <item itemvalue="Application.Appinitailizer" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -162,6 +207,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1698868456731</updated>
+      <workItem from="1707903243224" duration="1433000" />
+      <workItem from="1707920211422" duration="84000" />
+      <workItem from="1709049493711" duration="981000" />
+      <workItem from="1709178392089" duration="1547000" />
+      <workItem from="1709186263864" duration="69000" />
+      <workItem from="1709231117629" duration="1041000" />
+      <workItem from="1741528095697" duration="3893000" />
+      <workItem from="1741582137351" duration="106000" />
+      <workItem from="1741582251789" duration="132000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -347,8 +401,19 @@
       <option name="project" value="LOCAL" />
       <updated>1701256454998</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1701295103280</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1701295103280</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -382,9 +447,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/ManageComplaintsFormController.java</url>
-          <line>145</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/main/java/lk/ijse/policeStation/controller/SignInFormController.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

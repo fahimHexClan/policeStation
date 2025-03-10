@@ -15,28 +15,28 @@
 
 <AnchorPane prefHeight="722.0" prefWidth="1038.0" style="-fx-background-color: #00BF63;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.policeStation.controller.ManageCrimeFormController">
     <children>
-        <AnchorPane layoutX="13.0" layoutY="24.0" prefHeight="685.0" prefWidth="1029.0" style="-fx-background-color: white;">
+        <AnchorPane layoutX="8.0" layoutY="24.0" prefHeight="673.0" prefWidth="1024.0" style="-fx-background-color: white;">
             <children>
-                <Label layoutX="369.0" prefHeight="44.0" prefWidth="141.0" text="Crime ">
+                <Label layoutX="369.0" prefHeight="44.0" prefWidth="313.0" text="Crime Details">
                     <font>
                         <Font name="System Bold Italic" size="35.0" />
                     </font>
                 </Label>
-                <TableView fx:id="TableCrimeDetails" layoutX="4.0" layoutY="272.0" prefHeight="409.0" prefWidth="1019.0">
+                <TableView fx:id="TableCrimeDetails" layoutX="4.0" layoutY="272.0" prefHeight="409.0" prefWidth="1006.0">
                     <columns>
-                        <TableColumn fx:id="clmCrimeId" prefWidth="75.0" text="CrimeId" />
-                        <TableColumn fx:id="ClmLocation" prefWidth="75.0" text="Location" />
-                        <TableColumn fx:id="ClmCrimeDetails" prefWidth="125.47669982910156" text="CrimeDetails" />
-                        <TableColumn fx:id="ClmDate" prefWidth="79.52420043945312" text="Date" />
-                        <TableColumn fx:id="ClmInjuries" prefWidth="93.80996704101562" text="Injuries" />
-                        <TableColumn fx:id="ClmCriminalRecord" prefWidth="161.42926025390625" text="CriminalRecord" />
-                        <TableColumn fx:id="ClmMotiveReson" prefWidth="99.048095703125" text="MotiveReson" />
-                        <TableColumn fx:id="ClmStatus" prefWidth="63.095458984375" text="Status" />
-                        <TableColumn fx:id="lmTypeOfCrime" prefWidth="115.0003662109375" text="TypeOfCrime" />
-                        <TableColumn fx:id="ClmWeponsUsed" prefWidth="130.0006103515625" text="Wepons Used" />
+                        <TableColumn fx:id="clmCrimeId" prefWidth="64.52408409118652" text="CrimeId" />
+                        <TableColumn fx:id="ClmLocation" prefWidth="85.47657012939453" text="Location" />
+                        <TableColumn fx:id="ClmCrimeDetails" prefWidth="119.04804992675781" text="CrimeDetails" />
+                        <TableColumn fx:id="ClmDate" prefWidth="109.04815673828125" text="Date" />
+                        <TableColumn fx:id="ClmInjuries" prefWidth="97.61941528320312" text="Injuries" />
+                        <TableColumn fx:id="ClmCriminalRecord" prefWidth="87.85757446289062" text="CriminalRe" />
+                        <TableColumn fx:id="ClmMotiveReson" prefWidth="150.0006103515625" text="MotiveReson" />
+                        <TableColumn fx:id="ClmStatus" prefWidth="69.2860107421875" text="Status" />
+                        <TableColumn fx:id="lmTypeOfCrime" prefWidth="104.52423095703125" text="TypeOfCrime" />
+                        <TableColumn fx:id="ClmWeponsUsed" prefWidth="141.1910400390625" text="Wepons Used" />
                     </columns>
                 </TableView>
-                <Button layoutX="896.0" layoutY="52.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="106.0" style="-fx-background-color: #c8d6e5;" text="Save">
+                <Button layoutX="898.0" layoutY="52.0" mnemonicParsing="false" onAction="#BtnSaveOnAction" prefHeight="35.0" prefWidth="106.0" style="-fx-background-color: #c8d6e5;" text="Save">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
@@ -48,7 +48,7 @@
                   </ImageView>
                </graphic>
                 </Button>
-                <Button layoutX="895.0" layoutY="140.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: #c8d6e5;" text="Update">
+                <Button layoutX="897.0" layoutY="140.0" mnemonicParsing="false" onAction="#BtnUpdateOnAction" prefHeight="38.0" prefWidth="107.0" style="-fx-background-color: #c8d6e5;" text="Update">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
